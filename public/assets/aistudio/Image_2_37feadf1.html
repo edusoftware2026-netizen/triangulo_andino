@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed-variant":"#6e3900","surface-container-low":"#f2f4f6","error-container":"#ffdad6","secondary-container":"#fd6b36","outline-variant":"#c6c6cd","on-surface":"#191c1e","on-secondary-fixed":"#390c00","tertiary-fixed-dim":"#ffb77d","on-tertiary":"#ffffff","surface-variant":"#e0e3e5","on-tertiary-container":"#c76c00","on-secondary":"#ffffff","on-primary-container":"#7c839b","tertiary-container":"#2f1500","surface-bright":"#f7f9fb","inverse-surface":"#2d3133","tertiary":"#000000","surface-tint":"#565e74","on-secondary-fixed-variant":"#832600","on-secondary-container":"#5d1900","surface-container-high":"#e6e8ea","error":"#ba1a1a","primary-fixed":"#dae2fd","inverse-primary":"#bec6e0","surface-dim":"#d8dadc","on-primary-fixed-variant":"#3f465c","secondary":"#ac3400","tertiary-fixed":"#ffdcc3","on-primary":"#ffffff","primary":"#000000","on-background":"#191c1e","background":"#f7f9fb","secondary-fixed":"#ffdbd0","primary-container":"#131b2e","on-primary-fixed":"#131b2e","primary-fixed-dim":"#bec6e0","surface":"#f7f9fb","outline":"#76777d","inverse-on-surface":"#eff1f3","surface-container":"#eceef0","surface-container-lowest":"#ffffff","on-surface-variant":"#45464d","on-error-container":"#93000a","on-tertiary-fixed":"#2f1500","surface-container-highest":"#e0e3e5","secondary-fixed-dim":"#ffb59d","on-error":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-sm":"0.5rem","space-lg":"1.5rem","margin-md":"3rem","space-md":"1rem","space-xl":"2.5rem","space-2xl":"4rem","gutter-lg":"2.5rem","space-xs":"0.25rem",gutter:"1.5rem",margin:"1.5rem","margin-lg":"5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"headline-sm":["EB Garamond"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["EB Garamond"],"headline-lg":["EB Garamond"],"headline-lg-mobile":["EB Garamond"],"label-md":["Plus Jakarta Sans"],"display-lg":["EB Garamond"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["EB Garamond"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"display-lg-mobile":["38px",{lineHeight:"46px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg h-20 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="Triángulo Andino Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WbI1b3W87j_X4Czfrq3qSnHZF0wTnt1GIRF85bEfzhKv3cRjWGASopjeHsyLz2pcNbx7WfTFNb3ABN8XDB8_XT_rGLd79nHPaVYpeK-j07XU2bq23y2llPC276l6VKKM3rHe_7ePPhzNOCvGByTLcLSvBLaWrl2RQHRRmaJEZtAzDVKsBQu8KSw5KDpX-dpyf0O3O5uEq1rnUM3lgIHTPJdeJLFBoQAVetfawvGJ3P3tjN9tkOBbVTIQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface leading-none">Triángulo Andino</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Chile · Bolivia · Perú</span></div></a></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-secondary font-semibold"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="explorar-paquetes" href="#">Explorar Paquetes</a><div class="relative flex items-center"><a aria-current="page" class="transition-colors pr-2 text-secondary font-semibold" data-path="armador-de-ruta-ia" href="#">Armador de Ruta IA</a><span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm tracking-wider uppercase shadow-sm">Smart Route</span></div><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="circuitos-3-paises" href="#">Circuitos 3 Países</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="experiencias-y-hoteles" href="#">Experiencias &amp; Hoteles</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Arquitectura &amp; API</a></nav><div class="flex items-center gap-space-sm shrink-0"><div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Dual Mode: Gemini Mock Active</span></div><div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded"><button class="font-label-md text-label-md text-on-surface font-semibold px-1" type="button">ES</button><span class="font-label-sm text-label-sm text-outline-variant">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">EN</button><span class="font-label-sm text-label-sm text-outline-variant">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">PT</button><span class="font-label-sm text-label-sm text-outline-variant">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">FR</button></div><div class="hidden sm:flex items-center bg-surface-container-low px-2 py-1 rounded"><select class="bg-transparent font-label-md text-label-md text-on-surface font-semibold focus:outline-none cursor-pointer pr-1"><option value="USD">USD $</option><option value="EUR">EUR €</option><option value="CLP">CLP $</option><option value="PEN">PEN S/</option></select></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF79VQICsc-_aqMCbz3d1L7b0uoH-6zu0EatcKukyNRPwqXWPKF_mER5xGpml63cN8erSTYqRBn3sfTeKp3NNOJbfVVcKg8sdhkkqUrzYJvTenkIDXnd-wc3zWXady84QWITPZ8fx9dPfKCF77EbWaGX_MO1OZZS9JWJ_o3QJcZj4tBHDoWQfhE8B0NZJyPviQSB8anicRFCFK1mhqSOCqwY-MbNE8ypjxFR9uSy8SiAtPmeHH7_ak"/><a class="hidden lg:inline-flex items-center justify-center px-4 py-2 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary hover:text-on-secondary transition-colors duration-200 shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="contacto-concierge" href="#">Concierge 24/7</a></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- TOP HEADER / HERO CONCIERGE BRANDING -->
+<section class="relative w-full bg-surface-container-low overflow-hidden pb-space-2xl pt-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg">
+<!-- Top status & dual-mode badges -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md">
+<div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold" id="lbl-status-mode">
+            MODO DEMO OPERATIVO (localStorage + Mock Gemini Engine) · Listo para credenciales Firebase &amp; Gemini API
+          </span>
+</div>
+<!-- Language switcher selector panel -->
+<div class="flex items-center gap-1.5 bg-surface-container-lowest p-1 rounded shadow-sm">
+<span class="material-symbols-outlined text-secondary text-base pl-1.5">language</span>
+<button class="px-2 py-0.5 rounded font-label-md text-label-md uppercase font-bold text-on-primary bg-primary transition-all" id="lang-btn-es" onclick="setAppLanguage('ES')" type="button">ES</button>
+<button class="px-2 py-0.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-all" id="lang-btn-en" onclick="setAppLanguage('EN')" type="button">EN</button>
+<button class="px-2 py-0.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-all" id="lang-btn-pt" onclick="setAppLanguage('PT')" type="button">PT</button>
+<button class="px-2 py-0.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-all" id="lang-btn-fr" onclick="setAppLanguage('FR')" type="button">FR</button>
+<span class="w-[1px] h-4 bg-surface-variant mx-1"></span>
+<div class="flex items-center pr-1">
+<select class="bg-transparent font-label-md text-label-md uppercase font-bold text-secondary focus:outline-none cursor-pointer" id="currency-selector" onchange="updateCurrency(this.value)">
+<option value="USD">USD ($)</option>
+<option value="EUR">EUR (€)</option>
+<option value="CLP">CLP ($)</option>
+<option value="PEN">PEN (S/)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Main Headline Block -->
+<div class="max-w-4xl pt-space-xs">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold" id="lbl-kicker">Módulo Inteligente de Planificación</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight" id="lbl-main-title">
+          Armador Inteligente de Ruta Andina <span class="text-secondary italic">(Multi-Destino)</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm leading-relaxed" id="lbl-main-subtitle">
+          Diseña tu expedición combinada por Chile, Bolivia y Perú. Nuestra IA con Google Search Grounding optimiza altitud, aclimatación escalonada, logística de frontera y cotización en tiempo real.
+        </p>
+</div>
+</div>
+</section>
+<!-- MAIN INTERACTIVE GENERATOR WORKFLOW -->
+<section class="max-w-[1440px] mx-auto w-full px-margin lg:px-margin-lg py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- LEFT CONFIGURATION COLUMN (STEP 1 & STEP 2) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- PASO 1: SELECCIÓN DE DESTINOS -->
+<div class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="lbl-step1-title">Selección de Destinos Emblemáticos</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="lbl-step1-desc">Marca los hitos de tu viaje. El motor recalcula la curva de altitud automáticamente.</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold" id="selected-counter">5 Destinos Activos</span>
+</div>
+<!-- Cards de Destinos con Checkbox -->
+<div class="flex flex-col gap-space-md" id="destinations-container">
+<!-- Destino 1: San Pedro de Atacama -->
+<label class="destination-card relative flex flex-col md:flex-row gap-space-md p-space-md rounded-lg bg-surface-container-low hover:bg-surface-variant transition-all cursor-pointer group">
+<div class="relative w-full md:w-44 h-36 md:h-auto shrink-0 rounded overflow-hidden">
+<img alt="Atacama Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Stunning panoramic view of the Atacama Desert in Chile with dramatic volcanic peaks, salt flat flats glowing in golden warm light and clear cobalt skies, fine art architectural travel photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmGkIgyAR3vhUSEP67fgohJamfVA9s1y082jHQstijnsPz05PpdfEyX6UBhdA3qtrs8oBiwzyclk4pMx5c1CjMv6EV33CdpHzMk6xMm-9yoTy4OnprugeGwJoiYM_eGGSFYwPH_h0xyHq1m8_-Mk9_VBcMhcFjERonOX1QCqpbsB8hghJdHf_O3krKtqIjqpvxVrftZ-Sfd5o5AfehsWxC7FXS9S0SHmbymKNK3LuWG4t1pzFDUpW8"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">Chile</span>
+</div>
+<div class="flex flex-col justify-between w-full">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">San Pedro de Atacama</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">2.400 msnm · Punto de Inflexión</span>
+</div>
+<input checked="" class="dest-checkbox w-5 h-5 accent-secondary cursor-pointer mt-1" data-altitude="2400" data-cost="750" data-days="3" data-dest-id="atacama" onchange="handleDestChange()" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                    Géiseres del Tatio, Valle de la Luna, Salares de Atacama y astrofotografía en los cielos más limpios del planeta.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>3 Días sugeridos</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">+<span class="dest-price-val" data-usd="750">$750</span> USD / pax</span>
+</div>
+</div>
+</label>
+<!-- Destino 2: Salar de Uyuni & Lagunas -->
+<label class="destination-card relative flex flex-col md:flex-row gap-space-md p-space-md rounded-lg bg-surface-container-low hover:bg-surface-variant transition-all cursor-pointer group">
+<div class="relative w-full md:w-44 h-36 md:h-auto shrink-0 rounded overflow-hidden">
+<img alt="Salar de Uyuni Bolivia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Breathtaking infinity reflection on Salar de Uyuni in Bolivia with a modern expedition four wheel drive vehicle on pristine white crystalline salt crust under pastel clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChlFkOy5Hy_AQyFucQlyl0pxbg94ppW4oyn1Lgp85gla7TSgLcgiOXFf2oicjpEO-IVoP97WJckXqyf3rptg43125X2jD5OjN8eNHFcxDb-oeMjUQeEtoh24CER_gX7HXXvzlKhemAVVnDYdUBQ6iW_OuDx7WNMJpwe-xqxAqFClSft1w4lG_0h-Ro54oQAL4bnzziO5yaRQ3SegWI_TwmCDhIyWqPZWF1ext1yhBCWyE4ol7rXW-d"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">Bolivia</span>
+</div>
+<div class="flex flex-col justify-between w-full">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Salar de Uyuni &amp; Lagunas</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">3.650 msnm · Altiplano Central</span>
+</div>
+<input checked="" class="dest-checkbox w-5 h-5 accent-secondary cursor-pointer mt-1" data-altitude="3650" data-cost="980" data-days="3" data-dest-id="uyuni" onchange="handleDestChange()" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                    Cruce de frontera Hito Cajón, Laguna Colorada con flamencos andinos, desierto de Siloli y descanso en Hotel de Sal esculpido.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>3 Días sugeridos</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">+<span class="dest-price-val" data-usd="980">$980</span> USD / pax</span>
+</div>
+</div>
+</label>
+<!-- Destino 3: La Paz & Lago Titicaca -->
+<label class="destination-card relative flex flex-col md:flex-row gap-space-md p-space-md rounded-lg bg-surface-container-low hover:bg-surface-variant transition-all cursor-pointer group">
+<div class="relative w-full md:w-44 h-36 md:h-auto shrink-0 rounded overflow-hidden">
+<img alt="Lake Titicaca Bolivia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Deep blue waters of sacred Lake Titicaca at sunset in Bolivia showing traditional reed catamaran and distant snow covered peaks of Cordillera Real" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5jTpjafSBqD6JpkOWj4IOFlzgyGs6lAk75J-4zii5_yFUfCAjvPJWnmFW1d2Jj6G83ju8czFQ5-3WhrRtDycjvgFC__5sEGZGe9iJD-Ss64Jd6VEomePgs53Vx3BJ9CawIEvZbMIKJbUg9dDJQlfJDzSYb_dmkceZoM2ecM2CeFHfLrTke6R_YdVBmWCk9avG6TIQmB83WMxuvGDvkZQDp00WoxeUcKfRDILIt1oO0GQilzb8_AIg"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">Bolivia</span>
+</div>
+<div class="flex flex-col justify-between w-full">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">La Paz &amp; Lago Titicaca</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">3.812 msnm · Cuenca Sagrada</span>
+</div>
+<input checked="" class="dest-checkbox w-5 h-5 accent-secondary cursor-pointer mt-1" data-altitude="3812" data-cost="550" data-days="2" data-dest-id="titicaca" onchange="handleDestChange()" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                    Red de teleféricos urbanos más alta del mundo, santuario de Copacabana, Isla del Sol y travesía en catamarán privado.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2 Días sugeridos</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">+<span class="dest-price-val" data-usd="550">$550</span> USD / pax</span>
+</div>
+</div>
+</label>
+<!-- Destino 4: Valle Sagrado & Machu Picchu -->
+<label class="destination-card relative flex flex-col md:flex-row gap-space-md p-space-md rounded-lg bg-surface-container-low hover:bg-surface-variant transition-all cursor-pointer group">
+<div class="relative w-full md:w-44 h-36 md:h-auto shrink-0 rounded overflow-hidden">
+<img alt="Machu Picchu Peru" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Mystical morning mist over the iconic architectural terraces of Machu Picchu in Peru surrounded by lush verdant Andean mountain peaks in soft warm dawn light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADNWLNxlBIjcL-d49H51m3_Dr-TCNa0zcszKv4LnvdtfaLFqf5EBzFqhBIkSf4CX_rIiu-RIRpifmcnq7T747FhYuwHP2KmYxvAikjB1W2rsf6UT6SK9Iwhw9sbyhP69HsMQpkp8bMxQDIdZ5VfM9p9uRLk1DMrPzaASLjuXKV3HLPEd1wADxg231qJE08qKI-JYB4uNpAOYSfU8isQYVGFEIJGigkiurnOEk43Y7qDQWSrvarxsXH"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">Perú</span>
+</div>
+<div class="flex flex-col justify-between w-full">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Valle Sagrado &amp; Machu Picchu</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">2.430 msnm · Selva Alta</span>
+</div>
+<input checked="" class="dest-checkbox w-5 h-5 accent-secondary cursor-pointer mt-1" data-altitude="2430" data-cost="920" data-days="2" data-dest-id="machupicchu" onchange="handleDestChange()" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                    Tren Vistadome Observatory o Hiram Bingham, fortaleza de Ollantaytambo, terrazas circulares de Moray y salineras de Maras.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2 Días sugeridos</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">+<span class="dest-price-val" data-usd="920">$920</span> USD / pax</span>
+</div>
+</div>
+</label>
+<!-- Destino 5: Cusco Imperial & Vinicunca -->
+<label class="destination-card relative flex flex-col md:flex-row gap-space-md p-space-md rounded-lg bg-surface-container-low hover:bg-surface-variant transition-all cursor-pointer group">
+<div class="relative w-full md:w-44 h-36 md:h-auto shrink-0 rounded overflow-hidden">
+<img alt="Cusco Imperial Peru" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Charming colonial cobblestone street in historical Cusco Peru with ancient megalithic Inca stone walls and carved Spanish wooden balconies under crisp blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmOj_fo8-IvBQb-0RIfHsD24veroFK53DglDW1sApKNgSKclH7NdQlsHbsBCwxx834mE67_FJgPqOEhiI-ZJZDGsSNOmNV0jlXo5whcJAEprjAy94Ai5nYLIX7j5VAYPmbo1Y8m6fAOus3vneYoEFOQOzWRbV56MoDveiU04JdxULwIr4h1pZAHhkIsxvRKMoHy6UWpwKMQ3TSlj6pWqLZ7XOq1M8CcwoZacdVJ7bw2VSne3CNalsf"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">Perú</span>
+</div>
+<div class="flex flex-col justify-between w-full">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cusco Imperial &amp; Vinicunca</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">3.399 msnm · Capital Arqueológica</span>
+</div>
+<input checked="" class="dest-checkbox w-5 h-5 accent-secondary cursor-pointer mt-1" data-altitude="3399" data-cost="580" data-days="2" data-dest-id="cusco" onchange="handleDestChange()" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                    Templo del Sol Qorikancha, Sacsayhuamán, alta gastronomía novoandina y expedición opcional a Montaña de 7 Colores.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2 Días sugeridos</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">+<span class="dest-price-val" data-usd="580">$580</span> USD / pax</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- PASO 2: PARÁMETROS DEL VIAJERO Y FILTROS -->
+<div class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-xl shadow-sm">
+<div class="flex items-center gap-2 pb-space-md">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="lbl-step2-title">Parámetros del Viajero &amp; Nivel de Confort</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Duración Slider -->
+<div class="flex flex-col gap-2 p-space-md bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface" id="lbl-param-days">Días Totales Disponibles</label>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold" id="val-days">12 Días</span>
+</div>
+<input class="w-full accent-secondary cursor-pointer mt-1" id="input-days" max="21" min="7" oninput="updateDays(this.value)" step="1" type="range" value="12"/>
+<div class="flex justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Min: 7 días</span>
+<span>Óptimo: 12-15</span>
+<span>Max: 21 días</span>
+</div>
+</div>
+<!-- Viajeros Selector -->
+<div class="flex flex-col gap-2 p-space-md bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface" id="lbl-param-travelers">Número de Expedicionarios</label>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold" id="val-travelers">2 Personas</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<button class="w-10 h-10 rounded bg-surface-container hover:bg-surface-variant font-headline-sm text-headline-sm flex items-center justify-center font-bold text-on-surface transition-colors" onclick="adjustTravelers(-1)" type="button">−</button>
+<div class="flex-1 text-center font-headline-sm text-headline-sm text-primary font-bold bg-surface-container-lowest py-1.5 rounded shadow-sm" id="display-travelers">2</div>
+<button class="w-10 h-10 rounded bg-surface-container hover:bg-surface-variant font-headline-sm text-headline-sm flex items-center justify-center font-bold text-on-surface transition-colors" onclick="adjustTravelers(1)" type="button">+</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Tarifas optimizadas para traslados privados 4x4.</p>
+</div>
+</div>
+<!-- Modalidad Toggle -->
+<div class="mt-space-lg">
+<label class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface block mb-space-xs" id="lbl-param-mode">Modalidad de Viaje</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<button class="p-space-md text-left rounded-lg bg-primary text-on-primary shadow-sm transition-all flex flex-col gap-1" id="btn-mode-complete" onclick="setTripMode('complete')" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">Paquete Completo</span>
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm opacity-90">Hoteles de Alta Gama + 4x4 Privado + Cruces de Frontera + Guía Bilingüe satelital.</p>
+</button>
+<button class="p-space-md text-left rounded-lg bg-surface-container-low hover:bg-surface-variant text-on-surface transition-all flex flex-col gap-1" id="btn-mode-expedition" onclick="setTripMode('expedition')" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">Solo Expedición &amp; Logística</span>
+<span class="material-symbols-outlined text-outline-variant">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Conductor 4x4 especializado + Guías nativos + Entradas a reservas. Hoteles gestionados libremente.</p>
+</button>
+</div>
+</div>
+<!-- Categoría Hotelera Selector -->
+<div class="mt-space-lg">
+<label class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface block mb-space-xs" id="lbl-param-tier">Categoría Hotelera &amp; Refugios</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm" id="tier-container">
+<button class="p-space-sm rounded-lg bg-surface-container-low text-left text-on-surface hover:bg-surface-variant transition-all" id="tier-3star" onclick="setTier('3star')" type="button">
+<div class="font-label-md text-label-md font-bold">3★ Confort Étnico</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hostales boutique con calefacción y baño privado.</p>
+<div class="font-label-sm text-label-sm text-secondary font-bold mt-1">Estándar Regional</div>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low text-left text-on-surface hover:bg-surface-variant transition-all" id="tier-4star" onclick="setTier('4star')" type="button">
+<div class="font-label-md text-label-md font-bold">4★ Boutique &amp; Sal</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hoteles de sal destacados y casonas coloniales con encanto.</p>
+<div class="font-label-sm text-label-sm text-secondary font-bold mt-1">+15% Factor Confort</div>
+</button>
+<button class="p-space-sm rounded-lg bg-secondary text-left text-on-secondary shadow-md transition-all" id="tier-5star" onclick="setTier('5star')" type="button">
+<div class="font-label-md text-label-md font-bold flex items-center justify-between">
+<span>5★ High Luxury</span>
+<span class="material-symbols-outlined text-base">hotel_class</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary/90">Explora Atacama, Palacio de Sal VIP, Monasterio Cusco.</p>
+<div class="font-label-sm text-label-sm text-tertiary-fixed font-bold mt-1">Experiencia Definitiva</div>
+</button>
+</div>
+</div>
+<!-- BOTÓN PRINCIPAL DE GENERACIÓN IA -->
+<div class="mt-space-xl pt-space-md">
+<button class="relative group w-full py-4 px-6 rounded-lg bg-primary hover:bg-secondary text-on-primary transition-all duration-300 shadow-lg flex items-center justify-center gap-space-sm overflow-hidden" id="btn-generate-ai" onclick="generateSmartRoute()" type="button">
+<span class="material-symbols-outlined text-secondary-container group-hover:rotate-12 transition-transform duration-300">auto_awesome</span>
+<span class="font-label-lg text-label-lg font-bold tracking-wider uppercase" id="lbl-btn-generate">
+                ✨ Trazar Ruta Óptima y Cotizar con IA (Simulador Gemini + Grounding)
+              </span>
+</button>
+<p class="font-body-sm text-body-sm text-center text-on-surface-variant mt-2">
+              Validación continua de altitudes para mitigar el soroche y sincronización logística de pasos fronterizos.
+            </p>
+</div>
+</div>
+</div>
+<!-- RIGHT RESULTS & REAL-TIME OUTPUT COLUMN -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg sticky top-24">
+<!-- AI Progress Bar simulation overlay (hidden by default) -->
+<div class="hidden bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col gap-space-md animate-fade-in" id="ai-loader-card">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined animate-spin text-xl">progress_activity</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-primary">Gemini 1.5 Pro Engine</h4>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Consultando Google Search Grounding...</p>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary h-2.5 rounded-full transition-all duration-500 w-1/4" id="ai-progress-bar"></div>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant italic" id="ai-step-status">
+            Validando pasos migratorios Hito Cajón (Chile-Bolivia) y Kasani (Bolivia-Perú)...
+          </div>
+</div>
+<!-- RESUMEN EJECUTIVO DE LA EXPEDICIÓN -->
+<div class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-xl shadow-md" id="summary-card">
+<div class="flex items-center justify-between pb-space-sm">
+<span class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">
+              Itinerario Optimizado IA
+            </span>
+<div class="flex items-center gap-1 text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-green-600"></span>
+<span class="font-bold">Aclimatación: 98% Score</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-primary leading-tight mt-1" id="route-name">
+            La Gran Travesía Altiplánica: Atacama, Uyuni &amp; El Imperio Inca
+          </h3>
+<div class="grid grid-cols-2 gap-space-sm my-space-md pt-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Duración Total</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="summary-days-label">12 Días / 11 Noches</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Países Conectados</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="summary-countries">3 Naciones</span>
+</div>
+</div>
+<!-- Cotización Dinámica -->
+<div class="p-space-md bg-surface-container rounded-lg my-space-sm">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Cotización Estimada Por Pasajero</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-display-lg text-headline-lg font-bold text-primary" id="total-price-display">$3,780</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-bold" id="currency-tag">USD</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Total Grupo (<span id="summary-pax-count">2</span> pax):</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary" id="total-group-display">$7,560 USD</span>
+</div>
+</div>
+<!-- Desglose Transparente -->
+<div class="flex flex-col gap-1.5 pt-space-sm mt-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex justify-between">
+<span>· Expedición 4x4 Privada &amp; Cruce de Fronteras</span>
+<span class="font-bold text-on-surface" id="subtotal-logistics">$1,450 USD</span>
+</div>
+<div class="flex justify-between">
+<span>· Hotelería Seleccionada &amp; Refugios</span>
+<span class="font-bold text-on-surface" id="subtotal-hotels">$1,630 USD</span>
+</div>
+<div class="flex justify-between">
+<span>· Permisos Machu Picchu &amp; Parques Nacionales</span>
+<span class="font-bold text-on-surface" id="subtotal-tickets">$420 USD</span>
+</div>
+<div class="flex justify-between">
+<span>· Seguro Satelital &amp; Asistencia Altiplano 24/7</span>
+<span class="font-bold text-secondary">Incluido</span>
+</div>
+</div>
+</div>
+<!-- Altitude Safety Progress Map Graphic -->
+<div class="p-space-sm rounded bg-surface-container-low mt-space-sm">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-on-surface-variant">Perfil de Ascenso Gradual (Mitigación Soroche)</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">2.400m ➔ 3.812m ➔ 2.430m</span>
+</div>
+<!-- Interactive visual altitude bar chart SVG -->
+<svg class="w-full h-12 text-secondary" fill="none" viewbox="0 0 300 45" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 40 L60 25 L120 8 L180 5 L240 24 L295 14" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="5" cy="40" fill="#0F172A" r="4"></circle>
+<circle cx="60" cy="25" fill="#C2410C" r="4"></circle>
+<circle cx="120" cy="8" fill="#C2410C" r="4"></circle>
+<circle cx="180" cy="5" fill="#D97706" r="4"></circle>
+<circle cx="240" cy="24" fill="#0F172A" r="4"></circle>
+<circle cx="295" cy="14" fill="#C2410C" r="4"></circle>
+<text class="text-[7px] fill-current" text-anchor="start" x="5" y="44">Calama</text>
+<text class="text-[7px] fill-current" text-anchor="middle" x="60" y="21">Atacama</text>
+<text class="text-[7px] fill-current" text-anchor="middle" x="120" y="6">Uyuni</text>
+<text class="text-[7px] fill-current" text-anchor="middle" x="180" y="4">Titicaca</text>
+<text class="text-[7px] fill-current" text-anchor="middle" x="240" y="21">M.Picchu</text>
+<text class="text-[7px] fill-current" text-anchor="end" x="295" y="11">Cusco</text>
+</svg>
+</div>
+<!-- BOTONES DE CONVERSIÓN Y ACCIÓN -->
+<div class="flex flex-col gap-space-xs mt-space-md">
+<button class="w-full py-3 rounded bg-secondary hover:bg-secondary-container text-on-secondary font-label-md text-label-md uppercase tracking-wider font-bold transition-colors shadow-sm flex items-center justify-center gap-2" onclick="openBookingModal()" type="button">
+<span class="material-symbols-outlined text-lg">credit_card</span>
+<span id="lbl-btn-reserve">Reservar con 20% de Garantía (Mock Checkout)</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2.5 px-3 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="openWhatsAppConcierge()" type="button">
+<span class="material-symbols-outlined text-green-700 text-lg">chat</span>
+<span>WhatsApp Concierge</span>
+</button>
+<button class="py-2.5 px-3 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="downloadItineraryPDF()" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Descargar PDF</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ITINERARIO DÍA POR DÍA GENERADO (DETALLADO) -->
+<div class="mt-space-2xl bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-xl shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md pb-space-lg">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">route</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-primary" id="lbl-itinerary-header">Desglose Cronológico Día por Día</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Estructurado para máxima aclimatación física y óptimos tiempos de paso fronterizo.</p>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+<span id="grounding-note">Google Search Grounding: Horarios PerúRail, Paso Hito Cajón y clima Uyuni validados.</span>
+</div>
+</div>
+<!-- Accordion Timeline -->
+<div class="flex flex-col gap-space-sm" id="timeline-accordion-container">
+<!-- Día 1 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-1')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 01</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Llegada a Calama &amp; Traslado al Oasis de Atacama</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chile · 2.400 msnm · Aclimatación Inicial</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-1">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-1">
+<p>Recepción privada en Aeropuerto El Loa (CJC) por concierge bilingüe. Traslado en SUV privada hacia San Pedro de Atacama cruzando la Cordillera de la Sal. Check-in en hotel boutique seleccionado.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Comidas:</strong> Cóctel de bienvenida andino</span>
+<span><strong>Traslado:</strong> 1h 15m (102 km pavimentados)</span>
+<span><strong>Aclimatación:</strong> Infusión de Rica-Rica y descanso preventivo</span>
+</div>
+</div>
+</div>
+<!-- Día 2 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-2')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 02</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Valle de la Luna, Cordillera de la Sal &amp; Cielos Estelares</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chile · 2.550 msnm · Geología &amp; Astrofotografía</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-2">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-2">
+<p>Exploración matutina de las formaciones de cañones de arcilla y sal. Por la tarde, atardecer dorado en la Duna Mayor con vista a los volcanes Licancabur y Juriques. Sesión privada nocturna con astrónomo y telescopio de alta apertura.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Comidas:</strong> Desayuno gourmet + Picnic al atardecer</span>
+<span><strong>Guía:</strong> Geólogo local certificado</span>
+</div>
+</div>
+</div>
+<!-- Día 3 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-3')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 03</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Géiseres del Tatio al Amanecer &amp; Termas de Puritama</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chile · 4.320 msnm (Pico transitorio) · Hidrotermalismo</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-3">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-3">
+<p>Ascenso temprano al campo geotérmico más alto del hemisferio sur para observar columnas de vapor al alba. Descenso reconfortante para baño privado en los pozos cálidos de Puritama.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Comidas:</strong> Desayuno térmico en el Tatio + Almuerzo en Guatín</span>
+<span><strong>Oxígeno:</strong> Vehículo equipado con kit de O2 medicinal preventivo</span>
+</div>
+</div>
+</div>
+<!-- Día 4 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-4')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 04</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cruce Hito Cajón (Chile-Bolivia) &amp; Reserva Eduardo Avaroa</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chile ➔ Bolivia · Cruce Fronterizo 4x4 · Laguna Verde &amp; Colorada</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-4">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-4">
+<p>Trámites expeditos de control migratorio asistidos en Hito Cajón. Transbordo a expedición Toyota Land Cruiser 4x4 boliviana. Visita a Laguna Blanca, Laguna Verde al pie del Licancabur y la asombrosa Laguna Colorada con colonias de 3 especies de parinas.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Hospedaje:</strong> Ecolodge del Desierto Ojo de Perdiz</span>
+<span><strong>Comidas:</strong> Pensión completa andina</span>
+</div>
+</div>
+</div>
+<!-- Día 5 & 6 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-5')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 05-06</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Inmensidad del Salar de Uyuni &amp; Hotel de Sal Monumental</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bolivia · 3.653 msnm · Isla Incahuasi &amp; Sunset Reflejos</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-5">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-5">
+<p>Entrada al desierto de sal continuo más extenso del planeta (10.582 km²). Ascenso entre cactus milenarios en Isla Incahuasi. Almuerzo catering privado montado en medio de la nada blanca. Noche en Palacio de Sal con cena degustación de carne de llama y quinua real.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Hospedaje:</strong> Palacio de Sal / Luna Salada (Suite VIP)</span>
+<span><strong>Comidas:</strong> Menú de autor altiplánico maridado con vinos de altura de Tarija</span>
+</div>
+</div>
+</div>
+<!-- Día 7 & 8 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-7')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 07-08</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Vuelo La Paz, Teleféricos &amp; Navegación Lago Titicaca</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bolivia · 3.812 msnm · Copacabana &amp; Isla del Sol</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-7">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-7">
+<p>Vuelo doméstico Uyuni-La Paz. Circuito panorámico en teleférico sobre el cañón paceño y Valle de la Luna. Traslado privado al Lago Titicaca para embarque en catamarán privado hacia la Isla del Sol, cuna mítica de Manco Cápac y Mama Ocllo.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Hospedaje:</strong> Posada del Inca Ecolodge / Hotel Rosario Copacabana</span>
+<span><strong>Experiencia:</strong> Ceremonia Kallawaya tradicional de bendición andina</span>
+</div>
+</div>
+</div>
+<!-- Día 9 & 10 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-9')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 09-10</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cruce Kasani a Perú, Cusco &amp; Descenso al Valle Sagrado</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bolivia ➔ Perú · 2.430 msnm (Microclima templado) · Ollantaytambo</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-9">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-9">
+<p>Cruce fronterizo Kasani hacia Puno y enlace en tren panorámico Titicaca Train o vuelo a Cusco. Descenso estratégico al Valle Sagrado de los Incas (Urubamba) para asegurar descanso en menor altitud. Visita a los andenes agrícolas de Moray y minas de sal de Maras.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Hospedaje:</strong> Tambo del Inka Luxury Collection Resort &amp; Spa</span>
+<span><strong>Comidas:</strong> Almuerzo campestre con pachamanca orgánica</span>
+</div>
+</div>
+</div>
+<!-- Día 11 & 12 -->
+<div class="timeline-day rounded-lg bg-surface-container-low overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-variant transition-colors" onclick="toggleDayAccordion('day-11')" type="button">
+<div class="flex items-center gap-space-md">
+<span class="font-label-lg text-label-lg font-bold text-secondary w-16">DÍA 11-12</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Santuario Histórico Machu Picchu &amp; Retorno Imperial Cusco</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Perú · Maravilla del Mundo · Despedida de Expedición</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="icon-day-11">expand_more</span>
+</button>
+<div class="hidden p-space-md pt-0 text-on-surface-variant font-body-sm text-body-sm space-y-2" id="content-day-11">
+<p>Embarque en estación privada en tren de lujo rumbo a Aguas Calientes. Ingreso prioritario a Machu Picchu con arqueólogo privado (Circuito 1 Panorámico o Circuito 2 Clásico). Almuerzo gourmet en Sanctuary Lodge. Traslado final a la capital histórica de Cusco.</p>
+<div class="flex flex-wrap gap-space-md pt-1 font-label-sm text-label-sm text-on-surface">
+<span><strong>Hospedaje:</strong> Belmond Hotel Monasterio Cusco</span>
+<span><strong>Cena de Clausura:</strong> Menú maridado en restaurante premiado de San Blas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN DE ARQUITECTURA DUAL FULL-STACK (INSPECT CODE & CONFIG) -->
+<div class="mt-space-2xl bg-surface-container-low p-space-lg lg:p-space-xl rounded-xl shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">developer_board</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary">Arquitectura Dual Full-Stack (Inspect Code &amp; Config)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Demostración transparente para ingenieros y arquitectos cloud: Código listo para producción con selector de modo Offline Mock vs. Producción Real con Google Gemini 1.5 Pro &amp; Firestore.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 rounded bg-surface text-secondary font-label-sm text-label-sm uppercase font-bold tracking-wider">Production-Ready TS</span>
+</div>
+</div>
+<!-- Navigation tabs for code viewing -->
+<div class="flex items-center gap-2 border-b-0 pb-2 overflow-x-auto">
+<button class="px-3 py-1.5 rounded font-label-md text-label-md uppercase font-bold text-on-primary bg-primary transition-all" id="tab-btn-config" onclick="showCodeTab('config')" type="button">lib/config.ts</button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface bg-surface-container transition-all" id="tab-btn-gemini" onclick="showCodeTab('gemini')" type="button">lib/geminiService.ts</button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface bg-surface-container transition-all" id="tab-btn-firebase" onclick="showCodeTab('firebase')" type="button">lib/firebase.ts</button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface bg-surface-container transition-all" id="tab-btn-env" onclick="showCodeTab('env')" type="button">.env.example</button>
+</div>
+<!-- Code Snippet Container -->
+<div class="bg-primary text-primary-fixed p-space-md rounded-lg overflow-x-auto text-xs font-mono leading-relaxed mt-2 shadow-inner">
+<!-- Tab 1: config.ts -->
+<pre class="block" id="code-block-config"><code>// lib/config.ts
+// Configuración dinámica de dual-mode: Mock Simulator vs. Cloud Native APIs
+
+export interface AppConfig {
+  useRealFirebase: boolean;
+  useRealGeminiAI: boolean;
+  activeLanguage: 'ES' | 'EN' | 'PT' | 'FR';
+  defaultCurrency: 'USD' | 'EUR' | 'CLP' | 'PEN';
+  altitudeSafetyThresholdMeters: number;
+}
+
+export const APP_CONFIG: AppConfig = {
+  // Cuando se agregan las credenciales en Vercel/Firebase, se cambia a true
+  useRealFirebase: process.env.NEXT_PUBLIC_USE_REAL_FIREBASE === 'true',
+  useRealGeminiAI: process.env.NEXT_PUBLIC_USE_REAL_GEMINI === 'true',
+  activeLanguage: 'ES',
+  defaultCurrency: 'USD',
+  altitudeSafetyThresholdMeters: 4200, // Alerta automática sobre 4.200 msnm
+};</code></pre>
+<!-- Tab 2: geminiService.ts -->
+<pre class="hidden" id="code-block-gemini"><code>// lib/geminiService.ts
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { APP_CONFIG } from "./config";
+
+export async function generateItineraryPlan(payload: {
+  destinations: string[];
+  days: number;
+  travelers: number;
+  category: string;
+}) {
+  if (!APP_CONFIG.useRealGeminiAI) {
+    console.log("⚡ Dual Mode: Despachando Mock Engine local...");
+    return getLocalOptimizedMock(payload);
+  }
+
+  // Llamada Real al SDK de Google Gemini con Grounding de búsqueda
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+  const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-pro",
+    tools: [{ googleSearch: {} }] // Google Search Grounding habilitado
+  });
+
+  const prompt = `Actúa como Concierge de Lujo de Triángulo Andino. Diseña un circuito para ${payload.days} días, 
+  destinos: ${payload.destinations.join(", ")}, con altitud gradual para evitar soroche.`;
+
+  const result = await model.generateContent(prompt);
+  return result.response.text();
+}</code></pre>
+<!-- Tab 3: firebase.ts -->
+<pre class="hidden" id="code-block-firebase"><code>// lib/firebase.ts
+import { initializeApp, getApps } from "firebase/app";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { APP_CONFIG } from "./config";
+
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+};
+
+export const app = !getApps().length &amp;&amp; APP_CONFIG.useRealFirebase 
+  ? initializeApp(firebaseConfig) 
+  : null;
+
+export const db = app ? getFirestore(app) : null;
+
+// Guardado de cotizaciones con fallback instantáneo a localStorage
+export async function persistQuote(quoteData: Record&lt;string, any&gt;) {
+  if (db) {
+    const quoteRef = doc(db, "quotes", quoteData.id);
+    return await setDoc(quoteRef, quoteData);
+  } else {
+    const existing = JSON.parse(localStorage.getItem("triangulo_quotes") || "[]");
+    existing.push({ ...quoteData, savedAt: new Date().toISOString(), mode: "local_mock" });
+    localStorage.setItem("triangulo_quotes", JSON.stringify(existing));
+    return true;
+  }
+}</code></pre>
+<!-- Tab 4: env.example -->
+<pre class="hidden" id="code-block-env"><code># .env.example - Triángulo Andino Travel Full-Stack
+NEXT_PUBLIC_USE_REAL_FIREBASE=false
+NEXT_PUBLIC_USE_REAL_GEMINI=false
+
+# Google Gemini AI &amp; Grounding Keys
+GEMINI_API_KEY=AIzaSyD-tu-clave-gemini-aqui
+
+# Firebase Client Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=triangulo-andino.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=triangulo-andino
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=triangulo-andino.appspot.com
+
+# WhatsApp Concierge Gateway
+CONCIERGE_WHATSAPP_NUMBER=+56982349900</code></pre>
+</div>
+</div>
+</section>
+<!-- MODAL DE CHECKOUT / RESERVA CON GARANTÍA -->
+<div class="fixed inset-0 z-50 bg-primary/70 backdrop-blur-sm hidden items-center justify-center p-margin" id="booking-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl shadow-2xl p-space-lg lg:p-space-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary">Garantía de Expedición (20%)</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeBookingModal()" type="button">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Bloqueo de cupos en hoteles boutique de sal, permisos intransferibles a Machu Picchu y logística 4x4 satelital.
+      </p>
+<div class="p-space-md bg-surface-container-low rounded-lg space-y-1.5 font-body-sm text-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Total Expedición:</span>
+<span class="font-bold text-on-surface" id="modal-total-price">$7,560 USD</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Depósito de Confirmación (20%):</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary" id="modal-deposit-price">$1,512 USD</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Saldo restante (80%):</span>
+<span>30 días antes del inicio</span>
+</div>
+</div>
+<form class="flex flex-col gap-space-sm pt-1" onsubmit="handleReserveSubmit(event)">
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface block mb-1">Nombre Completo del Expedicionario Principal</label>
+<input class="w-full px-3 py-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Ej: Dr. Alejandro Valenzuela" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface block mb-1">Correo Electrónico de Contacto</label>
+<input class="w-full px-3 py-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="pasajero@privado.com" required="" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface block mb-1">Fecha Estimada</label>
+<input class="w-full px-3 py-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" required="" type="date" value="2025-05-15"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface block mb-1">Teléfono Móvil (WhatsApp)</label>
+<input class="w-full px-3 py-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="+56 9 8234 9900" required="" type="tel"/>
+</div>
+</div>
+<button class="mt-space-sm py-3 px-6 rounded bg-secondary hover:bg-secondary-container text-on-secondary font-label-md text-label-md uppercase tracking-wider font-bold transition-all shadow-md flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">lock</span>
+<span>Confirmar Reserva y Guardar en LocalStorage</span>
+</button>
+</form>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-4 py-3 rounded-lg shadow-xl hidden items-center gap-3 animate-bounce" id="toast-notify">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toast-message">Cotización guardada exitosamente en localStorage.</span>
+</div>
+</div>
+<!-- INTERACTIVE SCRIPTS: STATE MANAGEMENT, RECALCULATIONS, I18N, CURRENCY & ARCHITECTURE TABS -->
+<script>
+  // App state
+  const state = {
+    language: 'ES',
+    currency: 'USD',
+    rates: { USD: 1, EUR: 0.92, CLP: 960, PEN: 3.75 },
+    currencySymbols: { USD: '$', EUR: '€', CLP: '$', PEN: 'S/' },
+    days: 12,
+    travelers: 2,
+    mode: 'complete', // 'complete' or 'expedition'
+    tier: '5star',    // '3star', '4star', '5star'
+    destinations: ['atacama', 'uyuni', 'titicaca', 'machupicchu', 'cusco']
+  };
+
+  const translations = {
+    ES: {
+      statusMode: "MODO DEMO OPERATIVO (localStorage + Mock Gemini Engine) · Listo para credenciales Firebase & Gemini API",
+      kicker: "Módulo Inteligente de Planificación",
+      mainTitle: "Armador Inteligente de Ruta Andina <span class=\"text-secondary italic\">(Multi-Destino)</span>",
+      mainSubtitle: "Diseña tu expedición combinada por Chile, Bolivia y Perú. Nuestra IA con Google Search Grounding optimiza altitud, aclimatación escalonada, logística de frontera y cotización en tiempo real.",
+      step1Title: "Selección de Destinos Emblemáticos",
+      step1Desc: "Marca los hitos de tu viaje. El motor recalcula la curva de altitud automáticamente.",
+      step2Title: "Parámetros del Viajero & Nivel de Confort",
+      paramDays: "Días Totales Disponibles",
+      paramTravelers: "Número de Expedicionarios",
+      paramMode: "Modalidad de Viaje",
+      paramTier: "Categoría Hotelera & Refugios",
+      btnGenerate: "✨ Trazar Ruta Óptima y Cotizar con IA (Simulador Gemini + Grounding)",
+      btnReserve: "Reservar con 20% de Garantía (Mock Checkout)",
+      itineraryHeader: "Desglose Cronológico Día por Día",
+      groundingNote: "Google Search Grounding: Horarios PerúRail, Paso Hito Cajón y clima Uyuni validados."
+    },
+    EN: {
+      statusMode: "DEMO MODE ACTIVE (localStorage + Mock Gemini Engine) · Ready for Firebase & Gemini API credentials",
+      kicker: "Intelligent Route Planning Module",
+      mainTitle: "Intelligent Andean Route Builder <span class=\"text-secondary italic\">(Multi-Country)</span>",
+      mainSubtitle: "Design your bespoke expedition across Chile, Bolivia, and Peru. Our AI with Google Search Grounding optimizes altitude acclimation, border logistics, and live pricing.",
+      step1Title: "Select Key Andean Destinations",
+      step1Desc: "Pick your landmarks. The engine automatically recalculates altitude curves.",
+      step2Title: "Traveler Parameters & Comfort Tier",
+      paramDays: "Total Available Days",
+      paramTravelers: "Number of Travelers",
+      paramMode: "Travel Mode",
+      paramTier: "Hospitality & Lodge Tier",
+      btnGenerate: "✨ Generate Optimal Route & Quote with AI (Gemini + Grounding)",
+      btnReserve: "Book with 20% Guarantee (Mock Checkout)",
+      itineraryHeader: "Day-by-Day Chronological Itinerary",
+      groundingNote: "Google Search Grounding: Verified PeruRail train times, Hito Cajón border fees & Uyuni climate."
+    },
+    PT: {
+      statusMode: "MODO DEMO OPERACIONAL (localStorage + Mock Gemini Engine) · Pronto para Firebase & Gemini API",
+      kicker: "Módulo Inteligente de Rota Andina",
+      mainTitle: "Planejador Inteligente de Rota Andina <span class=\"text-secondary italic\">(Multi-Destino)</span>",
+      mainSubtitle: "Desenhe sua expedição combinada pelo Chile, Bolívia e Peru. Nossa IA otimiza aclimatação de altitude e logística de fronteira.",
+      step1Title: "Seleção de Destinos Emblemáticos",
+      step1Desc: "Marque os pontos da sua viagem para o cálculo de altitude.",
+      step2Title: "Parâmetros dos Viajantes & Nível de Conforto",
+      paramDays: "Dias Totais Disponíveis",
+      paramTravelers: "Número de Expedicionários",
+      paramMode: "Modalidade de Viagem",
+      paramTier: "Categoria de Hotéis & Refúgios",
+      btnGenerate: "✨ Traçar Rota Ótima e Cotar com IA (Gemini + Grounding)",
+      btnReserve: "Reservar com 20% de Garantia (Mock Checkout)",
+      itineraryHeader: "Itinerário Detalhado Dia a Dia",
+      groundingNote: "Google Search Grounding: Horários de trem e taxas de fronteira validadas."
+    },
+    FR: {
+      statusMode: "MODE DÉMO OPÉRATIONNEL (localStorage + Mock Gemini Engine) · Prêt pour Firebase & Gemini API",
+      kicker: "Module Intelligent d'Expédition",
+      mainTitle: "Concepteur Intelligent d'Itinéraire Andin <span class=\"text-secondary italic\">(Multi-Pays)</span>",
+      mainSubtitle: "Concevez votre expédition d'exception à travers le Chili, la Bolivie et le Pérou. L'IA optimise l'acclimatation et le franchissement des frontières.",
+      step1Title: "Sélection des Destinations Clés",
+      step1Desc: "Choisissez vos étapes. Le moteur réajuste le profil d'altitude.",
+      step2Title: "Paramètres des Voyageurs & Confort",
+      paramDays: "Jours Totaux Disponibles",
+      paramTravelers: "Nombre d'Expéditionnaires",
+      paramMode: "Mode de Voyage",
+      paramTier: "Catégorie Hôtelière & Lodges",
+      btnGenerate: "✨ Tracer l'Itinéraire Idéal avec IA (Gemini + Grounding)",
+      btnReserve: "Réserver avec 20% d'Acompte (Mock Checkout)",
+      itineraryHeader: "Programme Chronologique Jour par Jour",
+      groundingNote: "Google Search Grounding: Horaires ferroviaires et météo d'Uyuni synchronisés."
+    }
+  };
+
+  // Switch Language
+  function setAppLanguage(lang) {
+    state.language = lang;
+    const t = translations[lang] || translations.ES;
+
+    document.getElementById('lbl-status-mode').innerHTML = t.statusMode;
+    document.getElementById('lbl-kicker').textContent = t.kicker;
+    document.getElementById('lbl-main-title').innerHTML = t.mainTitle;
+    document.getElementById('lbl-main-subtitle').textContent = t.mainSubtitle;
+    document.getElementById('lbl-step1-title').textContent = t.step1Title;
+    document.getElementById('lbl-step1-desc').textContent = t.step1Desc;
+    document.getElementById('lbl-step2-title').textContent = t.step2Title;
+    document.getElementById('lbl-param-days').textContent = t.paramDays;
+    document.getElementById('lbl-param-travelers').textContent = t.paramTravelers;
+    document.getElementById('lbl-param-mode').textContent = t.paramMode;
+    document.getElementById('lbl-param-tier').textContent = t.paramTier;
+    document.getElementById('lbl-btn-generate').innerHTML = t.btnGenerate;
+    document.getElementById('lbl-btn-reserve').textContent = t.btnReserve;
+    document.getElementById('lbl-itinerary-header').textContent = t.itineraryHeader;
+    document.getElementById('grounding-note').textContent = t.groundingNote;
+
+    ['ES', 'EN', 'PT', 'FR'].forEach(code => {
+      const btn = document.getElementById('lang-btn-' + code.toLowerCase());
+      if (code === lang) {
+        btn.className = "px-2 py-0.5 rounded font-label-md text-label-md uppercase font-bold text-on-primary bg-primary transition-all";
+      } else {
+        btn.className = "px-2 py-0.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-all";
+      }
+    });
+
+    showToast(`Idioma actualizado a ${lang}`);
+  }
+
+  // Update Currency
+  function updateCurrency(curr) {
+    state.currency = curr;
+    document.getElementById('currency-tag').textContent = curr;
+    recalculateAllPrices();
+    showToast(`Moneda convertida a ${curr}`);
+  }
+
+  // Days slider
+  function updateDays(val) {
+    state.days = parseInt(val, 10);
+    document.getElementById('val-days').textContent = `${state.days} Días`;
+    document.getElementById('summary-days-label').textContent = `${state.days} Días / ${state.days - 1} Noches`;
+    recalculateAllPrices();
+  }
+
+  // Travelers +/-
+  function adjustTravelers(delta) {
+    const next = state.travelers + delta;
+    if (next >= 1 && next <= 8) {
+      state.travelers = next;
+      document.getElementById('val-travelers').textContent = `${next} Persona${next > 1 ? 's' : ''}`;
+      document.getElementById('display-travelers').textContent = next;
+      document.getElementById('summary-pax-count').textContent = next;
+      recalculateAllPrices();
+    }
+  }
+
+  // Trip Mode
+  function setTripMode(mode) {
+    state.mode = mode;
+    const btnComp = document.getElementById('btn-mode-complete');
+    const btnExp = document.getElementById('btn-mode-expedition');
+    if (mode === 'complete') {
+      btnComp.className = "p-space-md text-left rounded-lg bg-primary text-on-primary shadow-sm transition-all flex flex-col gap-1";
+      btnComp.querySelector('.material-symbols-outlined').textContent = "check_circle";
+      btnComp.querySelector('.material-symbols-outlined').className = "material-symbols-outlined text-secondary-container";
+      
+      btnExp.className = "p-space-md text-left rounded-lg bg-surface-container-low hover:bg-surface-variant text-on-surface transition-all flex flex-col gap-1";
+      btnExp.querySelector('.material-symbols-outlined').textContent = "radio_button_unchecked";
+      btnExp.querySelector('.material-symbols-outlined').className = "material-symbols-outlined text-outline-variant";
+    } else {
+      btnExp.className = "p-space-md text-left rounded-lg bg-primary text-on-primary shadow-sm transition-all flex flex-col gap-1";
+      btnExp.querySelector('.material-symbols-outlined').textContent = "check_circle";
+      btnExp.querySelector('.material-symbols-outlined').className = "material-symbols-outlined text-secondary-container";
+
+      btnComp.className = "p-space-md text-left rounded-lg bg-surface-container-low hover:bg-surface-variant text-on-surface transition-all flex flex-col gap-1";
+      btnComp.querySelector('.material-symbols-outlined').textContent = "radio_button_unchecked";
+      btnComp.querySelector('.material-symbols-outlined').className = "material-symbols-outlined text-outline-variant";
+    }
+    recalculateAllPrices();
+  }
+
+  // Tier
+  function setTier(tier) {
+    state.tier = tier;
+    ['3star', '4star', '5star'].forEach(t => {
+      const el = document.getElementById(`tier-${t}`);
+      if (t === tier) {
+        el.className = "p-space-sm rounded-lg bg-secondary text-left text-on-secondary shadow-md transition-all";
+      } else {
+        el.className = "p-space-sm rounded-lg bg-surface-container-low text-left text-on-surface hover:bg-surface-variant transition-all";
+      }
+    });
+    recalculateAllPrices();
+  }
+
+  // Destination Checkbox Change
+  function handleDestChange() {
+    const checkboxes = document.querySelectorAll('.dest-checkbox');
+    const selected = [];
+    checkboxes.forEach(cb => {
+      if (cb.checked) selected.push(cb.getAttribute('data-dest-id'));
+    });
+    state.destinations = selected;
+    document.getElementById('selected-counter').textContent = `${selected.length} Destino${selected.length !== 1 ? 's' : ''} Activo${selected.length !== 1 ? 's' : ''}`;
+    
+    // Country count
+    let count = 0;
+    if (selected.includes('atacama')) count++;
+    if (selected.includes('uyuni') || selected.includes('titicaca')) count++;
+    if (selected.includes('machupicchu') || selected.includes('cusco')) count++;
+    document.getElementById('summary-countries').textContent = `${count} Nación${count !== 1 ? 'es' : ''}`;
+
+    recalculateAllPrices();
+  }
+
+  // Dynamic Calculation Logic
+  function recalculateAllPrices() {
+    const rate = state.rates[state.currency] || 1;
+    const sym = state.currencySymbols[state.currency] || '$';
+
+    // Update single cards displayed prices
+    document.querySelectorAll('.dest-price-val').forEach(el => {
+      const baseUSD = parseFloat(el.getAttribute('data-usd'));
+      const converted = Math.round(baseUSD * rate);
+      el.textContent = `${sym}${converted.toLocaleString()}`;
+    });
+
+    // Base cost accumulation
+    let baseDestCost = 0;
+    document.querySelectorAll('.dest-checkbox').forEach(cb => {
+      if (cb.checked) {
+        baseDestCost += parseFloat(cb.getAttribute('data-cost'));
+      }
+    });
+
+    // Days factor
+    const daysMultiplier = (state.days / 10);
+
+    // Tier factor
+    let tierMultiplier = 1.0;
+    if (state.tier === '3star') tierMultiplier = 0.85;
+    if (state.tier === '4star') tierMultiplier = 1.05;
+    if (state.tier === '5star') tierMultiplier = 1.30;
+
+    // Mode factor
+    const modeMultiplier = state.mode === 'complete' ? 1.0 : 0.65;
+
+    // Group discount on logistics per pax
+    let groupFactor = 1.0;
+    if (state.travelers >= 4) groupFactor = 0.90;
+    if (state.travelers >= 6) groupFactor = 0.82;
+
+    const pricePerPersonUSD = Math.round((baseDestCost * daysMultiplier * tierMultiplier * modeMultiplier * groupFactor) / 10) * 10;
+    const totalGroupUSD = pricePerPersonUSD * state.travelers;
+
+    // Converted
+    const pricePaxConv = Math.round(pricePerPersonUSD * rate);
+    const priceGroupConv = Math.round(totalGroupUSD * rate);
+
+    document.getElementById('total-price-display').textContent = `${sym}${pricePaxConv.toLocaleString()}`;
+    document.getElementById('total-group-display').textContent = `${sym}${priceGroupConv.toLocaleString()} ${state.currency}`;
+
+    // Subtotals breakdown
+    const logistics = Math.round(pricePaxConv * 0.40);
+    const hotels = Math.round(pricePaxConv * 0.45);
+    const tickets = Math.round(pricePaxConv * 0.15);
+
+    document.getElementById('subtotal-logistics').textContent = `${sym}${logistics.toLocaleString()} ${state.currency}`;
+    document.getElementById('subtotal-hotels').textContent = `${sym}${hotels.toLocaleString()} ${state.currency}`;
+    document.getElementById('subtotal-tickets').textContent = `${sym}${tickets.toLocaleString()} ${state.currency}`;
+
+    // Update Modal
+    document.getElementById('modal-total-price').textContent = `${sym}${priceGroupConv.toLocaleString()} ${state.currency}`;
+    document.getElementById('modal-deposit-price').textContent = `${sym}${Math.round(priceGroupConv * 0.20).toLocaleString()} ${state.currency}`;
+  }
+
+  // Gemini AI Generation Simulation
+  function generateSmartRoute() {
+    const loader = document.getElementById('ai-loader-card');
+    const summary = document.getElementById('summary-card');
+    const progressBar = document.getElementById('ai-progress-bar');
+    const statusText = document.getElementById('ai-step-status');
+
+    loader.classList.remove('hidden');
+    summary.classList.add('opacity-40');
+    progressBar.style.width = '20%';
+    statusText.textContent = "Conectando con Google Search Grounding: consultando tasas Hito Cajón...";
+
+    setTimeout(() => {
+      progressBar.style.width = '55%';
+      statusText.textContent = "Evaluando perfiles de aclimatación médica y frecuencias de trenes Hiram Bingham...";
+    }, 700);
+
+    setTimeout(() => {
+      progressBar.style.width = '90%';
+      statusText.textContent = "Generando cronograma de autor y optimizando cotización multi-moneda...";
+    }, 1400);
+
+    setTimeout(() => {
+      progressBar.style.width = '100%';
+      loader.classList.add('hidden');
+      summary.classList.remove('opacity-40');
+      showToast("✨ Ruta optimizada generada por Gemini con éxito.");
+    }, 2000);
+  }
+
+  // Accordion Day Toggle
+  function toggleDayAccordion(id) {
+    const content = document.getElementById(`content-${id}`);
+    const icon = document.getElementById(`icon-${id}`);
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.textContent = 'expand_less';
+    } else {
+      content.classList.add('hidden');
+      icon.textContent = 'expand_more';
+    }
+  }
+
+  // Code Tab switching
+  function showCodeTab(tab) {
+    const tabs = ['config', 'gemini', 'firebase', 'env'];
+    tabs.forEach(t => {
+      const codeEl = document.getElementById(`code-block-${t}`);
+      const btn = document.getElementById(`tab-btn-${t}`);
+      if (t === tab) {
+        codeEl.classList.remove('hidden');
+        codeEl.classList.add('block');
+        btn.className = "px-3 py-1.5 rounded font-label-md text-label-md uppercase font-bold text-on-primary bg-primary transition-all";
+      } else {
+        codeEl.classList.add('hidden');
+        codeEl.classList.remove('block');
+        btn.className = "px-3 py-1.5 rounded font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface bg-surface-container transition-all";
+      }
+    });
+  }
+
+  // Modal Open / Close
+  function openBookingModal() {
+    const modal = document.getElementById('booking-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeBookingModal() {
+    const modal = document.getElementById('booking-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function handleReserveSubmit(e) {
+    e.preventDefault();
+    const quotePayload = {
+      id: "QUOTE-" + Math.floor(100000 + Math.random() * 900000),
+      destinations: state.destinations,
+      days: state.days,
+      travelers: state.travelers,
+      tier: state.tier,
+      mode: state.mode,
+      currency: state.currency,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Save to localStorage (Dual Mode Mock)
+    const stored = JSON.parse(localStorage.getItem('triangulo_andino_quotes') || '[]');
+    stored.push(quotePayload);
+    localStorage.setItem('triangulo_andino_quotes', JSON.stringify(stored));
+
+    closeBookingModal();
+    showToast(`✅ ¡Reserva registrada con éxito en localStorage! ID: ${quotePayload.id}`);
+  }
+
+  // WhatsApp Concierge Hook
+  function openWhatsAppConcierge() {
+    const msg = encodeURIComponent(`Hola Triángulo Andino Concierge. Me gustaría consultar la ruta generada de ${state.days} días para ${state.travelers} personas con categoría ${state.tier}.`);
+    window.open(`https://wa.me/56982349900?text=${msg}`, '_blank');
+  }
+
+  // Mock PDF Download
+  function downloadItineraryPDF() {
+    showToast("📄 Generando propuesta ejecutiva en PDF de alta resolución...");
+    setTimeout(() => {
+      showToast("Descarga de itinerario completa.");
+    }, 1200);
+  }
+
+  // Simple Toast Trigger
+  function showToast(text) {
+    const toast = document.getElementById('toast-notify');
+    const msg = document.getElementById('toast-message');
+    msg.textContent = text;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 3800);
+  }
+
+  // Initial calculation on render
+  recalculateAllPrices();
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(0,0,0,0.03)] pt-space-2xl pb-space-xl"><div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-lg pb-space-2xl"><div class="lg:col-span-4 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Triángulo Andino Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WbI1b3W87j_X4Czfrq3qSnHZF0wTnt1GIRF85bEfzhKv3cRjWGASopjeHsyLz2pcNbx7WfTFNb3ABN8XDB8_XT_rGLd79nHPaVYpeK-j07XU2bq23y2llPC276l6VKKM3rHe_7ePPhzNOCvGByTLcLSvBLaWrl2RQHRRmaJEZtAzDVKsBQu8KSw5KDpX-dpyf0O3O5uEq1rnUM3lgIHTPJdeJLFBoQAVetfawvGJ3P3tjN9tkOBbVTIQ"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Triángulo Andino</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Pioneros en expediciones de alta gama a través del Altiplano, Atacama y los Andes Centrales. Uniendo Chile, Bolivia y Perú con sofisticación arquitectónica y rigor de servicio.</p><div class="flex flex-wrap items-center gap-space-xs pt-space-xs"><span class="px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Sernatur Chile #7482</span><span class="px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Viceministerio Bolivia</span><span class="px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Dircetur Perú</span></div></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg font-semibold uppercase tracking-wider text-on-surface">Rutas Magistrales</h4><div class="flex flex-col gap-2"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="explorar-paquetes" href="#">Travesía Salar &amp; Atacama</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="circuitos-3-paises" href="#">Gran Circuito Tres Naciones</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="explorar-paquetes" href="#">Valle Sagrado &amp; Titikaka</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="experiencias-y-hoteles" href="#">Refugios de Altura &amp; Lodges</a></div></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg font-semibold uppercase tracking-wider text-on-surface">Tecnología &amp; Datos</h4><div class="flex flex-col gap-2"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="armador-de-ruta-ia" href="#">Smart Route Engine (Gemini)</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Documentación API &amp; Mock</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Grounding de Búsqueda</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Estado del Servicio</a></div></div><div class="lg:col-span-4 flex flex-col gap-space-md"><h4 class="font-label-lg text-label-lg font-semibold uppercase tracking-wider text-on-surface">Asistencia Concierge Ininterrumpida</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Soporte logístico por satélite y enlace prioritario WhatsApp 24/7 para expedicionarios en ruta.</p><div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-2xl">support_agent</span><div><p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Línea Directa Satelital</p><p class="font-label-lg text-label-lg font-semibold text-on-surface">+56 9 8234 9900 · +591 2 244 8900</p></div></div><form class="flex items-center gap-2 mt-space-xs"><input class="w-full px-3 py-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Correo corporativo o privado..." type="email"/><button class="px-4 py-2 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary hover:text-on-secondary transition-colors shrink-0" type="button">Suscribir</button></form></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">© 2025 Triángulo Andino Expeditions SAC / Ltda. Todos los derechos reservados.</p><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer transition-colors">Privacidad y Protocolo Andino</span><span class="hover:text-on-surface cursor-pointer transition-colors">Términos de Expedición</span><span class="hover:text-on-surface cursor-pointer transition-colors">Políticas de Cancelación</span></div></div></div></footer></body></html>

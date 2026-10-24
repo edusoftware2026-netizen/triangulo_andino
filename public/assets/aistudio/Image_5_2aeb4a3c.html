@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed-variant":"#6e3900","surface-container-low":"#f2f4f6","error-container":"#ffdad6","secondary-container":"#fd6b36","outline-variant":"#c6c6cd","on-surface":"#191c1e","on-secondary-fixed":"#390c00","tertiary-fixed-dim":"#ffb77d","on-tertiary":"#ffffff","surface-variant":"#e0e3e5","on-tertiary-container":"#c76c00","on-secondary":"#ffffff","on-primary-container":"#7c839b","tertiary-container":"#2f1500","surface-bright":"#f7f9fb","inverse-surface":"#2d3133","tertiary":"#000000","surface-tint":"#565e74","on-secondary-fixed-variant":"#832600","on-secondary-container":"#5d1900","surface-container-high":"#e6e8ea","error":"#ba1a1a","primary-fixed":"#dae2fd","inverse-primary":"#bec6e0","surface-dim":"#d8dadc","on-primary-fixed-variant":"#3f465c","secondary":"#ac3400","tertiary-fixed":"#ffdcc3","on-primary":"#ffffff","primary":"#000000","on-background":"#191c1e","background":"#f7f9fb","secondary-fixed":"#ffdbd0","primary-container":"#131b2e","on-primary-fixed":"#131b2e","primary-fixed-dim":"#bec6e0","surface":"#f7f9fb","outline":"#76777d","inverse-on-surface":"#eff1f3","surface-container":"#eceef0","surface-container-lowest":"#ffffff","on-surface-variant":"#45464d","on-error-container":"#93000a","on-tertiary-fixed":"#2f1500","surface-container-highest":"#e0e3e5","secondary-fixed-dim":"#ffb59d","on-error":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-sm":"0.5rem","space-lg":"1.5rem","margin-md":"3rem","space-md":"1rem","space-xl":"2.5rem","space-2xl":"4rem","gutter-lg":"2.5rem","space-xs":"0.25rem",gutter:"1.5rem",margin:"1.5rem","margin-lg":"5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"headline-sm":["EB Garamond"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["EB Garamond"],"headline-lg":["EB Garamond"],"headline-lg-mobile":["EB Garamond"],"label-md":["Plus Jakarta Sans"],"display-lg":["EB Garamond"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["EB Garamond"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"display-lg-mobile":["38px",{lineHeight:"46px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg h-20 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="Triángulo Andino Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WbI1b3W87j_X4Czfrq3qSnHZF0wTnt1GIRF85bEfzhKv3cRjWGASopjeHsyLz2pcNbx7WfTFNb3ABN8XDB8_XT_rGLd79nHPaVYpeK-j07XU2bq23y2llPC276l6VKKM3rHe_7ePPhzNOCvGByTLcLSvBLaWrl2RQHRRmaJEZtAzDVKsBQu8KSw5KDpX-dpyf0O3O5uEq1rnUM3lgIHTPJdeJLFBoQAVetfawvGJ3P3tjN9tkOBbVTIQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface leading-none">Triángulo Andino</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Chile · Bolivia · Perú</span></div></a></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-secondary font-semibold"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="explorar-paquetes" href="#">Explorar Paquetes</a><div class="relative flex items-center"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pr-2" data-path="armador-de-ruta-ia" href="#">Armador de Ruta IA</a><span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm tracking-wider uppercase shadow-sm">Smart Route</span></div><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="circuitos-3-paises" href="#">Circuitos 3 Países</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="experiencias-y-hoteles" href="#">Experiencias &amp; Hoteles</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Arquitectura &amp; API</a></nav><div class="flex items-center gap-space-sm shrink-0"><div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Dual Mode: Gemini Mock Active</span></div><div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded"><button class="font-label-md text-label-md text-on-surface font-semibold px-1" type="button">ES</button><span class="font-label-sm text-label-sm text-outline-variant">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">EN</button><span class="font-label-sm text-label-sm text-outline-variant">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">PT</button><span class="font-label-sm text-label-sm text-outline-variant">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">FR</button></div><div class="hidden sm:flex items-center bg-surface-container-low px-2 py-1 rounded"><select class="bg-transparent font-label-md text-label-md text-on-surface font-semibold focus:outline-none cursor-pointer pr-1"><option value="USD">USD $</option><option value="EUR">EUR €</option><option value="CLP">CLP $</option><option value="PEN">PEN S/</option></select></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF79VQICsc-_aqMCbz3d1L7b0uoH-6zu0EatcKukyNRPwqXWPKF_mER5xGpml63cN8erSTYqRBn3sfTeKp3NNOJbfVVcKg8sdhkkqUrzYJvTenkIDXnd-wc3zWXady84QWITPZ8fx9dPfKCF77EbWaGX_MO1OZZS9JWJ_o3QJcZj4tBHDoWQfhE8B0NZJyPviQSB8anicRFCFK1mhqSOCqwY-MbNE8ypjxFR9uSy8SiAtPmeHH7_ak"/><a class="hidden lg:inline-flex items-center justify-center px-4 py-2 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary hover:text-on-secondary transition-colors duration-200 shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="contacto-concierge" href="#">Concierge 24/7</a></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- HERO SECTION WITH EDITORIAL ASYMMETRY & SEAMLESS APP-SHELL INTEGRATION -->
+<section class="relative w-full -mt-20 overflow-hidden bg-primary-container text-on-primary">
+<!-- Immersive Backdrop with Sophisticated Scrim Layering -->
+<div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-40 transform scale-105 transition-transform duration-1000 ease-out" data-alt="Magnificent panoramic view of the Andean Altiplano where the salt flats of Uyuni meet the red volcanic cordillera under a crisp indigo sky, cinematic soft golden dawn light, ultra luxury travel aesthetic, warm terracotta reflections, pristine and vast landscape." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgDEHvZUOK_sL_nvNHhE6Z1C2Bo-aC4HKfwWxXwF1Ry8qzzLTl-v6Xg92W4C7dHICHWMlt0cNOqospXBkCuZRgXVKRKNmjIUT-AR8D7NxpwOSag1Uro8shAEYLSL25ZpMcZJNEwqcxVL1Tq98dOTXwrQGjUNMq6kLoRaHPW5RsiEjk6V7KiDddGpOdQrvOk-Io-WeVLEwsHVTI0pwzea4DWQSpc1jlRaYY0rKv6YyDrQx886fTu1kS')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/80 to-primary-container/30"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/95 via-primary-container/70 to-transparent"></div>
+<!-- Hero Content Container -->
+<div class="relative max-w-[1440px] mx-auto px-margin lg:px-margin-lg pt-40 pb-space-2xl flex flex-col gap-space-xl">
+<!-- Top Badges & Meta -->
+<div class="flex flex-wrap items-center gap-space-sm text-tertiary-fixed">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/10 backdrop-blur-md font-label-sm text-label-sm tracking-widest uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          Expediciones de Autor 2025 · 2026
+        </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high">Chile · Bolivia · Perú</span>
+</div>
+<!-- Hero Header & Value Proposition -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<h1 class="font-display-lg text-display-lg text-on-primary font-normal leading-[1.08] tracking-tight">
+            El Encuentro de Tres Mundos:<br/>
+<span class="italic font-headline-lg text-headline-lg font-light text-secondary-fixed">Chile, Bolivia &amp; Perú</span>
+</h1>
+<p class="font-body-lg text-body-lg text-surface-container-high max-w-2xl leading-relaxed">
+            Expediciones privadas y circuitos de alta gama orquestados por Inteligencia Artificial y respaldados las 24 horas por concierges locales en el Altiplano y los Andes Centrales.
+          </p>
+</div>
+<!-- Trust Badges Block (Floating Editorial Pillars) -->
+<div class="lg:col-span-4 flex flex-col gap-space-sm bg-surface-container-lowest/5 backdrop-blur-md p-space-md rounded-xl">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">verified_user</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-surface-bright">Aclimatación Médica Progresiva</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">minor_crash</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-surface-bright">Tracción 4x4 Privada Satelital</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">hotel</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-surface-bright">Relais &amp; Châteaux · Palacios de Sal</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">smart_toy</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-surface-bright">Grounding Gemini &amp; Live Search API</span>
+</div>
+</div>
+</div>
+<!-- Quick Route Planner Bar (Interactive Card) -->
+<div class="w-full bg-surface-container-lowest text-on-surface rounded-xl shadow-xl p-space-md lg:p-space-lg">
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md items-end">
+<div class="lg:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">flight_takeoff</span>
+              Punto de Partida
+            </label>
+<div class="relative">
+<select class="w-full bg-surface-container-low px-3 py-3 rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary cursor-pointer appearance-none">
+<option value="SCL">Santiago de Chile (SCL)</option>
+<option value="LPB">La Paz El Alto (LPB)</option>
+<option value="LIM">Lima Jorge Chávez (LIM)</option>
+<option value="CJC">Calama / Atacama (CJC)</option>
+<option value="CUZ">Cusco Velasco Astete (CUZ)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">explore</span>
+              Destinos Predilectos
+            </label>
+<div class="relative">
+<select class="w-full bg-surface-container-low px-3 py-3 rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary cursor-pointer appearance-none">
+<option value="tri-all">Gran Trilogía (Atacama + Uyuni + Cusco)</option>
+<option value="sal-ata">Altiplano &amp; Salares (Chile + Bolivia)</option>
+<option value="inc-tit">Cultura Inca &amp; Lago Titikaka (Bolivia + Perú)</option>
+<option value="sel-win">Ruta Gastronómica &amp; Salinas Secretas</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">date_range</span>
+              Duración &amp; Época
+            </label>
+<div class="relative">
+<select class="w-full bg-surface-container-low px-3 py-3 rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary cursor-pointer appearance-none">
+<option value="14">14 Días (Experiencia Completa)</option>
+<option value="10">10 Días (Itinerario Expreso)</option>
+<option value="8">8 Días (Inmersión Salares)</option>
+<option value="21">21 Días (Gran Travesía Andina)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="lg:col-span-3">
+<button class="w-full h-[48px] px-6 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center gap-2 transition-colors duration-200 shadow-md" type="button">
+<span class="material-symbols-outlined text-xl">auto_awesome</span>
+<span>Trazar con IA</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- EDITORIAL INTRO & INTERACTIVE CURRENCY BAR -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Catálogo Curado</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Circuitos Estrella Pre-armados</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Rutas transfronterizas diseñadas con ritmos biológicos controlados, permisos diplomáticos de aduana expedita y campamentos de lujo móvil en zonas remotas.
+          </p>
+</div>
+<!-- Live Currency & Preference Switcher -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-2 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Cotización:</span>
+<button class="curr-btn px-2 py-0.5 rounded font-label-md text-label-md font-bold bg-primary text-on-primary" id="btn-curr-usd" onclick="setCurrency('USD', 1, '$')">USD</button>
+<button class="curr-btn px-2 py-0.5 rounded font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface" id="btn-curr-eur" onclick="setCurrency('EUR', 0.92, '€')">EUR</button>
+<button class="curr-btn px-2 py-0.5 rounded font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface" id="btn-curr-clp" onclick="setCurrency('CLP', 960, '$')">CLP</button>
+<button class="curr-btn px-2 py-0.5 rounded font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface" id="btn-curr-pen" onclick="setCurrency('PEN', 3.78, 'S/')">PEN</button>
+</div>
+<span class="text-xs text-on-surface-variant px-1 hidden sm:inline">Tarifas actualizadas en tiempo real</span>
+</div>
+</div>
+<!-- CIRCUIT CARDS GRID (3 BESPOKE PACKAGES) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-lg pt-space-md">
+<!-- CARD 1: Trilogía Andina Completa -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-72 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Luxury Belmond Hiram Bingham train arriving at mystical Machu Picchu covered in morning mist and lush Andean terraces, high-end photography, sharp architectural contours and deep saturated green and terracotta tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdGs063hxFmbfoBRnwLhff8J5HBK5tcFy9iOquIoGKPAeVPdHwzjUv4gno8jqa_CKSaUNwvjg3NeSaoOWWXkYZs6ms2f-R4YK82qr2rpbNp3Sfk-iL4eA9gfCWyUwHPPkmVT1qZoIg_PNf9uMOqeBAS4o55DbtSjqKgcsrd8k9JgP3CoF9xRGs2UohruBYi6p7h7Vk7i-n711-78XFQNaRrEk7fIsie9SVNUGeQD70UEgcc8E8zh3L')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<!-- Country Tag Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded bg-primary-container/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span>🇨🇱 CHL</span>
+<span class="text-outline-variant">·</span>
+<span>🇧🇴 BOL</span>
+<span class="text-outline-variant">·</span>
+<span>🇵🇪 PER</span>
+</div>
+<!-- Duration Pill -->
+<div class="absolute top-4 right-4 px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              14 Días / 13 Noches
+            </div>
+<!-- Altitude indicator -->
+<div class="absolute bottom-3 left-4 flex items-center gap-2 text-surface-bright font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-secondary-container">landscape</span>
+<span>Altitud Máx: 4,900 m.s.n.m (Paso Fronterizo Hito Cajón)</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Circuito Insignia</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-xs text-secondary">fitness_center</span> Dificultad Media
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Trilogía Andina Completa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Santiago → San Pedro de Atacama → Expedición privada Uyuni 4x4 → Lago Titicaca → Valle Sagrado y Machu Picchu en Tren Hiram Bingham.
+              </p>
+</div>
+<!-- Highlights / Included Features -->
+<div class="flex flex-col gap-1.5 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>4x4 Lexus LX / Toyota Land Cruiser privado</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Médico de altura en ruta &amp; oxigenoterapia</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Hospedajes Relais &amp; Châteaux + Hotel de Sal</span>
+</div>
+</div>
+<!-- Price and Action Area -->
+<div class="pt-space-xs flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Precio base por expedicionario</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-semibold text-primary" data-base-price="4890" id="price-card-1">$4,890</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant currency-label">USD</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">Salidas Diarias</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-2">
+<a class="flex-1 py-2.5 px-3 rounded bg-primary text-on-primary hover:bg-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="armador-de-ruta-ia" href="#">
+                  Personalizar con IA
+                </a>
+<button class="px-3 py-2.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md uppercase" type="button">
+                  Ficha PDF
+                </button>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: Altiplano Salvaje & Salares -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-72 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Surreal reflection of deep red Andean lagoon Laguna Colorada with hundreds of James flamingos resting against snow capped volcanoes under intense clear azure sky, raw high-altitude geology." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvJp7fsApOtHIKEnCYlhWfKZyGcsbquZw5uQiyUOEujGTmA-RvH8BTSJIvSW8dHYfrOWYS4l7nE6dT9r6R4Lk3loHttEBmtPza9vail9__Vv1QGyUVhRdPW4XPRDW6UPfYZuG-0ucN1rkIA_CnILYnsGPzLvnJmrsaDPRznwV4Wmhc850YpZxpr6KABQ_AROZEoaW2zcOYonMU-i21Br8cpse9Mt0crXNxmNgoCcRRCp-wWuWMa_SY')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<!-- Country Tag Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded bg-primary-container/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span>🇨🇱 CHL</span>
+<span class="text-outline-variant">·</span>
+<span>🇧🇴 BOL</span>
+</div>
+<!-- Duration Pill -->
+<div class="absolute top-4 right-4 px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              8 Días / 7 Noches
+            </div>
+<!-- Altitude indicator -->
+<div class="absolute bottom-3 left-4 flex items-center gap-2 text-surface-bright font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-secondary-container">landscape</span>
+<span>Altitud Máx: 5,000 m.s.n.m (Geiseres Sol de Mañana)</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Aventura &amp; Geología</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-xs text-secondary">fitness_center</span> Dificultad Moderada
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Altiplano Salvaje &amp; Salares</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                San Pedro de Atacama → Valle de la Luna → Lagunas Blanca, Verde y Colorada → Géiseres Sol de Mañana → Gran Salar de Uyuni y Colchani.
+              </p>
+</div>
+<!-- Highlights / Included Features -->
+<div class="flex flex-col gap-1.5 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Noche de cúpula transparente de lujo en el salar</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Chef de campo privado y bar andino móvil</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Asistencia transfronteriza VIP sin esperas</span>
+</div>
+</div>
+<!-- Price and Action Area -->
+<div class="pt-space-xs flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Precio base por expedicionario</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-semibold text-primary" data-base-price="2650" id="price-card-2">$2,650</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant currency-label">USD</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">Grupo Reducido</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-2">
+<a class="flex-1 py-2.5 px-3 rounded bg-primary text-on-primary hover:bg-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="armador-de-ruta-ia" href="#">
+                  Personalizar con IA
+                </a>
+<button class="px-3 py-2.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md uppercase" type="button">
+                  Ficha PDF
+                </button>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: Mística Inca & Altiplano Sagrado -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-72 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Lake Titicaca calm deep sapphire blue waters during sunset, traditional totora reed boat gliding silently, royal Andes mountain range in background, quiet contemplative high-end travel scene." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcHXNhg8d_OampiVVfzEzLMlR9FIJwLu01jmXdPz2P6a5AW5BVCMDB_3XNoL2J9kdrwm8B6MgqQPSbjyAbF_ULcs_OTlUN44BBoiMEDwQsrfEMsTZqIGTLf_-bNoNejQ660AJEn9_DbutQhYZfrNnv3Iclt1-IMVemAq2ws3bl7n353rvh1_V6zA17xwCqtRNobMuTn_K5JX9SpdVyNnNJtvLM0MPCAfjCyN3c7gmYZJEjjWexspAC')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<!-- Country Tag Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded bg-primary-container/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span>🇧🇴 BOL</span>
+<span class="text-outline-variant">·</span>
+<span>🇵🇪 PER</span>
+</div>
+<!-- Duration Pill -->
+<div class="absolute top-4 right-4 px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              10 Días / 9 Noches
+            </div>
+<!-- Altitude indicator -->
+<div class="absolute bottom-3 left-4 flex items-center gap-2 text-surface-bright font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-secondary-container">landscape</span>
+<span>Altitud Máx: 3,850 m.s.n.m (Altiplano Titikaka)</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Cultura Ancestral</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-xs text-secondary">fitness_center</span> Dificultad Suave
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mística Inca &amp; Altiplano Sagrado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                La Paz bohemia y teleférico → Santuario de Copacabana e Isla del Sol → Puno &amp; Islas Uros → Valle Sagrado de Urubamba → Ciudadela de Machu Picchu.
+              </p>
+</div>
+<!-- Highlights / Included Features -->
+<div class="flex flex-col gap-1.5 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Catamarán privado exclusivo en el Lago Titikaka</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Guías antropólogos y arqueólogos dedicados</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Acceso exclusivo a ruinas incas en horarios privados</span>
+</div>
+</div>
+<!-- Price and Action Area -->
+<div class="pt-space-xs flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Precio base por expedicionario</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-semibold text-primary" data-base-price="3200" id="price-card-3">$3,200</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant currency-label">USD</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">Recomendado Familias</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-2">
+<a class="flex-1 py-2.5 px-3 rounded bg-primary text-on-primary hover:bg-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="armador-de-ruta-ia" href="#">
+                  Personalizar con IA
+                </a>
+<button class="px-3 py-2.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md uppercase" type="button">
+                  Ficha PDF
+                </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE SECTION: HOTELES EMBLEMÁTICOS & EXPERIENCIAS GASTRONÓMICAS DE ALTURA -->
+<section class="w-full bg-surface-container-low py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg flex flex-col gap-space-2xl">
+<!-- Section Title Area -->
+<div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Colección Privada</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Hoteles Emblemáticos &amp; Lodges de Altura</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Descanso sin concesiones en los confines del planeta. Arquitectura vernácula, muros de sal cristalina tallada a mano y servicio de cinco estrellas a más de 3,600 metros de altitud.
+          </p>
+</div>
+<!-- Interactive Hotel Filter Tabs -->
+<div class="flex flex-wrap gap-1.5 p-1 bg-surface-container rounded-lg">
+<button class="hotel-tab active px-4 py-1.5 rounded font-label-md text-label-md uppercase tracking-wider bg-surface-container-lowest text-on-surface shadow-sm font-semibold" onclick="filterHotels('all', this)" type="button">Todos</button>
+<button class="hotel-tab px-4 py-1.5 rounded font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface" onclick="filterHotels('chile', this)" type="button">Chile (Atacama)</button>
+<button class="hotel-tab px-4 py-1.5 rounded font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface" onclick="filterHotels('bolivia', this)" type="button">Bolivia (Uyuni)</button>
+<button class="hotel-tab px-4 py-1.5 rounded font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface" onclick="filterHotels('peru', this)" type="button">Perú (Cusco &amp; Puno)</button>
+</div>
+</div>
+<!-- Hotel Showcase Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter" id="hotel-grid">
+<!-- Hotel 1: Tierra Atacama / Explora -->
+<div class="hotel-item bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group" data-region="chile">
+<div class="relative h-60 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern adobe and raw wood architecture of Tierra Atacama lodge overlooking the Licancabur volcano with private outdoor plunge pool and desert gardens, warm desert sunlight." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd-ynNlC-u-Wx2DL1vPA-QUwVeHMZyndrDmNvJZhglZHanaWV0zFAGhaYTx9XsLjMTx4evxSjSb7ADyQmL4gglAizObwvmhBC51g94zRuRio3Gu7fucyh17cIwo93KtGrZGudTU7hhdBEDEs92JZnPfC10l03_289YH-fIV1JdCnJje1QxVfQ1WeC_i4V8MX5HBihJaK7lEzEHQk1EqIVqQWiNL9dq5KuV-d0MmI5pMvpjRR4VTZXm')">
+</div>
+<span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary-container/80 backdrop-blur text-on-primary font-label-sm text-label-sm">San Pedro de Atacama</span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Relais &amp; Châteaux Partner</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Tierra Atacama Hotel &amp; Spa</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Arquitectura de adobe orgánico y spa termal andino con vistas despejadas al Volcán Licancabur.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between border-t-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confort: Gran Lujo</span>
+<span class="material-symbols-outlined text-secondary">spa</span>
+</div>
+</div>
+</div>
+<!-- Hotel 2: Palacio de Sal (Uyuni) -->
+<div class="hotel-item bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group" data-region="bolivia">
+<div class="relative h-60 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Interior of Palacio de Sal in Uyuni showing elegant salt brick vaulted ceilings, warm contemporary designer illumination, luxury white leather chairs and panoramic windows facing the salt flat." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWjG04n8hSkKDeZGxOZo03Lvp62zrDTW9zfk85kia1DFUzCEM2qah__lW5XbA9KflqRJsxqdbZaYr-FI_SNbqI9KT8NyHQOzf_pVbLxY5hVWLw5GgpMi8rtSfL6rt33_8943xSzPPpiZl7O-O03Sy0myT6mOU50QocXGipOmBX-AOTbwKZfwHte36W6HLynULPPnvkl1Dwg0B_LAzZPy2Fptwsv1xKW9szRMoUKGtaaJPgbcwYu7_B')">
+</div>
+<span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary-container/80 backdrop-blur text-on-primary font-label-sm text-label-sm">Colchani · Uyuni</span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Arquitectura de Sal Pura</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Palacio de Sal Boutique</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                El primer hotel de sal del mundo. Bóvedas termales, chimeneas de leña y mirador astral 360°.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between border-t-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confort: Icono Altiplánico</span>
+<span class="material-symbols-outlined text-secondary">wb_sunny</span>
+</div>
+</div>
+</div>
+<!-- Hotel 3: Titilaka Lodge (Lago Titicaca) -->
+<div class="hotel-item bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group" data-region="peru">
+<div class="relative h-60 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Titilaka luxury lodge perched on a private peninsula stretching into Lake Titicaca, glass floor-to-ceiling windows overlooking deep blue water and local reed islands, dusk mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9qolg9rzUryat_Z4j8PVlhwzkHRfIrj8nHXhOOWViUonAwbkYv2bx9um9oLFIc7JzYWQlriazXYcidq9b4ykD7GkXx0C8bbIE1sQBlX3grVtREhMdAujEe5r9TU6CbXY82aIpiHSdewJ7kSnG0ovZ3uBg3viGxpJoyUZ3Zg1rlBlE2eD0PNCFSjzhrI1alocxQLcdWwcQn7_f8UjwGNr3X7iZF9WE5MWGv0Qw9ouQyHBGQVNzZl0v')">
+</div>
+<span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary-container/80 backdrop-blur text-on-primary font-label-sm text-label-sm">Puno · Titikaka</span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Península Privada</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Titilaka Exclusive Lodge</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Aislado en una península privada sobre las aguas del lago navegable más alto de la Tierra. Relais &amp; Châteaux.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between border-t-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confort: Relais &amp; Châteaux</span>
+<span class="material-symbols-outlined text-secondary">waves</span>
+</div>
+</div>
+</div>
+<!-- Hotel 4: Belmond Sanctuary Lodge (Machu Picchu) -->
+<div class="hotel-item bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group" data-region="peru">
+<div class="relative h-60 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Belmond Sanctuary Lodge terrace located directly adjacent to the entrance of Machu Picchu citadel, tropical orchid gardens, stone and timber luxury suites with mystic green mountain backdrop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0zERwRiMewXCwmDXDAdLSTpPwYkkNXtV8LYkA95xVdagA8JPcHDKpt6M88fXoWfGxkka9-4VG73LYC_utYe-dK4WKTGLKUAVPZYBROP6KWhuLUO0I05BMInmogq8PLuwC2msT2KZP-Rjw4_CLQrRsOzQDpxI5sDZUgejktQN8GmOq369JBFjjiS86kl5BpuOmplJXq8JrATMKgtilYgBrmMKh8YG5o4LiKzwLb7iuG5eVk43MHHAk')">
+</div>
+<span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary-container/80 backdrop-blur text-on-primary font-label-sm text-label-sm">Machu Picchu Pueblo</span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Ubicación Privilegiada</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Belmond Sanctuary Lodge</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                El único hotel situado justo en la puerta de la ciudadela sagrada de Machu Picchu para ingresos al alba.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between border-t-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confort: Belmond Heritage</span>
+<span class="material-symbols-outlined text-secondary">mountain_flag</span>
+</div>
+</div>
+</div>
+</div>
+<!-- EXPERIENCIAS GASTRONÓMICAS & VIVENCIALES DE ALTURA -->
+<div class="pt-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Sensorial &amp; Gastronomía</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Experiencias Culinarias de Alta Atmósfera</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Degustaciones maridadas con vinos de altura bolivianos (Tarija), cepas patrimoniales chilenas y cocina de raíces quechuas y aymaras.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+<!-- Experience 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<div class="h-44 w-full rounded overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="An intimate candle-lit dinner set in the middle of Atacama desert under thousands of vivid stars of the Milky Way, professional telescope beside the dinner table, exquisite fine dining wine setup." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEOjZbHGZ2JcjXn1AIDcFj8TRd52aLAfePAy-v2oAc9wKfxTFSnKEAadii0IylRPt1U8X5M_ellITqOY6129zYqh8kuDTsZ2LjV_GJGKQKeZlTgvMHqBP8xfCvq7_6SincnccNowDdcuE0SrvsqV9SsZKdLlWIywBo_Im-OnaFR5Op4dmRfLnMKk7IThZ_zrU_ApE-vtGac9N32hZllp67h5iFgD8zi36cD6v_HONQ-M81mdGilOX6')">
+</div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Atacama Stargazing</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Cena Astronómica en el Desierto</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Bajo el cielo más puro y límpido del hemisferio sur. Menú de degustación en 5 pasos maridado con vinos del Valle de Huasco mientras un astrofísico guía la observación con telescopio de alta precisión.
+              </p>
+</div>
+<div class="mt-auto pt-2 flex items-center text-secondary font-label-md text-label-md font-semibold gap-1">
+<span>Incluido en Circuito 1 y 2</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Experience 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<div class="h-44 w-full rounded overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="High-end white linen picnic table set precisely on the flooded reflective mirror water surface of Salar de Uyuni, champagne flutes, Andean local tapas, surreal floating perspective during golden hour." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS3gDCWBQk3irZJgLMfabAPIiYseScdrUi9JQe9gPRNLQpBjhqbyFSaPg8XDj83vkR5_JrNpUckWRgKRUEt0PeaWRrf4ZuD8C1UMyHnbTagImZthBFL0bfMmbStarkvzZhwuq8KpJVIZWXUJkSMPXta4mlkL7yG0Fe1CTO1ZgE_BgYz2DtVJBD-e4Hlc1lC6pesavXZQnT5qGnjPpeD7AsftZ2EH_5fxMG8SF-7APqsGbwxF50BJ3t')">
+</div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Salar de Uyuni</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Picnic Flotante en el Espejo de Sal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Mesa privada con lencería blanca montada directamente sobre la lámina de agua infinita. Cocina de quinoa real, carne de llama confitada y champagne helado en el corazón del silencio blanco.
+              </p>
+</div>
+<div class="mt-auto pt-2 flex items-center text-secondary font-label-md text-label-md font-semibold gap-1">
+<span>Exclusividad Triángulo Andino</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Experience 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<div class="h-44 w-full rounded overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Modern gourmet presentation of Peruvian high Andean gastronomy in Cusco, indigenous edible flowers, ancient varieties of colorful native potatoes, ceramic plates crafted by local master artisans." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQHW9-5fs-asyRdXOfnn8HegM_cCHGG0iKvsLgGO_q1mRGDlC8JFjy6lmEJOJW2oJNOMbN4GF3Gx1Yw-vQb6o8mUYKUy7jJVZUP3LlyDVAM8Vb11XAuDMoERVXtK293hDbRISUu8w9yi5aepYyGj0U5G9R6o5SVbtgPevaW3rvgIGeBgO9ZaFSkPuq1zTYUiBgqXFpIaQCpYxYlWsBLBEEIARNmszNgZnVa1Gay0fn8YnGVVW3J3IZ')">
+</div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Cusco &amp; Valle Sagrado</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Degustación de Alturas Andinas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Exploración culinaria de ecosistemas verticales inspirada en el centro de investigación Mater Iniciativa de Virgilio Martínez. Ingredientes recolectados desde el nivel del mar hasta 4,500 metros.
+              </p>
+</div>
+<div class="mt-auto pt-2 flex items-center text-secondary font-label-md text-label-md font-semibold gap-1">
+<span>Mesa Prioritaria Reservada</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE ROUTE & TOPOGRAPHY DATA VISUALIZATION SECTION -->
+<section class="w-full bg-surface py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg">
+<div class="bg-primary-container text-on-primary rounded-xl p-space-lg lg:p-space-xl flex flex-col gap-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">Perfil Altimétrico &amp; Conectividad</span>
+<h3 class="font-headline-md text-headline-md text-on-primary">
+              La Ciencia de Viajar por las Alturas sin Esfuerzo
+            </h3>
+<p class="font-body-sm text-body-sm text-surface-container-high leading-relaxed">
+              El mayor desafío del Altiplano es el mal de altura (soroche). Nuestro algoritmo de IA traza la curva de aclimatación escalonada óptima: descansos en valles intermedios, hidratación ionizada y monitoreo de pulsioximetría en cada vehículo.
+            </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">100%</span>
+<span class="font-label-sm text-label-sm text-surface-container uppercase">Oxígeno a Bordo</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">&lt; 3h</span>
+<span class="font-label-sm text-label-sm text-surface-container uppercase">Tramos 4x4 Diarios</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">24/7</span>
+<span class="font-label-sm text-label-sm text-surface-container uppercase">Telemedicina Satelital</span>
+</div>
+</div>
+</div>
+<!-- Topographic Elevation Profile Sparkline SVG Chart -->
+<div class="lg:col-span-7 bg-surface-container-lowest/5 p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-surface-bright">Curva de Elevación: Trilogía Andina (14 Días)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/10 font-label-sm text-label-sm text-tertiary-fixed">Medición Satelital GPS</span>
+</div>
+<div class="w-full h-48 relative flex items-end">
+<!-- Inline SVG Altimetric Profile -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 200">
+<defs>
+<lineargradient id="altitudeGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#fd6b36" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#fd6b36" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Area Fill -->
+<polygon fill="url(#altitudeGrad)" points="
+                  0,180 
+                  50,180 
+                  120,110 
+                  200,90 
+                  280,25 
+                  360,60 
+                  440,75 
+                  520,70 
+                  600,105 
+                  700,130 
+                  700,200 
+                  0,200"></polygon>
+<!-- Line -->
+<polyline fill="none" points="
+                  0,180 
+                  50,180 
+                  120,110 
+                  200,90 
+                  280,25 
+                  360,60 
+                  440,75 
+                  520,70 
+                  600,105 
+                  700,130" stroke="#fd6b36" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- Markers with tooltips -->
+<circle cx="50" cy="180" fill="#ffffff" r="5" stroke="#fd6b36" stroke-width="2"></circle>
+<text fill="#f7f9fb" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="50" y="165">Santiago (570m)</text>
+<circle cx="200" cy="90" fill="#ffffff" r="5" stroke="#fd6b36" stroke-width="2"></circle>
+<text fill="#f7f9fb" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="200" y="75">Atacama (2,400m)</text>
+<circle cx="280" cy="25" fill="#ba1a1a" r="6" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#ffdcc3" font-family="Plus Jakarta Sans" font-size="12" font-weight="bold" text-anchor="middle" x="280" y="15">Hito Cajón (4,900m)</text>
+<circle cx="360" cy="60" fill="#ffffff" r="5" stroke="#fd6b36" stroke-width="2"></circle>
+<text fill="#f7f9fb" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="360" y="48">Uyuni (3,656m)</text>
+<circle cx="520" cy="70" fill="#ffffff" r="5" stroke="#fd6b36" stroke-width="2"></circle>
+<text fill="#f7f9fb" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="520" y="58">Titikaka (3,812m)</text>
+<circle cx="700" cy="130" fill="#ffffff" r="5" stroke="#fd6b36" stroke-width="2"></circle>
+<text fill="#f7f9fb" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="660" y="120">Cusco (3,399m)</text>
+</svg>
+</div>
+<div class="flex items-center justify-between text-xs text-surface-container-high pt-2">
+<span>Día 1: Arribo Costa</span>
+<span>Días 3-5: Desierto</span>
+<span>Días 6-8: Paso Altiplánico</span>
+<span>Días 9-11: Lago Sagrado</span>
+<span>Días 12-14: Valle &amp; Cusco</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HIGH-CONVERSION CTA & SMART ROUTE IA LAUNCHPAD -->
+<section class="w-full bg-surface-container-lowest py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg">
+<div class="relative bg-gradient-to-r from-primary via-primary-container to-primary rounded-xl overflow-hidden p-space-lg lg:p-space-2xl shadow-xl text-on-primary">
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider w-fit">
+<span class="material-symbols-outlined text-sm">bolt</span>
+              Motor Neuronal Gemini 1.5 Pro Live
+            </span>
+<h2 class="font-display-lg text-display-lg text-on-primary font-normal leading-tight">
+              ¿Deseas una ruta inédita o combinar otros hitos?
+            </h2>
+<p class="font-body-lg text-body-lg text-surface-container-high max-w-2xl">
+              Diseña tu viaje a medida con IA en 30 segundos calculando tiempos de cruce fronterizo, vuelos charter privados y disponibilidad hotelera en vivo; o si lo prefieres, conversa directamente con nuestro Concierge de guardia 24/7.
+            </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="px-8 py-4 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-lg text-label-lg uppercase tracking-wider flex items-center gap-3 transition-colors shadow-lg" data-path="armador-de-ruta-ia" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span>Iniciar Armador de Ruta IA</span>
+</a>
+<a class="px-6 py-4 rounded bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 backdrop-blur-md text-on-primary font-label-lg text-label-lg uppercase tracking-wider flex items-center gap-2 transition-colors" href="https://wa.me/56982349900" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-green-400">chat</span>
+<span>Hablar con Concierge Satelital</span>
+</a>
+</div>
+</div>
+<!-- Quick Stat & Confidence Box -->
+<div class="lg:col-span-4 bg-surface-container-lowest/5 backdrop-blur-lg p-space-lg rounded-xl flex flex-col gap-space-md">
+<div class="flex items-center gap-3">
+<img alt="Triángulo Andino Seal" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AEtjO1WbI1b3W87j_X4Czfrq3qSnHZF0wTnt1GIRF85bEfzhKv3cRjWGASopjeHsyLz2pcNbx7WfTFNb3ABN8XDB8_XT_rGLd79nHPaVYpeK-j07XU2bq23y2llPC276l6VKKM3rHe_7ePPhzNOCvGByTLcLSvBLaWrl2RQHRRmaJEZtAzDVKsBQu8KSw5KDpX-dpyf0O3O5uEq1rnUM3lgIHTPJdeJLFBoQAVetfawvGJ3P3tjN9tkOBbVTIQ"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold">Garantía Triángulo</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase">Triple Acreditación Oficial</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+              Cada itinerario generado cuenta con trazabilidad de seguridad satelital Garmin InReach, seguros de rescate de altura incluidos y enlace directo con las embajadas correspondientes.
+            </p>
+<div class="flex items-center gap-2 text-xs text-outline-variant pt-2">
+<span class="material-symbols-outlined text-sm text-secondary">check</span>
+<span>Reserva flexible y reprogramación sin penalidad médica</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT-SIDE SCRIPT FOR REAL-TIME CURRENCY & HOTEL FILTERING -->
+<script>
+    // Currency conversion controller
+    function setCurrency(currency, rate, symbol) {
+      // Update toggle buttons styling
+      document.querySelectorAll('.curr-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        btn.classList.add('text-on-surface-variant', 'font-semibold');
+      });
+      const activeBtn = document.getElementById('btn-curr-' + currency.toLowerCase());
+      if (activeBtn) {
+        activeBtn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+        activeBtn.classList.remove('text-on-surface-variant');
+      }
+
+      // Convert card prices
+      const cardIds = ['price-card-1', 'price-card-2', 'price-card-3'];
+      cardIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const base = parseFloat(el.getAttribute('data-base-price'));
+          const converted = Math.round(base * rate);
+          el.textContent = symbol + converted.toLocaleString();
+        }
+      });
+
+      // Update currency labels
+      document.querySelectorAll('.currency-label').forEach(lbl => {
+        lbl.textContent = currency;
+      });
+    }
+
+    // Hotel filter controller
+    function filterHotels(region, btnElement) {
+      document.querySelectorAll('.hotel-tab').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        b.classList.add('text-on-surface-variant');
+      });
+      btnElement.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+      btnElement.classList.remove('text-on-surface-variant');
+
+      const items = document.querySelectorAll('.hotel-item');
+      items.forEach(item => {
+        if (region === 'all' || item.getAttribute('data-region') === region) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(0,0,0,0.03)] pt-space-2xl pb-space-xl"><div class="max-w-[1440px] mx-auto px-margin lg:px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-lg pb-space-2xl"><div class="lg:col-span-4 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Triángulo Andino Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WbI1b3W87j_X4Czfrq3qSnHZF0wTnt1GIRF85bEfzhKv3cRjWGASopjeHsyLz2pcNbx7WfTFNb3ABN8XDB8_XT_rGLd79nHPaVYpeK-j07XU2bq23y2llPC276l6VKKM3rHe_7ePPhzNOCvGByTLcLSvBLaWrl2RQHRRmaJEZtAzDVKsBQu8KSw5KDpX-dpyf0O3O5uEq1rnUM3lgIHTPJdeJLFBoQAVetfawvGJ3P3tjN9tkOBbVTIQ"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Triángulo Andino</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Pioneros en expediciones de alta gama a través del Altiplano, Atacama y los Andes Centrales. Uniendo Chile, Bolivia y Perú con sofisticación arquitectónica y rigor de servicio.</p><div class="flex flex-wrap items-center gap-space-xs pt-space-xs"><span class="px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Sernatur Chile #7482</span><span class="px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Viceministerio Bolivia</span><span class="px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Dircetur Perú</span></div></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg font-semibold uppercase tracking-wider text-on-surface">Rutas Magistrales</h4><div class="flex flex-col gap-2"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="explorar-paquetes" href="#">Travesía Salar &amp; Atacama</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="circuitos-3-paises" href="#">Gran Circuito Tres Naciones</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="explorar-paquetes" href="#">Valle Sagrado &amp; Titikaka</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="experiencias-y-hoteles" href="#">Refugios de Altura &amp; Lodges</a></div></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg font-semibold uppercase tracking-wider text-on-surface">Tecnología &amp; Datos</h4><div class="flex flex-col gap-2"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="armador-de-ruta-ia" href="#">Smart Route Engine (Gemini)</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Documentación API &amp; Mock</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Grounding de Búsqueda</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="arquitectura-full-stack-y-api" href="#">Estado del Servicio</a></div></div><div class="lg:col-span-4 flex flex-col gap-space-md"><h4 class="font-label-lg text-label-lg font-semibold uppercase tracking-wider text-on-surface">Asistencia Concierge Ininterrumpida</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Soporte logístico por satélite y enlace prioritario WhatsApp 24/7 para expedicionarios en ruta.</p><div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-2xl">support_agent</span><div><p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Línea Directa Satelital</p><p class="font-label-lg text-label-lg font-semibold text-on-surface">+56 9 8234 9900 · +591 2 244 8900</p></div></div><form class="flex items-center gap-2 mt-space-xs"><input class="w-full px-3 py-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Correo corporativo o privado..." type="email"/><button class="px-4 py-2 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary hover:text-on-secondary transition-colors shrink-0" type="button">Suscribir</button></form></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">© 2025 Triángulo Andino Expeditions SAC / Ltda. Todos los derechos reservados.</p><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer transition-colors">Privacidad y Protocolo Andino</span><span class="hover:text-on-surface cursor-pointer transition-colors">Términos de Expedición</span><span class="hover:text-on-surface cursor-pointer transition-colors">Políticas de Cancelación</span></div></div></div></footer></body></html>
