@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Currency, Language } from '../types';
+import { TRANSLATIONS } from '../data/translations';
 
 interface NavbarProps {
   currentView: string;
@@ -21,12 +22,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenConcierge,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = TRANSLATIONS[language] || TRANSLATIONS.ES;
 
   const navItems = [
-    { id: 'home', label: 'Explorar paquetes', icon: 'explore' },
-    { id: 'builder', label: '✨ Armador IA', icon: 'auto_awesome', highlight: true },
-    { id: 'explorer', label: 'Guía de destinos', icon: 'travel_explore' },
-    { id: 'admin', label: 'Panel admin', icon: 'query_stats' },
+    { id: 'home', label: t.navHome, icon: 'explore' },
+    { id: 'builder', label: `✨ ${t.navBuilder}`, icon: 'auto_awesome', highlight: true },
+    { id: 'explorer', label: t.navExplorer, icon: 'travel_explore' },
+    { id: 'admin', label: t.navAdmin, icon: 'query_stats' },
   ];
 
   return (
@@ -126,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="hidden lg:inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-all shadow-xs"
           >
             <span className="material-symbols-outlined text-sm">support_agent</span>
-            <span>Concierge 24/7</span>
+            <span>{t.concierge247}</span>
           </button>
 
           {/* Mobile Menu Toggle Button */}

@@ -321,6 +321,7 @@ export default function App() {
       <Footer
         setCurrentView={setCurrentView}
         onOpenConcierge={handleOpenConcierge}
+        language={language}
       />
     </div>
   );

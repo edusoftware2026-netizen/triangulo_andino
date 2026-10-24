@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { Language } from '../types';
+import { TRANSLATIONS } from '../data/translations';
 
 interface FooterProps {
   setCurrentView: (view: string) => void;
   onOpenConcierge: () => void;
+  language?: Language;
 }
 
-export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge }) => {
+export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge, language = 'ES' }) => {
   const [emailInput, setEmailInput] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const t = TRANSLATIONS[language] || TRANSLATIONS.ES;
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();

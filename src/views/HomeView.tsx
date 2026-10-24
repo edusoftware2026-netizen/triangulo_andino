@@ -144,17 +144,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full z-10 flex flex-col gap-4 pt-4">
           {/* Editorial Kicker */}
           <div className="flex items-center gap-3 text-gold font-sans">
-            <span className="text-xs uppercase tracking-[0.22em] font-bold">
-              Expediciones de autor
-            </span>
-            <span className="text-white/40">·</span>
-            <span className="text-xs uppercase tracking-widest text-stone font-medium">
-              Chile · Bolivia · Perú
-            </span>
-            <span className="text-white/40">·</span>
-            <span className="text-xs text-gold/90 font-medium">
-              Lodges Relais & Châteaux
-            </span>
+            <span className="text-xs uppercase tracking-[0.22em] font-bold">{t.heroTag}</span><span className="text-white/40">·</span><span className="text-xs uppercase tracking-widest text-stone font-medium">{t.heroSubtitle}</span><span className="text-white/40">·</span><span className="text-xs text-gold/90 font-medium">{t.pillHotels}</span>
           </div>
 
           {/* Master Headline (Sentence case) */}
@@ -186,7 +176,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 }`}
               >
                 <span className="material-symbols-outlined text-base">hotel</span>
-                <span>Paquetes con hotelería incluida</span>
+                <span>{language === "EN" ? "Packages with Hotels" : language === "PT" ? "Pacotes com Hotel" : language === "FR" ? "Forfaits avec Hôtels" : "Paquetes con hotelería incluida"}</span>
               </button>
 
               <button
@@ -199,7 +189,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 }`}
               >
                 <span className="material-symbols-outlined text-base">directions_car</span>
-                <span>Solo expedición 4x4 (sin hotel)</span>
+                <span>{language === "EN" ? "4x4 Expedition Only (No Hotel)" : language === "PT" ? "Apenas Expedição 4x4 (Sem Hotel)" : language === "FR" ? "Expédition 4x4 Seule (Sans Hôtel)" : "Solo expedición 4x4 (sin hotel)"}</span>
               </button>
 
               <button
@@ -212,7 +202,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 }`}
               >
                 <span className="material-symbols-outlined text-base">auto_awesome</span>
-                <span>Armar ruta con IA</span>
+                <span>{t.customizeWithAI}</span>
               </button>
             </div>
 
@@ -223,9 +213,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <label className="text-[11px] uppercase tracking-wider text-earth font-bold flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base text-olive">
                     explore
-                  </span>
-                  Destino andino
-                </label>
+                  </span>{t.quickDestinations}</label>
                 <select
                   value={searchDestination}
                   onChange={(e) => setSearchDestination(e.target.value)}
@@ -244,9 +232,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <label className="text-[11px] uppercase tracking-wider text-earth font-bold flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base text-olive">
                     calendar_month
-                  </span>
-                  Duración deseada
-                </label>
+                  </span>{t.quickDuration}</label>
                 <select
                   value={searchDuration}
                   onChange={(e) => setSearchDuration(e.target.value)}
@@ -266,9 +252,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <label className="text-[11px] uppercase tracking-wider text-earth font-bold flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base text-olive">
                     bed
-                  </span>
-                  Categoría de hotel
-                </label>
+                  </span>{t.paramTier}</label>
                 <select
                   value={searchHotelTier}
                   onChange={(e) => setSearchHotelTier(e.target.value)}
@@ -324,9 +308,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     {activeSearchTab === 'custom_ai' ? 'auto_awesome' : 'search'}
                   </span>
                   <span>
-                    {activeSearchTab === 'custom_ai'
-                      ? 'Diseñar con IA'
-                      : 'Buscar expedición'}
+                    {activeSearchTab === 'custom_ai' ? t.quickButton : (language === 'EN' ? 'Search Expeditions' : language === 'PT' ? 'Buscar Expedições' : language === 'FR' ? 'Rechercher des Expéditions' : 'Buscar expedición')}
                   </span>
                 </button>
               </div>
@@ -341,27 +323,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Header & Filter Bar */}
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pb-10 border-b border-chocolate/12">
             <div className="flex flex-col gap-2 max-w-2xl">
-              <span className="text-xs uppercase tracking-[0.2em] text-terracotta-text font-bold">
-                Expediciones insignia curadas
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-chocolate font-medium tracking-tight">
-                Colección de rutas del Triángulo Andino
-              </h2>
-              <p className="text-sm text-earth leading-relaxed">
-                Cada expedición incluye chofer-guía privado bilingüe, camioneta 4x4 equipada con oxígeno medicinal satelital y coordinación integral en cruces de frontera.
-              </p>
+              <span className="text-xs uppercase tracking-[0.2em] text-terracotta-text font-bold">{t.curatedCatalog}</span><h2 className="font-serif text-3xl sm:text-4xl text-chocolate font-medium tracking-tight">{t.catalogTitle}</h2><p className="text-sm text-earth leading-relaxed">{t.catalogDesc}</p>
             </div>
 
             {/* Currency & Filter Switcher */}
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-1 bg-stone p-1.5 rounded border border-chocolate/10 shadow-xs">
                 {(['all', 'trilogia', 'chile_bolivia', 'bolivia_peru'] as const).map((filter) => {
-                  const labelMap = {
-                    all: 'Todos',
-                    trilogia: '3 Países (Trilogía)',
-                    chile_bolivia: 'Chile + Bolivia',
-                    bolivia_peru: 'Bolivia + Perú',
-                  };
+                  const labelMap = { all: t.filterAll, trilogia: t.nav3Countries, chile_bolivia: `${t.filterChile} + ${t.filterBolivia}`, bolivia_peru: `${t.filterBolivia} + ${t.filterPeru}` };
                   return (
                     <button
                       key={filter}
@@ -520,9 +489,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   {/* Pie de Tarjeta en Piedra Suave (#E5DFD5) según Manual 7.4 */}
                   <div className="bg-stone p-4 px-6 border-t border-chocolate/10 flex items-center justify-between gap-3">
                     <div className="flex flex-col">
-                      <span className="text-[10px] text-earth uppercase tracking-wider font-semibold">
-                        Desde por viajero
-                      </span>
+                      <span className="text-[10px] text-earth uppercase tracking-wider font-semibold">{t.pricePerPax}</span>
                       <div className="flex items-baseline gap-1">
                         <span className="font-serif text-2xl font-bold text-chocolate">
                           {rateInfo.symbol}{convertedPrice.toLocaleString()}
