@@ -23,28 +23,28 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Explorar Paquetes', icon: 'explore' },
+    { id: 'home', label: 'Explorar paquetes', icon: 'explore' },
     { id: 'builder', label: '✨ Armador IA', icon: 'auto_awesome', highlight: true },
-    { id: 'explorer', label: 'Guía IA', icon: 'travel_explore' },
-    { id: 'admin', label: 'Admin', icon: 'query_stats' },
+    { id: 'explorer', label: 'Guía de destinos', icon: 'travel_explore' },
+    { id: 'admin', label: 'Panel admin', icon: 'query_stats' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-black/8 shadow-xs">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-chocolate/12 shadow-xs">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
-        {/* SINGLE ELEGANT LOGO WITH GOLDEN MOUNTAIN ICON */}
+        {/* SINGLE ELEGANT LOGO WITH GOLDEN MOUNTAIN ICON (ANDEAN VANGUARD) */}
         <button
           type="button"
           onClick={() => {
             setCurrentView('home');
             setMobileMenuOpen(false);
           }}
-          className="flex items-center gap-2.5 text-left group focus:outline-none shrink-0"
+          className="flex items-center gap-2.5 text-left group focus-visible:ring-2 focus-visible:ring-olive focus-visible:ring-offset-2 rounded shrink-0"
         >
-          {/* Minimalist Golden Mountain Emblem */}
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F172A] to-[#1e293b] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-200 border border-amber-500/30">
+          {/* Mountain in Gold over Chocolate box */}
+          <div className="w-10 h-10 rounded bg-chocolate flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-200 border border-gold/40">
             <svg
-              className="w-6 h-6 text-[#d97706]"
+              className="w-6 h-6 text-gold"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -52,16 +52,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#0F172A] leading-none group-hover:text-[#c2410c] transition-colors whitespace-nowrap">
+            <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-chocolate leading-none group-hover:text-olive transition-colors whitespace-nowrap">
               Triángulo Andino
             </span>
-            <span className="text-[10px] uppercase tracking-widest text-[#76777d] font-bold mt-1 whitespace-nowrap">
+            <span className="text-[10px] uppercase tracking-widest text-earth font-bold mt-1 whitespace-nowrap">
               Chile · Bolivia · Perú
             </span>
           </div>
         </button>
 
-        {/* CENTRAL CLEAR NAVIGATION MENU (SINGLE-LINE WHITESPACE-NOWRAP) */}
+        {/* CENTRAL CLEAR NAVIGATION MENU (EDITORIAL SENTENCE STYLE WITH OLIVE UNDERLINE) */}
         <nav className="hidden md:flex items-center gap-1.5 lg:gap-3">
           {navItems.map((item) => {
             const isActive = currentView === item.id;
@@ -70,12 +70,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={item.id}
                 type="button"
                 onClick={() => setCurrentView(item.id)}
-                className={`px-3 py-2 rounded-lg text-xs font-bold tracking-wide transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
+                className={`px-3 py-2 text-xs tracking-wide transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 border-b-2 rounded-t font-semibold ${
                   isActive
-                    ? 'bg-[#0F172A] text-white shadow-xs'
+                    ? 'border-olive text-chocolate font-bold bg-stone/40'
                     : item.highlight
-                    ? 'text-[#c2410c] hover:bg-orange-50 font-extrabold'
-                    : 'text-[#45464d] hover:text-[#0F172A] hover:bg-gray-100'
+                    ? 'border-transparent text-terracotta-text font-bold hover:text-terracotta-strong hover:bg-stone/30'
+                    : 'border-transparent text-earth hover:text-chocolate hover:bg-stone/20'
                 }`}
               >
                 <span>{item.label}</span>
@@ -86,8 +86,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* RIGHT CONTROLS: LANGUAGE, CURRENCY & CONCIERGE */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Language Switcher */}
-          <div className="flex items-center bg-[#f2f4f6] px-1 py-1 rounded-lg text-xs border border-black/5">
+          {/* Language Switcher in Stone Container */}
+          <div className="flex items-center bg-stone px-1 py-1 rounded text-xs border border-chocolate/10">
             {(['ES', 'EN', 'PT', 'FR'] as Language[]).map((lang) => (
               <button
                 key={lang}
@@ -95,8 +95,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => setLanguage(lang)}
                 className={`px-1.5 py-0.5 rounded text-[11px] font-bold uppercase transition-all ${
                   language === lang
-                    ? 'bg-[#0F172A] text-white shadow-xs'
-                    : 'text-[#45464d] hover:text-[#0F172A]'
+                    ? 'bg-white text-chocolate shadow-xs border border-chocolate/10'
+                    : 'text-earth hover:text-chocolate'
                 }`}
               >
                 {lang}
@@ -104,13 +104,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </div>
 
-          {/* Currency Switcher */}
-          <div className="hidden sm:flex items-center bg-[#f2f4f6] px-2 py-1 rounded-lg text-xs font-bold border border-black/5">
+          {/* Currency Switcher in Stone Container */}
+          <div className="hidden sm:flex items-center bg-stone px-2 py-1 rounded text-xs font-bold border border-chocolate/10">
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value as Currency)}
               aria-label="Moneda"
-              className="bg-transparent text-[#0F172A] focus:outline-none cursor-pointer"
+              className="bg-transparent text-chocolate focus:outline-none cursor-pointer"
             >
               <option value="USD">USD ($)</option>
               <option value="EUR">EUR (€)</option>
@@ -119,11 +119,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             </select>
           </div>
 
-          {/* Concierge Action Button */}
+          {/* Concierge Action Button (Oliva, radio 4px) */}
           <button
             type="button"
             onClick={onOpenConcierge}
-            className="hidden lg:inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#c2410c] hover:bg-[#9a3412] text-white text-xs uppercase tracking-wider font-bold transition-all shadow-xs"
+            className="hidden lg:inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-all shadow-xs"
           >
             <span className="material-symbols-outlined text-sm">support_agent</span>
             <span>Concierge 24/7</span>
@@ -134,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menú de navegación"
-            className="md:hidden p-2 rounded-lg text-[#0F172A] hover:bg-gray-100 focus:outline-none"
+            className="md:hidden p-2 rounded text-chocolate hover:bg-stone/50 focus:outline-none"
           >
             <span className="material-symbols-outlined text-2xl">
               {mobileMenuOpen ? 'close' : 'menu'}
@@ -143,9 +143,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* MOBILE EXPANDED MENU DRAWER */}
+      {/* MOBILE EXPANDED MENU DRAWER (LINO CANVAS WITH 48PX ROWS) */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-black/10 px-6 py-4 flex flex-col gap-2 shadow-lg animate-fade-in">
+        <div className="md:hidden bg-canvas border-b border-chocolate/12 px-6 py-4 flex flex-col gap-2 shadow-lg animate-fade-in">
           {navItems.map((item) => {
             const isActive = currentView === item.id;
             return (
@@ -156,26 +156,26 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setCurrentView(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold flex items-center justify-between ${
+                className={`w-full text-left px-4 py-3 rounded text-sm font-bold flex items-center justify-between min-h-[48px] ${
                   isActive
-                    ? 'bg-[#0F172A] text-white'
-                    : 'text-[#191c1e] hover:bg-gray-100'
+                    ? 'bg-stone text-chocolate border-l-4 border-olive'
+                    : 'text-chocolate hover:bg-stone/40'
                 }`}
               >
                 <span>{item.label}</span>
-                <span className="material-symbols-outlined text-sm text-[#c2410c]">
+                <span className="material-symbols-outlined text-sm text-olive">
                   arrow_forward
                 </span>
               </button>
             );
           })}
 
-          <div className="pt-3 border-t border-black/5 flex items-center justify-between">
-            <span className="text-xs font-semibold text-[#45464d]">Moneda activa:</span>
+          <div className="pt-3 border-t border-chocolate/10 flex items-center justify-between">
+            <span className="text-xs font-semibold text-earth">Moneda activa:</span>
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value as Currency)}
-              className="bg-[#f2f4f6] px-2 py-1 rounded text-xs font-bold text-[#0F172A]"
+              className="bg-stone px-2 py-1 rounded text-xs font-bold text-chocolate border border-chocolate/10"
             >
               <option value="USD">USD ($)</option>
               <option value="EUR">EUR (€)</option>
@@ -190,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onOpenConcierge();
               setMobileMenuOpen(false);
             }}
-            className="w-full mt-2 py-3 rounded-xl bg-[#c2410c] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
+            className="w-full mt-2 py-3 rounded bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xs transition-colors"
           >
             <span className="material-symbols-outlined text-sm">support_agent</span>
             <span>Hablar con Concierge 24/7</span>

@@ -3,16 +3,61 @@
 @theme {
   --font-serif: "EB Garamond", serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
-  --color-primary: #0F172A;
-  --color-secondary: #ac3400;
-  --color-secondary-container: #fd6b36;
-  --color-surface: #f7f9fb;
-  --color-surface-container-low: #f2f4f6;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container: #eceef0;
-  --color-surface-container-high: #e6e8ea;
-  --color-on-surface: #191c1e;
-  --color-on-surface-variant: #45464d;
+
+  /* Andean Vanguard Brand Tokens */
+  --color-canvas: #F9F6F0;
+  --color-stone: #E5DFD5;
+  --color-chocolate: #3E322C;
+  --color-earth: #6B5B52;
+  --color-olive: #5B6E52;
+  --color-olive-deep: #44543D;
+  --color-terracotta: #C2694E;
+  --color-terracotta-text: #A9543A;
+  --color-terracotta-strong: #9E4A32;
+  --color-gold: #D4A373;
+  --color-gold-text: #8C6239;
+
+  /* Semantic Aliases (Backward-compatible & Token-mapped) */
+  --color-surface: #F9F6F0;
+  --color-on-surface: #3E322C;
+  --color-on-background: #3E322C;
+  --color-on-surface-variant: #6B5B52;
+  --color-primary: #5B6E52;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #44543D;
+  --color-secondary: #C2694E;
+  --color-secondary-text: #A9543A;
+  --color-tertiary: #D4A373;
+  --color-tertiary-text: #8C6239;
+  --color-on-tertiary: #3E322C;
+
+  /* Surfaces & Layers */
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F4F0E8;
+  --color-surface-container: #E5DFD5;
+  --color-surface-container-high: #E0D9CD;
+  --color-surface-container-highest: #DCD5C7;
+
+  /* Compatibility: icons and indicators use this token as accent */
+  --color-secondary-container: #C2694E;
+
+  /* Tints, borders, states & scrim */
+  --color-secondary-soft: #F3DFD5;
+  --color-on-secondary-soft: #7A3B2A;
+  --color-outline: #8A7C6E;
+  --color-outline-variant: #D5CEC0;
+  --color-error: #A94B3F;
+  --color-success: #4F6B4A;
+  --color-warning: #8C6239;
+  --color-scrim: #2E2520;
+
+  /* Admin Dark Warm Tokens */
+  --color-admin-bg: #2A211D;
+  --color-admin-surface: #332923;
+  --color-admin-surface-elevated: #3E322C;
+  --color-admin-border: #5A4C42;
+  --color-admin-text: #F9F6F0;
+  --color-admin-text-secondary: #D8CEC2;
 }
 
 @layer base {
@@ -20,25 +65,36 @@
     margin: 0;
     padding: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #f7f9fb;
-    color: #191c1e;
+    background-color: #F9F6F0;
+    color: #3E322C;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  
   h1, h2, h3, h4, .font-serif, .font-headline-lg, .font-headline-md, .font-headline-sm, .font-display-lg {
     font-family: 'EB Garamond', Georgia, serif;
+    color: #3E322C;
+  }
+
+  /* Accessible keyboard focus ring (Oliva 2px with 2px offset) */
+  :focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 2px;
   }
 }
 
+/* Tipografía de escala Andean Vanguard */
 .font-display-lg {
   font-family: 'EB Garamond', Georgia, serif;
   font-size: clamp(34px, 4vw, 56px);
-  line-height: 1.15;
+  line-height: 1.08;
   letter-spacing: -0.02em;
 }
 
 .font-headline-lg {
   font-family: 'EB Garamond', Georgia, serif;
   font-size: clamp(26px, 3vw, 40px);
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .font-headline-md {
@@ -77,6 +133,7 @@
   line-height: 20px;
   letter-spacing: 0.04em;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .font-label-md {
@@ -85,6 +142,7 @@
   line-height: 16px;
   letter-spacing: 0.06em;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .font-label-sm {
@@ -93,6 +151,7 @@
   line-height: 14px;
   letter-spacing: 0.08em;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* Material symbols outlined helper */
@@ -110,18 +169,62 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* Niveles de Elevación Oficiales (Manual UI/UX) */
+/* Nivel 1: Tarjetas y paneles (borde fino 1px, sin sombras difusas) */
+.elevation-card {
+  border: 1px solid rgba(62, 50, 44, 0.12);
+  box-shadow: none;
+}
+
+/* Nivel 2: Menús flotantes, dropdowns, buscador flotante */
+.elevation-floating {
+  box-shadow: 0 12px 32px -4px rgba(62, 50, 44, 0.08), 0 4px 12px -2px rgba(62, 50, 44, 0.04);
+}
+
+/* Nivel 3: Modales */
+.elevation-modal {
+  box-shadow: 0 24px 48px -8px rgba(62, 50, 44, 0.18), 0 8px 16px -4px rgba(62, 50, 44, 0.08);
+}
+
+/* Scrim cálido sobre fotografía */
+.scrim-warm {
+  background: linear-gradient(180deg, rgba(46, 37, 32, 0.1) 0%, rgba(46, 37, 32, 0.75) 100%);
+}
+
+/* Overlay cálido para modales */
+.modal-overlay-warm {
+  background-color: rgba(62, 50, 44, 0.65);
+  backdrop-filter: blur(8px);
+}
+
 /* Custom print styles for official voucher */
 @media print {
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+
   body * {
-    visibility: hidden;
+    visibility: hidden !important;
   }
-  #printable-voucher, #printable-voucher * {
-    visibility: visible;
+
+  #printable-voucher,
+  #printable-voucher * {
+    visibility: visible !important;
   }
+
   #printable-voucher {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background-color: #FFFFFF !important;
+    color: #3E322C !important;
+    box-shadow: none !important;
+    border: 1px solid #E5DFD5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
