@@ -268,7 +268,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     pricePerPax: "Precio base por expedicionario",
     dailyDepartures: "Salidas Diarias",
     customizeWithAI: "Personalizar con IA",
-    viewDetails: "Cotizar & Reservar",
+    viewDetails: "Cotizar y Reservar",
     filterAll: "Todos",
     filterChile: "Chile (Atacama)",
     filterBolivia: "Bolivia (Uyuni)",
@@ -372,7 +372,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     subtotalHotels: "Hotelería Seleccionada & Refugios",
     subtotalTickets: "Permisos Machu Picchu & Parques Nacionales",
     satelliteIncluded: "Incluido",
-    btnBookGuarantee: "Reservar con 20% de Garantía (Mock Checkout)",
+    btnBookGuarantee: "Cotizar y Reservar",
     btnWhatsapp: "WhatsApp Concierge",
     btnDownloadPDF: "Descargar Voucher / PDF",
 
@@ -403,7 +403,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     noHiddenFees: "Sin cargos ocultos",
     sernaturWarranty: "Garantía Sernatur #7482",
     sorocheFlexible: "Reprogramable por soroche",
-    confirmBookingBtn: "Confirmar reserva",
+    confirmBookingBtn: "Confirmar Cotización y Reserva",
     authorizingStripe: "Autorizando con Stripe...",
 
     voucherSuccessTitle: "¡Expedición Reservada Exitosamente!",
@@ -595,7 +595,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     subtotalHotels: "Selected Hospitality & Mountain Lodges",
     subtotalTickets: "Machu Picchu & National Park Permits",
     satelliteIncluded: "Included",
-    btnBookGuarantee: "Book with 20% Guarantee (Mock Checkout)",
+    btnBookGuarantee: "Quote & Book",
     btnWhatsapp: "WhatsApp Concierge",
     btnDownloadPDF: "Download Voucher / PDF",
 
@@ -626,7 +626,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     noHiddenFees: "No hidden fees",
     sernaturWarranty: "Sernatur Guarantee #7482",
     sorocheFlexible: "Reschedulable for altitude sickness",
-    confirmBookingBtn: "Confirm Reservation",
+    confirmBookingBtn: "Confirm Quote & Booking",
     authorizingStripe: "Authorizing with Stripe...",
 
     voucherSuccessTitle: "Expedition Successfully Confirmed!",
@@ -714,7 +714,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     pricePerPax: "Preço base por expedicionário",
     dailyDepartures: "Saídas Diárias",
     customizeWithAI: "Personalizar com IA",
-    viewDetails: "Cotar & Reservar",
+    viewDetails: "Cotar e Reservar",
     filterAll: "Todos",
     filterChile: "Chile (Atacama)",
     filterBolivia: "Bolivia (Uyuni)",
@@ -818,7 +818,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     subtotalHotels: "Hotelaria Selecionada & Refúgios",
     subtotalTickets: "Ingressos Machu Picchu & Parques Nacionais",
     satelliteIncluded: "Incluído",
-    btnBookGuarantee: "Reservar com 20% de Garantia (Mock Checkout)",
+    btnBookGuarantee: "Cotar e Reservar",
     btnWhatsapp: "WhatsApp Concierge",
     btnDownloadPDF: "Baixar Voucher / PDF",
 
@@ -849,7 +849,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     noHiddenFees: "Sem taxas ocultas",
     sernaturWarranty: "Garantia Sernatur #7482",
     sorocheFlexible: "Remarcável por soroche",
-    confirmBookingBtn: "Confirmar Reserva",
+    confirmBookingBtn: "Confirmar Cotação e Reserva",
     authorizingStripe: "Autorizando no Stripe...",
 
     voucherSuccessTitle: "Expedição Confirmada com Sucesso!",
@@ -1041,7 +1041,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     subtotalHotels: "Hôtellerie d'Exception & Lodges",
     subtotalTickets: "Permis Machu Picchu & Parcs Nationaux",
     satelliteIncluded: "Inclus",
-    btnBookGuarantee: "Réserver avec 20% d'Acompte (Mock Checkout)",
+    btnBookGuarantee: "Devis & Réserver",
     btnWhatsapp: "WhatsApp Concierge",
     btnDownloadPDF: "Télécharger Voucher / PDF",
 
@@ -1072,7 +1072,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
     noHiddenFees: "Sans frais cachés",
     sernaturWarranty: "Garantie Sernatur #7482",
     sorocheFlexible: "Reportable en cas de mal aigu des montagnes",
-    confirmBookingBtn: "Confirmer la Réservation",
+    confirmBookingBtn: "Confirmer Devis & Réservation",
     authorizingStripe: "Autorisation bancaire Stripe en cours...",
 
     voucherSuccessTitle: "Expédition Confirmée avec Succès !",

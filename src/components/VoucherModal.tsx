@@ -60,7 +60,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
       `*Circuito:* ${reservation.packageName}\n` +
       `*Fecha de Salida:* ${reservation.travelDate}\n` +
       `*Viajeros:* ${reservation.travelersCount} pax\n` +
-      `*Garantía Pagada:* ${rateInfo.symbol}${depositConverted.toLocaleString()} ${reservation.currency}\n` +
+      `*Modalidad:* Cotización y Reserva Prioritaria Confirmada\n` +
       `Solicito conexión con el Concierge de guardia.`
     );
     window.open(`https://wa.me/56982349900?text=${text}`, '_blank');
@@ -176,24 +176,25 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
                 </div>
               )}
 
-              {/* Financial Box */}
-              <div className="p-3 bg-stone/25 rounded text-xs space-y-1 border border-chocolate/8">
+              {/* Status Box: NO PRECIOS, SOLO COTIZAR Y RESERVAR */}
+              <div className="p-3 bg-stone/25 rounded text-xs space-y-1.5 border border-chocolate/8">
                 <div className="flex justify-between text-earth">
-                  <span>{t.totalGroupLabel}:</span>
+                  <span>{language === 'EN' ? 'Reservation condition:' : language === 'FR' ? 'Condition de réservation :' : language === 'PT' ? 'Condição da reserva:' : 'Condición de la reserva:'}</span>
                   <span className="font-bold text-chocolate">
-                    {rateInfo.symbol}{totalConverted.toLocaleString()} {reservation.currency}
+                    {language === 'EN' ? 'Priority Bespoke Expedition' : language === 'FR' ? 'Expédition Privée Prioritaire' : language === 'PT' ? 'Expedição Privada Prioritária' : 'Expedición Privada Prioritaria'}
                   </span>
                 </div>
-                <div className="flex justify-between text-terracotta-text font-bold text-sm">
-                  <span>{t.guaranteeDeposit}:</span>
-                  <span>
-                    {rateInfo.symbol}{depositConverted.toLocaleString()} {reservation.currency}
+                <div className="flex justify-between text-olive font-bold text-sm">
+                  <span>{language === 'EN' ? 'Status:' : language === 'FR' ? 'Statut :' : language === 'PT' ? 'Status:' : 'Estado:'}</span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-olive"></span>
+                    {language === 'EN' ? 'Quote & Booking Confirmed' : language === 'FR' ? 'Devis & Réservation Confirmés' : language === 'PT' ? 'Cotação & Reserva Confirmadas' : 'Cotización y Reserva Confirmada'}
                   </span>
                 </div>
                 <div className="flex justify-between text-earth/80">
-                  <span>{t.remainingBalanceLabel}:</span>
-                  <span>
-                    {rateInfo.symbol}{remainingConverted.toLocaleString()} {reservation.currency} {language === 'EN' ? '(payable 30 days prior)' : language === 'FR' ? '(à payer 30 jours avant)' : language === 'PT' ? '(a pagar 30 dias antes)' : '(a pagar 30 días antes)'}
+                  <span>{language === 'EN' ? 'Quotation reference:' : language === 'FR' ? 'Référence devis :' : language === 'PT' ? 'Referência cotação:' : 'Referencia de cotización:'}</span>
+                  <span className="font-semibold text-chocolate">
+                    {language === 'EN' ? 'VIP Private Rate (Direct Concierge)' : language === 'FR' ? 'Tarif VIP Privé (Concierge Direct)' : language === 'PT' ? 'Tarifa VIP Privada (Concierge Direto)' : 'Tarifa VIP Privada (Concierge Directo)'}
                   </span>
                 </div>
               </div>

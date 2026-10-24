@@ -348,20 +348,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 })}
               </div>
 
-              {/* Currency Selector */}
-              <div className="flex items-center bg-stone px-3 py-2 rounded border border-chocolate/10 shadow-xs text-xs font-bold text-chocolate">
-                <span className="text-earth mr-2 uppercase text-[10px] tracking-wider">{language === 'EN' ? 'Currency:' : language === 'FR' ? 'Devise :' : language === 'PT' ? 'Moeda:' : 'Moneda:'}</span>
-                <select
-                  value={currency}
-                  onChange={(e) => setCurrency(e.target.value as Currency)}
-                  aria-label="Moneda de visualización"
-                  className="bg-transparent font-bold text-chocolate focus:outline-none cursor-pointer"
-                >
-                  <option value="USD">USD ($)</option>
-                  <option value="EUR">EUR (€)</option>
-                  <option value="CLP">CLP ($)</option>
-                  <option value="PEN">PEN (S/)</option>
-                </select>
+              <div className="flex items-center gap-2 bg-stone px-3 py-2 rounded border border-chocolate/10 shadow-xs text-xs font-bold text-chocolate">
+                <span className="w-2 h-2 rounded-full bg-olive"></span>
+                <span className="uppercase text-[10px] tracking-wider text-earth font-bold">
+                  {language === 'EN' ? 'Bespoke Travel' : language === 'FR' ? 'Voyages Sur Mesure' : language === 'PT' ? 'Viagens Sob Medida' : 'Viajes a Medida'}
+                </span>
               </div>
             </div>
           </div>
@@ -489,15 +480,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   {/* Pie de Tarjeta en Piedra Suave (#E5DFD5) según Manual 7.4 */}
                   <div className="bg-stone p-4 px-6 border-t border-chocolate/10 flex items-center justify-between gap-3">
                     <div className="flex flex-col">
-                      <span className="text-[10px] text-earth uppercase tracking-wider font-semibold">{t.pricePerPax}</span>
-                      <div className="flex items-baseline gap-1">
-                        <span className="font-serif text-2xl font-bold text-chocolate">
-                          {rateInfo.symbol}{convertedPrice.toLocaleString()}
-                        </span>
-                        <span className="text-[11px] font-bold text-earth uppercase">
-                          {currency}
-                        </span>
-                      </div>
+                      <span className="text-[10px] text-terracotta-text uppercase tracking-wider font-bold">
+                        {language === 'EN' ? 'Bespoke Private Tour' : language === 'FR' ? 'Circuit Privé Sur Mesure' : language === 'PT' ? 'Roteiro Privado Sob Medida' : 'Circuito Privado a Medida'}
+                      </span>
+                      <span className="font-serif text-base font-bold text-chocolate">
+                        {language === 'EN' ? 'Custom Quote' : language === 'FR' ? 'Sur Devis' : language === 'PT' ? 'Sob Cotação' : 'Cotización a Medida'}
+                      </span>
                     </div>
 
                     <div className="flex items-center gap-2">
@@ -618,8 +606,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                       <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-stone">
                         <span>{dest.days} {language === 'EN' ? 'suggested days' : language === 'FR' ? 'jours suggérés' : language === 'PT' ? 'dias sugeridos' : 'días sugeridos'}</span>
-                        <span className="font-bold text-white">
-                          +{rateInfo.symbol}{Math.round(dest.costUSD * rateInfo.rate)}
+                        <span className="text-gold font-semibold flex items-center gap-1">
+                          <span className="material-symbols-outlined text-xs">verified</span>
+                          {language === 'EN' ? '4x4 Logistics' : language === 'FR' ? 'Logistique 4x4' : language === 'PT' ? 'Logística 4x4' : 'Logística 4x4'}
                         </span>
                       </div>
                     </div>
@@ -753,7 +742,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
             </div>
 
-            {/* Live Pricing Summary & Launch CTA (Oliva Button) */}
+            {/* Live Route Summary & Action: NO PRECIOS, SOLO COTIZAR Y RESERVAR */}
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-2">
               <div className="flex flex-wrap items-center gap-6">
                 <div className="flex flex-col">
@@ -769,33 +758,27 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase tracking-wider text-stone/70 font-bold">
-                    {t.homeEstimatedBudget}
+                    {language === 'EN' ? 'Selected milestones' : language === 'FR' ? 'Étapes sélectionnées' : language === 'PT' ? 'Marcos selecionados' : 'Hitos seleccionados'}
                   </span>
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-serif text-3xl font-bold text-gold">
-                      {rateInfo.symbol}{convertedLivePrice.toLocaleString()}
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="font-serif text-2xl font-bold text-gold">
+                      {activeDestObjects.length} {language === 'EN' ? 'Destinations' : language === 'FR' ? 'Destinations' : language === 'PT' ? 'Destinos' : 'Destinos'}
                     </span>
-                    <span className="text-xs text-stone font-bold uppercase">
-                      {currency}
+                    <span className="px-2 py-0.5 rounded bg-olive/40 text-[10px] uppercase font-bold text-white border border-olive/60">
+                      {language === 'EN' ? 'Private 4x4' : language === 'FR' ? '4x4 Privé' : language === 'PT' ? '4x4 Privado' : '4x4 Privado'}
                     </span>
                   </div>
                 </div>
-
-                {multiDestDiscountUSD > 0 && (
-                  <div className="text-xs text-white font-semibold bg-olive/30 px-3 py-1 rounded border border-olive/40">
-                    {t.homeCombinedSavings.replace('{amount}', `${rateInfo.symbol}${Math.round(multiDestDiscountUSD * rateInfo.rate)} ${currency}`)}
-                  </div>
-                )}
               </div>
 
-              {/* Direct Link to the Full Route Builder with These Destinations */}
+              {/* Direct Action to Quote and Book */}
               <button
                 type="button"
                 onClick={() => onCustomizeAI()}
                 className="w-full lg:w-auto px-8 py-4 rounded bg-olive hover:bg-olive-deep text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-colors shadow-xs"
               >
                 <span className="material-symbols-outlined text-lg">auto_awesome</span>
-                <span>{t.homeTakeToBuilder}</span>
+                <span>{language === 'EN' ? 'Quote & Book with AI' : language === 'FR' ? 'Devis & Réserver avec l\'IA' : language === 'PT' ? 'Cotar e Reservar com IA' : 'Cotizar y Reservar con IA'}</span>
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
             </div>

@@ -351,8 +351,8 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                         <div className="flex-1">
                           <div className="flex items-center justify-between font-semibold text-chocolate">
                             <span>{extra.name}</span>
-                            <span className="text-terracotta-text font-bold">
-                              +{rateInfo.symbol}{convertedExtra} {currency}
+                            <span className="text-olive font-semibold text-[11px]">
+                              {language === 'EN' ? 'Optional Add-on' : language === 'FR' ? 'Option Additionnelle' : language === 'PT' ? 'Opcional Adicional' : 'Experiencia Opcional'}
                             </span>
                           </div>
                           <p className="text-[11px] text-earth mt-0.5">{extra.description}</p>
@@ -363,67 +363,53 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                 </div>
               </div>
 
-              {/* Financial Calculation Box */}
-              <div className="p-4 bg-stone/25 rounded border border-chocolate/10 space-y-3">
-                <div className="flex items-baseline justify-between">
+              {/* Resumen de Cotización y Reserva (NO PRECIOS, SOLO COTIZAR Y RESERVAR) */}
+              <div className="p-5 bg-stone/25 rounded border border-chocolate/10 space-y-3">
+                <div className="flex items-center justify-between pb-2 border-b border-chocolate/10">
                   <div>
                     <span className="text-[10px] uppercase tracking-wider text-earth font-bold block">
-                      {t.pricePerTraveler}
+                      {language === 'EN' ? 'Quotation status' : language === 'FR' ? 'Statut du devis' : language === 'PT' ? 'Status da cotação' : 'Estado de cotización'}
                     </span>
-                    <div className="flex items-baseline gap-1 mt-0.5">
-                      <span className="font-serif text-3xl font-bold text-chocolate">
-                        {rateInfo.symbol}{pricePerPersonConverted.toLocaleString()}
-                      </span>
-                      <span className="text-xs font-bold text-earth">{currency}</span>
-                    </div>
-                  </div>
-
-                  <div className="text-right">
-                    <span className="text-[10px] text-earth block font-semibold">
-                      {t.totalGroupLabel} ({travelers} pax):
-                    </span>
-                    <span className="font-serif text-xl font-bold text-terracotta-text">
-                      {rateInfo.symbol}{totalGroupConverted.toLocaleString()} {currency}
+                    <span className="font-serif text-lg font-bold text-chocolate">
+                      {language === 'EN' ? 'Bespoke Private Proposal' : language === 'FR' ? 'Proposition Privée Sur Mesure' : language === 'PT' ? 'Proposta Privada Sob Medida' : 'Propuesta Privada a Medida'}
                     </span>
                   </div>
+                  <span className="px-2.5 py-1 rounded bg-olive/15 text-olive text-xs font-bold border border-olive/30 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-olive animate-pulse"></span>
+                    {language === 'EN' ? 'Configured' : language === 'FR' ? 'Configuré' : language === 'PT' ? 'Configurado' : 'Configurado'}
+                  </span>
                 </div>
 
-                {/* Formula Breakdown Details */}
-                <div className="flex flex-col gap-1 text-[11px] text-earth pt-2 border-t border-chocolate/10">
+                <div className="flex flex-col gap-2 text-xs text-earth">
                   <div className="flex justify-between">
-                    <span>{t.baseTour}:</span>
-                    <span>{rateInfo.symbol}{Math.round(baseTourUSD * rateInfo.rate).toLocaleString()}</span>
+                    <span className="text-earth">{t.expeditionersLabel}:</span>
+                    <span className="font-bold text-chocolate">{travelers} {t.personsUnit}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>{t.hotelCategory} ({hotelTier}):</span>
-                    <span>{rateInfo.symbol}{Math.round(hotelUSD * rateInfo.rate).toLocaleString()}</span>
+                    <span className="text-earth">{t.travelMode}:</span>
+                    <span className="font-bold text-chocolate">
+                      {travelMode === 'complete' ? t.completePackage : t.expeditionOnly}
+                    </span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>{t.transfersLogistics}:</span>
-                    <span>{rateInfo.symbol}{Math.round(transfersUSD * rateInfo.rate).toLocaleString()}</span>
-                  </div>
-                  {extrasUSD > 0 && (
-                    <div className="flex justify-between text-terracotta-text">
-                      <span>{t.extraActivities}:</span>
-                      <span>+{rateInfo.symbol}{Math.round(extrasUSD * rateInfo.rate).toLocaleString()}</span>
+                  {travelMode === 'complete' && (
+                    <div className="flex justify-between">
+                      <span className="text-earth">{t.accommodationCategory}:</span>
+                      <span className="font-bold text-terracotta-text uppercase">
+                        {hotelTier === '3star' ? t.comfortTier : hotelTier === '4star' ? t.boutiqueTier : t.luxuryTier}
+                      </span>
                     </div>
                   )}
-                  <div className="flex justify-between font-bold text-chocolate pt-1 border-t border-chocolate/10">
-                    <span>{t.reservationGuarantee}:</span>
-                    <span>{rateInfo.symbol}{depositConverted.toLocaleString()} {currency}</span>
+                  {activeExtras.length > 0 && (
+                    <div className="flex justify-between text-terracotta-text">
+                      <span>{t.extraActivities}:</span>
+                      <span className="font-bold">+{activeExtras.length} {language === 'EN' ? 'selected' : language === 'FR' ? 'sélectionnées' : language === 'PT' ? 'selecionadas' : 'seleccionadas'}</span>
+                    </div>
+                  )}
+                  <div className="pt-2 border-t border-chocolate/10 flex items-center justify-between text-chocolate font-semibold">
+                    <span>{language === 'EN' ? 'Logistics & Safety:' : language === 'FR' ? 'Logistique & Sécurité :' : language === 'PT' ? 'Logística & Segurança:' : 'Logística y Seguridad:'}</span>
+                    <span className="text-olive font-bold">Garmin InReach 24/7</span>
                   </div>
                 </div>
-              </div>
-
-              {/* Profitability Transparency Metric */}
-              <div className="p-3 bg-stone/40 rounded border border-chocolate/12 text-xs flex items-center justify-between text-chocolate">
-                <div className="flex items-center gap-1.5 font-semibold text-earth">
-                  <span className="material-symbols-outlined text-sm text-gold-text">analytics</span>
-                  <span>{t.estimatedAgencyMargin}:</span>
-                </div>
-                <span className="font-mono font-bold text-chocolate">
-                  ${estimatedProfitUSD.toLocaleString()} USD
-                </span>
               </div>
 
               {/* Booking Actions */}
@@ -441,8 +427,8 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                   }
                   className="w-full py-3.5 px-4 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors elevation-card flex items-center justify-center gap-2"
                 >
-                  <span className="material-symbols-outlined text-base">credit_card</span>
-                  <span>{t.btnBookGuarantee}</span>
+                  <span className="material-symbols-outlined text-base">verified</span>
+                  <span>{language === 'EN' ? 'Quote & Book' : language === 'FR' ? 'Devis & Réserver' : language === 'PT' ? 'Cotar e Reservar' : 'Cotizar y Reservar'}</span>
                 </button>
 
                 <button

@@ -382,8 +382,9 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                             <span className="material-symbols-outlined text-sm">schedule</span>
                             <span>{dest.daysSuggested} {language === 'EN' ? 'Suggested days' : language === 'FR' ? 'Jours suggérés' : language === 'PT' ? 'Dias sugeridos' : 'Días sugeridos'}</span>
                           </div>
-                          <span className="text-xs font-bold text-chocolate">
-                            +{rateInfo.symbol}{convertedDestCost.toLocaleString()} {currency} / pax
+                          <span className="text-xs font-semibold text-olive flex items-center gap-1">
+                            <span className="material-symbols-outlined text-xs">directions_car</span>
+                            {language === 'EN' ? 'Private 4x4 route' : language === 'FR' ? 'Circuit 4x4 privé' : language === 'PT' ? 'Rota 4x4 privada' : 'Ruta privada 4x4'}
                           </span>
                         </div>
                       </div>
@@ -666,53 +667,41 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                 </div>
               </div>
 
-              {/* Cotización Dinámica */}
+              {/* Resumen de Ruta y Logística (NO PRECIOS, SOLO COTIZAR Y RESERVAR) */}
               <div className="p-5 bg-stone/25 rounded border border-chocolate/10 space-y-4">
-                <div className="flex items-baseline justify-between">
+                <div className="flex items-center justify-between pb-2 border-b border-chocolate/10">
                   <div>
                     <span className="text-[10px] uppercase tracking-wider text-earth font-bold block">
-                      {t.routeTotalQuote}
+                      {language === 'EN' ? 'Bespoke Route Proposal' : language === 'FR' ? 'Proposition d\'itinéraire sur mesure' : language === 'PT' ? 'Proposta de Roteiro Sob Medida' : 'Propuesta de Expedición a Medida'}
                     </span>
-                    <div className="flex items-baseline gap-1 mt-0.5">
-                      <span className="font-serif text-3xl font-bold text-chocolate">
-                        {rateInfo.symbol}{pricePaxConverted.toLocaleString()}
-                      </span>
-                      <span className="text-xs font-bold text-earth">{currency}</span>
-                    </div>
-                  </div>
-
-                  <div className="text-right">
-                    <span className="text-[10px] text-earth block font-semibold">
-                      {t.totalGroup} ({travelers} pax):
-                    </span>
-                    <span className="font-serif text-xl font-bold text-terracotta-text">
-                      {rateInfo.symbol}{totalGroupConverted.toLocaleString()} {currency}
+                    <span className="font-serif text-lg font-bold text-chocolate">
+                      {language === 'EN' ? 'Private Route & Logistics' : language === 'FR' ? 'Itinéraire & Logistique Privés' : language === 'PT' ? 'Roteiro & Logística Privados' : 'Ruta y Logística Privada'}
                     </span>
                   </div>
+                  <span className="px-2.5 py-1 rounded bg-olive/15 text-olive text-xs font-bold border border-olive/30">
+                    {days} {language === 'EN' ? 'Days' : language === 'FR' ? 'Jours' : language === 'PT' ? 'Dias' : 'Días'}
+                  </span>
                 </div>
 
-                {/* Desglose Transparente */}
-                <div className="flex flex-col gap-1.5 pt-3 border-t border-chocolate/10 text-xs text-earth">
+                <div className="flex flex-col gap-2 text-xs text-earth">
                   <div className="flex justify-between">
-                    <span>· {t.subtotalLogistics}</span>
-                    <span className="font-bold text-chocolate">
-                      {rateInfo.symbol}{logisticsConverted.toLocaleString()} {currency}
-                    </span>
+                    <span className="text-earth">{t.paramTravelers}:</span>
+                    <span className="font-bold text-chocolate">{travelers} {travelers > 1 ? (language === 'EN' ? 'Travelers' : language === 'FR' ? 'Voyageurs' : language === 'PT' ? 'Pessoas' : 'Personas') : (language === 'EN' ? 'Traveler' : language === 'FR' ? 'Voyageur' : language === 'PT' ? 'Pessoa' : 'Persona')}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>· {t.subtotalHotels}</span>
-                    <span className="font-bold text-chocolate">
-                      {rateInfo.symbol}{hotelsConverted.toLocaleString()} {currency}
-                    </span>
+                    <span className="text-earth">{t.paramMode}:</span>
+                    <span className="font-bold text-chocolate">{tripMode === 'complete' ? t.completePackage : t.expeditionOnly}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>· {t.subtotalTickets}</span>
-                    <span className="font-bold text-chocolate">
-                      {rateInfo.symbol}{ticketsConverted.toLocaleString()} {currency}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>· {language === 'EN' ? 'Satellite insurance & 24/7 Altiplano assistance' : language === 'FR' ? 'Assurance satellite et assistance altiplano 24/7' : language === 'PT' ? 'Seguro satélite e assistência altiplano 24/7' : 'Seguro satelital y asistencia altiplano 24/7'}</span>
+                  {tripMode === 'complete' && (
+                    <div className="flex justify-between">
+                      <span className="text-earth">{t.paramTier}:</span>
+                      <span className="font-bold text-terracotta-text uppercase">
+                        {tier === '3star' ? t.comfortTier : tier === '4star' ? t.boutiqueTier : t.luxuryTier}
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex justify-between pt-2 border-t border-chocolate/10 font-semibold text-chocolate">
+                    <span>{language === 'EN' ? 'Satellite support & emergency 24/7' : language === 'FR' ? 'Support satellite & urgence 24/7' : language === 'PT' ? 'Suporte satelital & emergência 24/7' : 'Soporte satelital y emergencia 24/7'}:</span>
                     <span className="font-bold text-olive">{t.satelliteIncluded}</span>
                   </div>
                 </div>
@@ -748,8 +737,8 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                   onClick={() => onOpenCheckout(currentCustomPackage, travelers, tier, tripMode)}
                   className="w-full py-3.5 px-4 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors elevation-card flex items-center justify-center gap-2"
                 >
-                  <span className="material-symbols-outlined text-base">credit_card</span>
-                  <span>{t.btnBookGuarantee}</span>
+                  <span className="material-symbols-outlined text-base">verified</span>
+                  <span>{language === 'EN' ? 'Quote & Book' : language === 'FR' ? 'Devis & Réserver' : language === 'PT' ? 'Cotar e Reservar' : 'Cotizar y Reservar'}</span>
                 </button>
 
                 <div className="grid grid-cols-2 gap-2">

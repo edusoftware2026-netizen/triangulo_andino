@@ -117,14 +117,14 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-serif text-xl font-bold tracking-tight">
-                  {t.securePaymentStripe}
+                  {language === 'EN' ? 'Quote & Booking Confirmation' : language === 'FR' ? 'Confirmation Devis & Réservation' : language === 'PT' ? 'Confirmação de Cotação e Reserva' : 'Confirmación de Cotización y Reserva'}
                 </h3>
                 <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] tracking-wider uppercase font-semibold text-gold">
                   {t.sslEncrypted}
                 </span>
               </div>
               <p className="text-xs text-stone/80 mt-0.5">
-                {t.expeditionGuaranteeSubtitle}
+                {language === 'EN' ? 'Priority booking request with 24/7 Concierge assignment' : language === 'FR' ? 'Demande de réservation prioritaire avec Concierge 24/7' : language === 'PT' ? 'Solicitação de reserva prioritária com Concierge 24/7' : 'Solicitud prioritaria con asignación directa de Concierge 24/7'}
               </p>
             </div>
           </div>
@@ -138,27 +138,24 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
           </button>
         </div>
 
-        {/* Financial Summary Strip */}
-        <div className="bg-stone/30 p-4 px-6 border-b border-chocolate/10 flex items-center justify-between">
+        {/* Expedition Specification Strip (NO PRECIOS, SOLO COTIZAR Y RESERVAR) */}
+        <div className="bg-stone/30 p-4 px-6 border-b border-chocolate/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <span className="text-[11px] text-earth uppercase font-semibold block">
-              {t.payNowLabel}
+            <span className="text-[10px] text-earth uppercase font-semibold tracking-wider block">
+              {language === 'EN' ? 'Expedition to quote & reserve' : language === 'FR' ? 'Expédition à deviser et réserver' : language === 'PT' ? 'Expedição para cotar e reservar' : 'Expedición a cotizar y reservar'}:
             </span>
-            <div className="flex items-baseline gap-1 mt-0.5">
-              <span className="text-2xl font-bold text-terracotta-text">
-                {rateInfo.symbol}{depositConverted.toLocaleString()}
-              </span>
-              <span className="text-xs font-bold text-earth">{currency}</span>
+            <div className="font-serif text-lg font-bold text-chocolate mt-0.5">
+              {packageItem.title[language] || packageItem.title.ES}
             </div>
           </div>
 
-          <div className="text-right text-xs">
-            <span className="text-earth block">{t.totalExpeditionLabel} ({travelers} pax):</span>
-            <span className="font-bold text-chocolate">
-              {rateInfo.symbol}{totalConverted.toLocaleString()} {currency}
+          <div className="text-left sm:text-right text-xs">
+            <span className="text-earth block font-medium">
+              {travelers} {language === 'EN' ? 'Travelers' : language === 'FR' ? 'Voyageurs' : language === 'PT' ? 'Viajantes' : 'Viajeros'} · {travelMode === 'complete' ? (language === 'EN' ? 'Complete Package' : language === 'FR' ? 'Forfait Complet' : language === 'PT' ? 'Pacote Completo' : 'Paquete Completo') : (language === 'EN' ? 'Expedition Only' : language === 'FR' ? 'Expédition Seule' : language === 'PT' ? 'Apenas Expedição' : 'Solo Expedición')}
             </span>
-            <span className="text-[10px] text-earth/80 block mt-0.5">
-              {t.remainingBalanceLabel}: {rateInfo.symbol}{remainingConverted.toLocaleString()}
+            <span className="text-olive font-bold inline-flex items-center gap-1 mt-0.5">
+              <span className="w-2 h-2 rounded-full bg-olive animate-pulse"></span>
+              {language === 'EN' ? 'Priority Quota Blocked' : language === 'FR' ? 'Place Prioritaire Bloquée' : language === 'PT' ? 'Vaga Prioritária Bloqueada' : 'Cupo Prioritario Bloqueado'}
             </span>
           </div>
         </div>
@@ -303,9 +300,9 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
               </>
             ) : (
               <>
-                <span className="material-symbols-outlined text-base">lock</span>
+                <span className="material-symbols-outlined text-base">verified</span>
                 <span>
-                  {t.confirmBookingBtn} ({rateInfo.symbol}{depositConverted.toLocaleString()} {currency})
+                  {language === 'EN' ? 'Confirm Quote & Booking' : language === 'FR' ? 'Confirmer Devis & Réservation' : language === 'PT' ? 'Confirmar Cotação e Reserva' : 'Confirmar Cotización y Reserva'}
                 </span>
               </>
             )}

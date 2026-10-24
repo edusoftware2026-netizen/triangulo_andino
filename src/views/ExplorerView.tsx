@@ -417,22 +417,22 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                           </p>
                         </div>
 
-                        {/* Card Piedra Footer */}
-                        <div className="pt-3 border-t border-chocolate/8 flex items-baseline justify-between">
+                        {/* Card Piedra Footer: NO PRECIOS, SOLO COTIZAR Y RESERVAR */}
+                        <div className="pt-3 border-t border-chocolate/8 flex items-center justify-between">
                           <div>
-                            <span className="text-[10px] uppercase text-earth block">
-                              Desde:
+                            <span className="text-[10px] uppercase text-terracotta-text font-bold block">
+                              {language === 'EN' ? 'Bespoke Tour' : language === 'FR' ? 'Circuit Sur Mesure' : language === 'PT' ? 'Roteiro Sob Medida' : 'Circuito a Medida'}
                             </span>
-                            <span className="font-serif text-xl font-bold text-chocolate">
-                              {rateInfo.symbol}{convertedPrice.toLocaleString()} {currency}
+                            <span className="font-serif text-sm font-bold text-chocolate">
+                              {language === 'EN' ? 'Private Quote' : language === 'FR' ? 'Sur Devis' : language === 'PT' ? 'Sob Cotação' : 'Cotización Privada'}
                             </span>
                           </div>
                           <button
                             type="button"
                             onClick={() => onSelectPackage(pkg)}
-                            className="px-3.5 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors"
+                            className="px-3.5 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors shadow-xs"
                           >
-                            Ver expedición
+                            {language === 'EN' ? 'Quote & Book' : language === 'FR' ? 'Devis & Réserver' : language === 'PT' ? 'Cotar e Reservar' : 'Cotizar y Reservar'}
                           </button>
                         </div>
                       </div>

@@ -106,19 +106,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </div>
 
-          {/* Currency Switcher in Stone Container */}
-          <div className="hidden sm:flex items-center bg-stone px-2 py-1 rounded text-xs font-bold border border-chocolate/10">
-            <select
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value as Currency)}
-              aria-label="Moneda"
-              className="bg-transparent text-chocolate focus:outline-none cursor-pointer"
-            >
-              <option value="USD">USD ($)</option>
-              <option value="EUR">EUR (€)</option>
-              <option value="CLP">CLP ($)</option>
-              <option value="PEN">PEN (S/)</option>
-            </select>
+          {/* Bespoke Travel Status Tag */}
+          <div className="hidden sm:flex items-center gap-1.5 bg-stone px-2.5 py-1.5 rounded text-xs font-bold border border-chocolate/10 text-chocolate">
+            <span className="w-1.5 h-1.5 rounded-full bg-olive"></span>
+            <span className="text-[11px] uppercase tracking-wider font-bold">
+              {language === 'EN' ? 'Bespoke' : language === 'FR' ? 'Sur Mesure' : language === 'PT' ? 'Sob Medida' : 'A Medida'}
+            </span>
           </div>
 
           {/* Concierge Action Button (Oliva, radio 4px) */}
@@ -173,17 +166,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
 
           <div className="pt-3 border-t border-chocolate/10 flex items-center justify-between">
-            <span className="text-xs font-semibold text-earth">{language === 'EN' ? 'Active currency:' : language === 'FR' ? 'Devise active :' : language === 'PT' ? 'Moeda ativa:' : 'Moneda activa:'}</span>
-            <select
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value as Currency)}
-              className="bg-stone px-2 py-1 rounded text-xs font-bold text-chocolate border border-chocolate/10"
-            >
-              <option value="USD">USD ($)</option>
-              <option value="EUR">EUR (€)</option>
-              <option value="CLP">CLP ($)</option>
-              <option value="PEN">PEN (S/)</option>
-            </select>
+            <span className="text-xs font-semibold text-earth">{language === 'EN' ? 'Expedition mode:' : language === 'FR' ? 'Mode expédition :' : language === 'PT' ? 'Modo de expedição:' : 'Modalidad de viaje:'}</span>
+            <span className="px-2 py-1 rounded text-xs font-bold text-chocolate bg-stone border border-chocolate/10">
+              {language === 'EN' ? 'Private & Bespoke' : language === 'FR' ? 'Privé & Sur Mesure' : language === 'PT' ? 'Privado & Sob Medida' : 'Privado y a Medida'}
+            </span>
           </div>
 
           <button
