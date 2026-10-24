@@ -237,7 +237,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
     <div className="w-full bg-canvas min-h-screen pt-20 pb-20 text-chocolate">
       {/* TOP HEADER CONCIERGE BRANDING */}
       <section className="relative w-full bg-stone/25 pb-12 pt-8 border-b border-chocolate/10">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-4">
+        <div className="max-w-360 mx-auto px-6 lg:px-12 flex flex-col gap-4">
           {/* Top Status & Dual-mode Badges */}
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white elevation-card border border-chocolate/10">
@@ -300,7 +300,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
       </section>
 
       {/* MAIN INTERACTIVE WORKFLOW */}
-      <section className="max-w-[1440px] mx-auto w-full px-6 lg:px-12 py-10">
+      <section className="max-w-360 mx-auto w-full px-6 lg:px-12 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* LEFT CONFIGURATION COLUMN */}
           <div className="lg:col-span-7 flex flex-col gap-8">

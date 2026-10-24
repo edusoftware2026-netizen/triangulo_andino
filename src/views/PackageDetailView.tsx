@@ -68,7 +68,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
 
   return (
     <div className="w-full bg-canvas min-h-screen pt-24 pb-20 text-chocolate">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-8">
+      <div className="max-w-360 mx-auto px-6 lg:px-12 flex flex-col gap-8">
         {/* Navigation Breadcrumb */}
         <div className="flex items-center gap-2 text-xs text-earth">
           <button
@@ -94,7 +94,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             alt={packageItem.title[language] || packageItem.title.ES}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/65 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-chocolate via-chocolate/65 to-transparent" />
 
           <div className="relative z-10 max-w-4xl flex flex-col gap-3">
             <div className="flex flex-wrap items-center gap-2">

@@ -84,7 +84,7 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
 
   return (
     <div className="w-full bg-canvas min-h-screen pt-24 pb-20 text-chocolate">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-10">
+      <div className="max-w-360 mx-auto px-6 lg:px-12 flex flex-col gap-10">
         {/* Header Hero */}
         <div className="flex flex-col gap-3 max-w-4xl">
           <div className="flex items-center gap-2">

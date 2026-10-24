@@ -137,11 +137,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
         />
 
         {/* Cinematic Scrims: Warm Vignette Gradient (#2E2520) for Crisp Typographic Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2E2520]/95 via-[#2E2520]/60 to-black/35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2E2520]/90 via-[#2E2520]/45 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#2E2520]/95 via-[#2E2520]/60 to-black/35" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#2E2520]/90 via-[#2E2520]/45 to-transparent" />
 
         {/* Hero Narrative Content */}
-        <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full z-10 flex flex-col gap-4 pt-4">
+        <div className="relative max-w-360 mx-auto px-6 lg:px-12 w-full z-10 flex flex-col gap-4 pt-4">
           {/* Editorial Kicker */}
           <div className="flex items-center gap-3 text-gold font-sans">
             <span className="text-xs uppercase tracking-[0.22em] font-bold">{t.heroTag}</span><span className="text-white/40">·</span><span className="text-xs uppercase tracking-widest text-stone font-medium">{t.heroSubtitle}</span><span className="text-white/40">·</span><span className="text-xs text-gold/90 font-medium">{t.pillHotels}</span>
@@ -162,7 +162,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
 
         {/* 2. FLOATING SEARCH CARD (NIVEL 2 ELEVATION, RADIUS 4PX, OLIVE CTA) */}
-        <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full z-20 mt-6">
+        <div className="relative max-w-360 mx-auto px-6 lg:px-12 w-full z-20 mt-6">
           <div className="bg-white/95 backdrop-blur-md rounded-lg elevation-floating border border-chocolate/12 p-5 lg:p-7">
             {/* Search Tabs */}
             <div className="flex flex-wrap items-center gap-2 pb-5 border-b border-chocolate/10">
@@ -319,7 +319,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 3. VISUAL PACKAGE CARDS (REDISENO ANATOMICO OFICIAL 7.4) */}
       <section id="catalog-section" className="w-full bg-canvas py-20 border-b border-chocolate/12">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="max-w-360 mx-auto px-6 lg:px-12">
           {/* Header & Filter Bar */}
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pb-10 border-b border-chocolate/12">
             <div className="flex flex-col gap-2 max-w-2xl">
@@ -423,7 +423,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     )}
 
                     {/* Subtle warm vignette on bottom */}
-                    <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-chocolate/70 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-0 inset-x-0 h-16 bg-linear-to-t from-chocolate/70 to-transparent pointer-events-none" />
 
                     {/* Carousel Dots */}
                     {gallery.length > 1 && (
@@ -533,7 +533,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         {/* Subtle Map Ambient Grid */}
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
 
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col gap-12">
+        <div className="max-w-360 mx-auto px-6 lg:px-12 relative z-10 flex flex-col gap-12">
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 pb-6 border-b border-white/10">
             <div className="flex flex-col gap-2 max-w-3xl">
@@ -585,7 +585,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-chocolate via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-chocolate via-transparent to-transparent" />
 
                       {/* Flag and Country Badge */}
                       <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-chocolate/85 backdrop-blur text-white text-[10px] uppercase font-bold tracking-wider">
@@ -805,7 +805,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 5. HOTELES EMBLEMÁTICOS & EXPERIENCIAS DE ALTURA */}
       <section id="hotels-section" className="w-full bg-canvas py-20 border-b border-chocolate/12">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+        <div className="max-w-360 mx-auto px-6 lg:px-12 flex flex-col gap-12">
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6">
             <div className="flex flex-col gap-2 max-w-2xl">
@@ -1012,7 +1012,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 6. CONCIERGE & SAFETY GUARANTEE (CHOCOLATE CARD EMBEDDED) */}
       <section className="w-full bg-canvas py-16">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="max-w-360 mx-auto px-6 lg:px-12">
           <div className="bg-chocolate text-white rounded-lg p-8 lg:p-12 border border-chocolate/20 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex flex-col gap-3 max-w-2xl">
               <span className="text-xs uppercase tracking-widest text-gold font-bold">
