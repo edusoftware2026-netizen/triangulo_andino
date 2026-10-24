@@ -137,8 +137,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
         />
 
         {/* Cinematic Scrims: Warm Vignette Gradient (#2E2520) for Crisp Typographic Contrast */}
-        <div className="absolute inset-0 bg-linear-to-t from-[#2E2520]/95 via-[#2E2520]/60 to-black/35" />
-        <div className="absolute inset-0 bg-linear-to-r from-[#2E2520]/90 via-[#2E2520]/45 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-scrim/95 via-scrim/60 to-black/35" />
+        <div className="absolute inset-0 bg-linear-to-r from-scrim/90 via-scrim/45 to-transparent" />
 
         {/* Hero Narrative Content */}
         <div className="relative max-w-360 mx-auto px-6 lg:px-12 w-full z-10 flex flex-col gap-4 pt-4">
@@ -150,13 +150,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Master Headline (Sentence case) */}
           <div className="max-w-4xl flex flex-col gap-2.5">
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.08] tracking-tight">
-              Travesías privadas al{' '}
+              {t.heroTitle1}{' '}
               <span className="italic font-light text-gold font-serif">
-                techo del mundo
+                {t.heroTitle2}
               </span>
             </h1>
             <p className="text-sm sm:text-lg text-white/90 font-light max-w-2xl leading-relaxed">
-              Descubre la inmensidad del Salar de Uyuni, los cañones de Atacama y la gloria de Machu Picchu en vehículos 4x4 satelitales con logística médica y curaduría cinco estrellas.
+              {t.heroDesc}
             </p>
           </div>
         </div>
@@ -220,10 +220,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   aria-label="Destino Andino"
                   className="w-full bg-canvas border border-outline px-3.5 py-3 rounded text-xs font-semibold text-chocolate focus:outline-none focus:ring-2 focus:ring-olive transition-all cursor-pointer"
                 >
-                  <option value="all">Cualquier circuito (Todos)</option>
-                  <option value="trilogia">Gran Trilogía (Atacama + Uyuni + Cusco)</option>
-                  <option value="atacama_uyuni">Altiplano & Salares (Chile + Bolivia)</option>
-                  <option value="machupicchu">Cultura Inca & Titicaca (Bolivia + Perú)</option>
+                  <option value="all">{language === 'EN' ? 'Any circuit (All)' : language === 'FR' ? 'Tous les circuits' : language === 'PT' ? 'Qualquer circuito (Todos)' : 'Cualquier circuito (Todos)'}</option>
+                  <option value="trilogia">{language === 'EN' ? 'Grand Trilogy (Atacama + Uyuni + Cusco)' : language === 'FR' ? 'Grande Trilogie (Atacama + Uyuni + Cusco)' : language === 'PT' ? 'Grande Trilogia (Atacama + Uyuni + Cusco)' : 'Gran Trilogía (Atacama + Uyuni + Cusco)'}</option>
+                  <option value="atacama_uyuni">{language === 'EN' ? 'Highlands & Salt Flats (Chile + Bolivia)' : language === 'FR' ? 'Hauts Plateaux & Salars (Chili + Bolivie)' : language === 'PT' ? 'Planalto & Salares (Chile + Bolívia)' : 'Altiplano & Salares (Chile + Bolivia)'}</option>
+                  <option value="machupicchu">{language === 'EN' ? 'Inca Culture & Titicaca (Bolivia + Peru)' : language === 'FR' ? 'Culture Inca & Titicaca (Bolivie + Pérou)' : language === 'PT' ? 'Cultura Inca & Titicaca (Bolívia + Peru)' : 'Cultura Inca & Titicaca (Bolivia + Perú)'}</option>
                 </select>
               </div>
 
@@ -239,11 +239,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   aria-label="Duración"
                   className="w-full bg-canvas border border-outline px-3.5 py-3 rounded text-xs font-semibold text-chocolate focus:outline-none focus:ring-2 focus:ring-olive transition-all cursor-pointer"
                 >
-                  <option value="all">Cualquier duración</option>
-                  <option value="8">8 días (Inmersión salares)</option>
-                  <option value="10">10 días (Itinerario expreso)</option>
-                  <option value="14">14 días (Experiencia completa)</option>
-                  <option value="21">21 días (Gran travesía andina)</option>
+                  <option value="all">{language === 'EN' ? 'Any duration' : language === 'FR' ? 'Toutes durées' : language === 'PT' ? 'Qualquer duração' : 'Cualquier duración'}</option>
+                  <option value="8">{language === 'EN' ? '8 days (Salt flats immersion)' : language === 'FR' ? '8 jours (Immersion salars)' : language === 'PT' ? '8 dias (Imersão salares)' : '8 días (Inmersión salares)'}</option>
+                  <option value="10">{language === 'EN' ? '10 days (Express itinerary)' : language === 'FR' ? '10 jours (Itinéraire express)' : language === 'PT' ? '10 dias (Itinerário expresso)' : '10 días (Itinerario expreso)'}</option>
+                  <option value="14">{language === 'EN' ? '14 days (Full experience)' : language === 'FR' ? '14 jours (Expérience complète)' : language === 'PT' ? '14 dias (Experiência completa)' : '14 días (Experiencia completa)'}</option>
+                  <option value="21">{language === 'EN' ? '21 days (Grand Andean expedition)' : language === 'FR' ? '21 jours (Grande traversée andine)' : language === 'PT' ? '21 dias (Grande travessia andina)' : '21 días (Gran travesía andina)'}</option>
                 </select>
               </div>
 
@@ -282,7 +282,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   <span className="material-symbols-outlined text-base text-olive">
                     group
                   </span>
-                  Número de viajeros
+                  {language === 'EN' ? 'Number of travelers' : language === 'FR' ? 'Nombre de voyageurs' : language === 'PT' ? 'Número de viajantes' : 'Número de viajeros'}
                 </label>
                 <select
                   value={searchTravelers}
@@ -290,10 +290,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   aria-label="Número de Viajeros"
                   className="w-full bg-canvas border border-outline px-3.5 py-3 rounded text-xs font-semibold text-chocolate focus:outline-none focus:ring-2 focus:ring-olive transition-all cursor-pointer"
                 >
-                  <option value="1">1 viajero (Privado solo)</option>
-                  <option value="2">2 viajeros (En pareja)</option>
-                  <option value="3">3-4 viajeros (Grupo amigos)</option>
-                  <option value="5">5+ viajeros (Familia / delegación)</option>
+                  <option value="1">{language === 'EN' ? '1 traveler (Solo private)' : language === 'FR' ? '1 voyageur (Solo privé)' : language === 'PT' ? '1 viajante (Privado solo)' : '1 viajero (Privado solo)'}</option>
+                  <option value="2">{language === 'EN' ? '2 travelers (Couple)' : language === 'FR' ? '2 voyageurs (Couple)' : language === 'PT' ? '2 viajantes (Casal)' : '2 viajeros (En pareja)'}</option>
+                  <option value="3">{language === 'EN' ? '3-4 travelers (Friends group)' : language === 'FR' ? '3-4 voyageurs (Groupe d\'amis)' : language === 'PT' ? '3-4 viajantes (Grupo amigos)' : '3-4 viajeros (Grupo amigos)'}</option>
+                  <option value="5">{language === 'EN' ? '5+ travelers (Family / delegation)' : language === 'FR' ? '5+ voyageurs (Famille / délégation)' : language === 'PT' ? '5+ viajantes (Família / delegação)' : '5+ viajeros (Familia / delegación)'}</option>
                 </select>
               </div>
 
@@ -350,7 +350,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
               {/* Currency Selector */}
               <div className="flex items-center bg-stone px-3 py-2 rounded border border-chocolate/10 shadow-xs text-xs font-bold text-chocolate">
-                <span className="text-earth mr-2 uppercase text-[10px] tracking-wider">Moneda:</span>
+                <span className="text-earth mr-2 uppercase text-[10px] tracking-wider">{language === 'EN' ? 'Currency:' : language === 'FR' ? 'Devise :' : language === 'PT' ? 'Moeda:' : 'Moneda:'}</span>
                 <select
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value as Currency)}
@@ -445,10 +445,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     <div className="flex flex-col gap-2">
                       <div className="flex items-center justify-between">
                         <span className="text-[11px] uppercase tracking-widest text-terracotta-text font-bold">
-                          {pkg.isCustomAI ? '✨ Generado por IA' : 'Circuito insignia'}
+                          {pkg.isCustomAI ? (language === 'EN' ? '✨ AI Generated' : language === 'FR' ? '✨ Généré par IA' : language === 'PT' ? '✨ Gerado por IA' : '✨ Generado por IA') : (language === 'EN' ? 'Signature circuit' : language === 'FR' ? 'Circuit signature' : language === 'PT' ? 'Circuito insígnia' : 'Circuito insignia')}
                         </span>
                         <span className="text-xs text-earth font-medium">
-                          Dificultad {pkg.difficulty}
+                          {language === 'EN' ? 'Difficulty' : language === 'FR' ? 'Difficulté' : language === 'PT' ? 'Dificuldade' : 'Dificultad'} {pkg.difficulty}
                         </span>
                       </div>
 
@@ -469,7 +469,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       </div>
                       <div className="flex items-center gap-1.5 text-chocolate justify-end">
                         <span className="material-symbols-outlined text-sm text-olive">schedule</span>
-                        <span className="font-semibold">{pkg.days} días / {pkg.nights} noches</span>
+                        <span className="font-semibold">{pkg.days} {language === 'EN' ? 'days' : language === 'FR' ? 'jours' : language === 'PT' ? 'dias' : 'días'} / {pkg.nights} {language === 'EN' ? 'nights' : language === 'FR' ? 'nuits' : language === 'PT' ? 'noites' : 'noches'}</span>
                       </div>
                     </div>
 
@@ -506,7 +506,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         onClick={() => onSelectPackage(pkg)}
                         className="py-2.5 px-4 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors shadow-xs"
                       >
-                        Ver expedición
+                        {t.viewDetails}
                       </button>
                       <button
                         type="button"
@@ -531,7 +531,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 4. LA BANDA CHOCOLATE OFICIAL DE LA PÁGINA (ARMADOR MULTI-DESTINO INTERACTIVO) */}
       <section className="w-full bg-chocolate text-white py-20 relative overflow-hidden">
         {/* Subtle Map Ambient Grid */}
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[24px_24px]" />
 
         <div className="max-w-360 mx-auto px-6 lg:px-12 relative z-10 flex flex-col gap-12">
           {/* Section Header */}
@@ -539,21 +539,21 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="flex flex-col gap-2 max-w-3xl">
               <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold font-bold">
                 <span className="material-symbols-outlined text-sm">auto_awesome</span>
-                Herramienta interactiva en vivo
+                {t.homeRoutePlannerKicker}
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal">
-                Armador multi-destino con trazado de ruta
+                {t.homeRoutePlannerTitle}
               </h2>
               <p className="text-sm sm:text-base text-stone/90 leading-relaxed">
-                Marca los hitos que sueñas visitar. Nuestro motor geográfico traza la ruta óptima de sur a norte, conecta los cruces fronterizos y calcula tu cotización en vivo con descuento multi-país.
+                {t.homeRoutePlannerDesc}
               </p>
             </div>
 
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded border border-white/15">
               <span className="material-symbols-outlined text-gold text-xl">satellite_alt</span>
               <div className="flex flex-col text-xs">
-                <span className="font-bold text-white">Logística satelital Garmin InReach</span>
-                <span className="text-stone/80">Chile · Bolivia · Perú sincronizados</span>
+                <span className="font-bold text-white">{t.homeSatelliteBadge}</span>
+                <span className="text-stone/80">{t.homeSyncCountries}</span>
               </div>
             </div>
           </div>
@@ -561,7 +561,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Destination Selector Visual Cards (Radius 8px, Chocolate Layering) */}
           <div className="flex flex-col gap-4">
             <h3 className="text-xs uppercase tracking-widest text-stone font-bold">
-              1. Selecciona los hitos que deseas unir en tu expedición:
+              {t.homeSelectMilestones}
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -617,7 +617,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       </div>
 
                       <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-stone">
-                        <span>{dest.days} días sugeridos</span>
+                        <span>{dest.days} {language === 'EN' ? 'suggested days' : language === 'FR' ? 'jours suggérés' : language === 'PT' ? 'dias sugeridos' : 'días sugeridos'}</span>
                         <span className="font-bold text-white">
                           +{rateInfo.symbol}{Math.round(dest.costUSD * rateInfo.rate)}
                         </span>
@@ -638,10 +638,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </span>
                 <div>
                   <h4 className="font-serif text-xl font-semibold text-white">
-                    Trazado altimétrico de tu ruta en vivo
+                    {t.homeRouteElevationTitle}
                   </h4>
                   <span className="text-xs text-stone/80">
-                    Conexión geográfica automatizada: {activeDestObjects.map((d) => d.name).join(' ➔ ')}
+                    {t.homeAutoGeoConnection}: {activeDestObjects.map((d) => d.name).join(' ➔ ')}
                   </span>
                 </div>
               </div>
@@ -649,7 +649,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               {selectedHomeDests.length >= 3 && (
                 <span className="px-3 py-1 rounded bg-olive/30 text-white border border-olive/50 text-xs font-bold flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-sm">percent</span>
-                  15% Bonificación multi-destino aplicada
+                  {t.homeBonusApplied}
                 </span>
               )}
             </div>
@@ -732,23 +732,23 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-white/10 text-xs text-stone/90">
                 <span className="flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-olive"></span>
-                  Punto de partida: {activeDestObjects[0]?.name || 'Atacama'}
+                  {t.homeStartingPoint}: {activeDestObjects[0]?.name || 'Atacama'}
                 </span>
                 {selectedHomeDests.includes('uyuni') && selectedHomeDests.includes('atacama') && (
                   <span className="text-gold font-semibold flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">badge</span>
-                    Cruce 4x4 Hito Cajón (Chile ➔ Bolivia)
+                    {t.homeBorderCrossing1}
                   </span>
                 )}
                 {selectedHomeDests.includes('titicaca') && (selectedHomeDests.includes('machupicchu') || selectedHomeDests.includes('cusco')) && (
                   <span className="text-gold font-semibold flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">badge</span>
-                    Cruce Kasani / Desaguadero (Bolivia ➔ Perú)
+                    {t.homeBorderCrossing2}
                   </span>
                 )}
                 <span className="flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-terracotta"></span>
-                  Término: {activeDestObjects[activeDestObjects.length - 1]?.name || 'Cusco'}
+                  {t.homeEndingPoint}: {activeDestObjects[activeDestObjects.length - 1]?.name || 'Cusco'}
                 </span>
               </div>
             </div>
@@ -758,18 +758,18 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="flex flex-wrap items-center gap-6">
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase tracking-wider text-stone/70 font-bold">
-                    Duración estimada
+                    {t.homeEstimatedDuration}
                   </span>
                   <span className="font-serif text-2xl font-bold text-white">
-                    {liveTotalDays} días / {Math.max(1, liveTotalDays - 1)} noches
+                    {liveTotalDays} {language === 'EN' ? 'days' : language === 'FR' ? 'jours' : language === 'PT' ? 'dias' : 'días'} / {Math.max(1, liveTotalDays - 1)} {language === 'EN' ? 'nights' : language === 'FR' ? 'nuits' : language === 'PT' ? 'noites' : 'noches'}
                   </span>
                 </div>
 
-                <div className="w-[1px] h-10 bg-white/15 hidden sm:block"></div>
+                <div className="w-px h-10 bg-white/15 hidden sm:block"></div>
 
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase tracking-wider text-stone/70 font-bold">
-                    Presupuesto por viajero (Base)
+                    {t.homeEstimatedBudget}
                   </span>
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-serif text-3xl font-bold text-gold">
@@ -783,7 +783,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                 {multiDestDiscountUSD > 0 && (
                   <div className="text-xs text-white font-semibold bg-olive/30 px-3 py-1 rounded border border-olive/40">
-                    Ahorro de {rateInfo.symbol}{Math.round(multiDestDiscountUSD * rateInfo.rate)} {currency} por combinar destinos
+                    {t.homeCombinedSavings.replace('{amount}', `${rateInfo.symbol}${Math.round(multiDestDiscountUSD * rateInfo.rate)} ${currency}`)}
                   </div>
                 )}
               </div>
@@ -795,7 +795,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 className="w-full lg:w-auto px-8 py-4 rounded bg-olive hover:bg-olive-deep text-white text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-colors shadow-xs"
               >
                 <span className="material-symbols-outlined text-lg">auto_awesome</span>
-                <span>Llevar selección al armador IA</span>
+                <span>{t.homeTakeToBuilder}</span>
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
             </div>
@@ -810,13 +810,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6">
             <div className="flex flex-col gap-2 max-w-2xl">
               <span className="text-xs uppercase tracking-[0.2em] text-terracotta-text font-bold">
-                Colección privada
+                {t.homeHotelsKicker}
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-chocolate font-medium">
-                Hoteles emblemáticos & lodges de altura
+                {t.homeHotelsTitle}
               </h2>
               <p className="text-sm text-earth leading-relaxed">
-                Descanso sin concesiones en los confines del planeta. Arquitectura vernácula, muros de sal cristalina tallada a mano y servicio de cinco estrellas a más de 3.600 metros de altitud.
+                {t.homeHotelsDesc}
               </p>
             </div>
 
@@ -914,13 +914,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="pt-10 flex flex-col gap-6 border-t border-chocolate/12">
             <div className="flex flex-col gap-1">
               <span className="text-xs uppercase tracking-[0.2em] text-terracotta-text font-bold">
-                Sensorial & gastronomía
+                {t.homeCulinaryKicker}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-chocolate font-medium">
-                Experiencias culinarias de alta atmósfera
+                {t.homeCulinaryTitle}
               </h3>
               <p className="text-sm text-earth max-w-2xl">
-                Degustaciones maridadas con vinos de altura bolivianos (Tarija), cepas patrimoniales chilenas y cocina de raíces quechuas y aymaras.
+                {t.homeCulinaryDesc}
               </p>
             </div>
 
@@ -940,14 +940,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-lg font-semibold text-chocolate">
-                    Cena astronómica en el desierto
+                    {t.homeStargazingTitle}
                   </h4>
                   <p className="text-xs text-earth mt-1.5 leading-relaxed">
-                    Bajo el cielo más puro y límpido del hemisferio sur. Menú de degustación en 5 pasos maridado con vinos del Valle de Huasco mientras un astrofísico guía la observación con telescopio de alta precisión.
+                    {t.homeStargazingDesc}
                   </p>
                 </div>
                 <div className="mt-auto pt-2 flex items-center text-olive text-xs font-bold gap-1">
-                  <span>Incluido en circuito insignia</span>
+                  <span>{t.homeIncludedBadge}</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </div>
               </div>
@@ -967,14 +967,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-lg font-semibold text-chocolate">
-                    Picnic flotante en el espejo de sal
+                    {t.homePicnicTitle}
                   </h4>
                   <p className="text-xs text-earth mt-1.5 leading-relaxed">
-                    Mesa privada con lencería blanca montada directamente sobre la lámina de agua infinita. Cocina de quinoa real, carne de llama confitada y champagne helado en el corazón del silencio blanco.
+                    {t.homePicnicDesc}
                   </p>
                 </div>
                 <div className="mt-auto pt-2 flex items-center text-olive text-xs font-bold gap-1">
-                  <span>Exclusividad Triángulo Andino</span>
+                  <span>{t.homeExclusiveBadge}</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </div>
               </div>
@@ -994,14 +994,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-lg font-semibold text-chocolate">
-                    Degustación de alturas andinas
+                    {t.homeTastingTitle}
                   </h4>
                   <p className="text-xs text-earth mt-1.5 leading-relaxed">
-                    Exploración culinaria de ecosistemas verticales inspirada en el centro de investigación Mater Iniciativa de Virgilio Martínez. Ingredientes recolectados desde el nivel del mar hasta 4.500 metros.
+                    {t.homeTastingDesc}
                   </p>
                 </div>
                 <div className="mt-auto pt-2 flex items-center text-olive text-xs font-bold gap-1">
-                  <span>Mesa prioritaria reservada</span>
+                  <span>{t.homeReservedBadge}</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </div>
               </div>
@@ -1016,13 +1016,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="bg-chocolate text-white rounded-lg p-8 lg:p-12 border border-chocolate/20 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex flex-col gap-3 max-w-2xl">
               <span className="text-xs uppercase tracking-widest text-gold font-bold">
-                Asistencia de emergencia & confort 24/7
+                {t.footerConciergeSupport}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal">
-                ¿Deseas una ruta inédita o coordinar tu viaje en privado?
+                {t.homeEmergencyBannerTitle}
               </h3>
               <p className="text-xs sm:text-sm text-stone/90 leading-relaxed">
-                Nuestros asesores andinos bilingües y equipo médico de expedición están disponibles para ajustar vuelos locales, permisos de alta montaña y requerimientos de aclimatación.
+                {t.homeEmergencyBannerDesc}
               </p>
             </div>
 
@@ -1033,7 +1033,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 className="w-full sm:w-auto px-6 py-3.5 rounded bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-xs"
               >
                 <span className="material-symbols-outlined text-base">auto_awesome</span>
-                <span>Armar con IA</span>
+                <span>{t.customizeWithAI}</span>
               </button>
 
               <button
@@ -1042,7 +1042,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 className="w-full sm:w-auto px-6 py-3.5 rounded bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors border border-white/20"
               >
                 <span className="material-symbols-outlined text-gold text-base">chat</span>
-                <span>WhatsApp Concierge 24/7</span>
+                <span>{t.concierge247}</span>
               </button>
             </div>
           </div>

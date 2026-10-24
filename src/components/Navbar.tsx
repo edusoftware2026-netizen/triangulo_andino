@@ -173,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
 
           <div className="pt-3 border-t border-chocolate/10 flex items-center justify-between">
-            <span className="text-xs font-semibold text-earth">Moneda activa:</span>
+            <span className="text-xs font-semibold text-earth">{language === 'EN' ? 'Active currency:' : language === 'FR' ? 'Devise active :' : language === 'PT' ? 'Moeda ativa:' : 'Moneda activa:'}</span>
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value as Currency)}
@@ -195,7 +195,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="w-full mt-2 py-3 rounded bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xs transition-colors"
           >
             <span className="material-symbols-outlined text-sm">support_agent</span>
-            <span>Hablar con Concierge 24/7</span>
+            <span>{t.concierge247}</span>
           </button>
         </div>
       )}

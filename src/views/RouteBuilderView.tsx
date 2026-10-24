@@ -380,7 +380,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                         <div className="flex items-center justify-between pt-3 mt-2 border-t border-chocolate/8">
                           <div className="flex items-center gap-1 text-earth text-xs font-medium">
                             <span className="material-symbols-outlined text-sm">schedule</span>
-                            <span>{dest.daysSuggested} Días sugeridos</span>
+                            <span>{dest.daysSuggested} {language === 'EN' ? 'Suggested days' : language === 'FR' ? 'Jours suggérés' : language === 'PT' ? 'Dias sugeridos' : 'Días sugeridos'}</span>
                           </div>
                           <span className="text-xs font-bold text-chocolate">
                             +{rateInfo.symbol}{convertedDestCost.toLocaleString()} {currency} / pax
@@ -413,7 +413,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                       {t.paramDays}
                     </label>
                     <span className="font-serif text-xl text-terracotta-text font-bold">
-                      {days} Días
+                      {days} {language === 'EN' ? 'Days' : language === 'FR' ? 'Jours' : language === 'PT' ? 'Dias' : 'Días'}
                     </span>
                   </div>
                   <input
@@ -439,7 +439,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                       {t.paramTravelers}
                     </label>
                     <span className="font-serif text-xl text-terracotta-text font-bold">
-                      {travelers} {travelers > 1 ? 'Personas' : 'Persona'}
+                      {travelers} {travelers > 1 ? (language === 'EN' ? 'Travelers' : language === 'FR' ? 'Voyageurs' : language === 'PT' ? 'Pessoas' : 'Personas') : (language === 'EN' ? 'Traveler' : language === 'FR' ? 'Voyageur' : language === 'PT' ? 'Pessoa' : 'Persona')}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mt-2">
@@ -484,7 +484,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold uppercase tracking-wider">
-                        Paquete completo (con hotel)
+                        {t.completePackage}
                       </span>
                       <span className="material-symbols-outlined text-sm text-terracotta">
                         {tripMode === 'complete' ? 'check_circle' : 'radio_button_unchecked'}
@@ -506,7 +506,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold uppercase tracking-wider">
-                        Solo expedición y logística (sin hotel)
+                        {t.expeditionOnly}
                       </span>
                       <span className="material-symbols-outlined text-sm text-terracotta">
                         {tripMode === 'expedition' ? 'check_circle' : 'radio_button_unchecked'}
@@ -535,7 +535,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                           : 'bg-stone/25 text-chocolate border-chocolate/8 hover:bg-stone/40'
                       }`}
                     >
-                      <div className="text-xs font-bold">3★ Confort étnico</div>
+                      <div className="text-xs font-bold">{t.comfortTier}</div>
                       <p className="text-[11px] opacity-85 mt-1">Hostales boutique con calefacción y baño privado.</p>
                       <div className="text-[10px] font-bold mt-2 text-stone/80">Estándar regional</div>
                     </button>
@@ -549,7 +549,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                           : 'bg-stone/25 text-chocolate border-chocolate/8 hover:bg-stone/40'
                       }`}
                     >
-                      <div className="text-xs font-bold">4★ Boutique & Sal</div>
+                      <div className="text-xs font-bold">{t.boutiqueTier}</div>
                       <p className="text-[11px] opacity-85 mt-1">Hoteles de sal destacados y casonas coloniales.</p>
                       <div className="text-[10px] font-bold mt-2 text-stone/80">+15% Factor confort</div>
                     </button>
@@ -564,7 +564,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                       }`}
                     >
                       <div className="text-xs font-bold flex items-center justify-between">
-                        <span>5★ High Luxury</span>
+                        <span>{t.luxuryTier}</span>
                         <span className="material-symbols-outlined text-sm">hotel_class</span>
                       </div>
                       <p className="text-[11px] opacity-85 mt-1">Explora Atacama, Palacio de Sal VIP, Monasterio Cusco.</p>
@@ -650,18 +650,18 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-3 bg-stone/25 rounded border border-chocolate/8">
                   <span className="text-[10px] uppercase tracking-wider text-earth font-semibold block">
-                    Duración total
+                    {t.homeEstimatedDuration}
                   </span>
                   <span className="font-serif text-lg font-bold text-chocolate">
-                    {days} Días / {days - 1} Noches
+                    {days} {language === 'EN' ? 'Days' : language === 'FR' ? 'Jours' : language === 'PT' ? 'Dias' : 'Días'} / {days - 1} {language === 'EN' ? 'Nights' : language === 'FR' ? 'Nuits' : language === 'PT' ? 'Noites' : 'Noches'}
                   </span>
                 </div>
                 <div className="p-3 bg-stone/25 rounded border border-chocolate/8">
                   <span className="text-[10px] uppercase tracking-wider text-earth font-semibold block">
-                    Países conectados
+                    {language === 'EN' ? 'Countries connected' : language === 'FR' ? 'Pays connectés' : language === 'PT' ? 'Países conectados' : 'Países conectados'}
                   </span>
                   <span className="font-serif text-lg font-bold text-chocolate">
-                    {countriesConnected} Naciones
+                    {countriesConnected} {language === 'EN' ? 'Nations' : language === 'FR' ? 'Nations' : language === 'PT' ? 'Nações' : 'Naciones'}
                   </span>
                 </div>
               </div>
@@ -712,7 +712,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span>· Seguro satelital y asistencia altiplano 24/7</span>
+                    <span>· {language === 'EN' ? 'Satellite insurance & 24/7 Altiplano assistance' : language === 'FR' ? 'Assurance satellite et assistance altiplano 24/7' : language === 'PT' ? 'Seguro satélite e assistência altiplano 24/7' : 'Seguro satelital y asistencia altiplano 24/7'}</span>
                     <span className="font-bold text-olive">{t.satelliteIncluded}</span>
                   </div>
                 </div>

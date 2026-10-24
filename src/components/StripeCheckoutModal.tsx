@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Package, HotelTier, TravelMode, ExtraActivity, Currency, BookingReservation } from '../types';
+import { Package, HotelTier, TravelMode, ExtraActivity, Currency, BookingReservation, Language } from '../types';
+import { TRANSLATIONS } from '../data/translations';
 import { CURRENCY_RATES, addReservation } from '../data/mockData';
 
 interface StripeCheckoutModalProps {
@@ -11,6 +12,7 @@ interface StripeCheckoutModalProps {
   travelMode: TravelMode;
   selectedExtras: ExtraActivity[];
   currency: Currency;
+  language?: Language;
   onSuccess: (reservation: BookingReservation) => void;
 }
 
@@ -23,8 +25,10 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
   travelMode,
   selectedExtras,
   currency,
+  language = 'ES',
   onSuccess,
 }) => {
+  const t = TRANSLATIONS[language || 'ES'];
   const [leadName, setLeadName] = useState('');
   const [leadEmail, setLeadEmail] = useState('');
   const [leadPhone, setLeadPhone] = useState('+56 9 ');
@@ -113,14 +117,14 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-serif text-xl font-bold tracking-tight">
-                  Pago seguro con Stripe
+                  {t.securePaymentStripe}
                 </h3>
                 <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] tracking-wider uppercase font-semibold text-gold">
-                  256-bit SSL
+                  {t.sslEncrypted}
                 </span>
               </div>
               <p className="text-xs text-stone/80 mt-0.5">
-                Garantía de expedición (20% de depósito inicial)
+                {t.expeditionGuaranteeSubtitle}
               </p>
             </div>
           </div>
@@ -138,7 +142,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
         <div className="bg-stone/30 p-4 px-6 border-b border-chocolate/10 flex items-center justify-between">
           <div>
             <span className="text-[11px] text-earth uppercase font-semibold block">
-              Monto a pagar ahora (20% depósito):
+              {t.payNowLabel}
             </span>
             <div className="flex items-baseline gap-1 mt-0.5">
               <span className="text-2xl font-bold text-terracotta-text">
@@ -149,12 +153,12 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
           </div>
 
           <div className="text-right text-xs">
-            <span className="text-earth block">Total expedición ({travelers} pax):</span>
+            <span className="text-earth block">{t.totalExpeditionLabel} ({travelers} pax):</span>
             <span className="font-bold text-chocolate">
               {rateInfo.symbol}{totalConverted.toLocaleString()} {currency}
             </span>
             <span className="text-[10px] text-earth/80 block mt-0.5">
-              Saldo restante: {rateInfo.symbol}{remainingConverted.toLocaleString()}
+              {t.remainingBalanceLabel}: {rateInfo.symbol}{remainingConverted.toLocaleString()}
             </span>
           </div>
         </div>
@@ -164,7 +168,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
-                Expedicionario principal *
+                {t.leadTraveler} *
               </label>
               <input
                 type="text"
@@ -178,7 +182,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
 
             <div>
               <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
-                Correo electrónico *
+                {t.emailField} *
               </label>
               <input
                 type="email"
@@ -194,7 +198,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
-                WhatsApp satelital *
+                {t.satelliteWhatsapp} *
               </label>
               <input
                 type="tel"
@@ -208,7 +212,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
 
             <div>
               <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
-                Fecha estimada de salida *
+                {t.estimatedDepartureDate} *
               </label>
               <input
                 type="date"
@@ -225,7 +229,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
             <div className="flex items-center justify-between">
               <span className="text-[11px] uppercase tracking-wider font-bold text-earth flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-sm text-olive">credit_card</span>
-                Datos de tarjeta (Stripe Elements Sandbox)
+                {t.cardDataSandbox}
               </span>
               <div className="flex items-center gap-1">
                 <span className="text-[10px] font-bold text-chocolate bg-stone/50 px-1.5 py-0.5 rounded">VISA</span>
@@ -272,15 +276,15 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
           <div className="flex items-center justify-between text-[11px] text-earth pt-1">
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-olive text-sm">check_circle</span>
-              Sin cargos ocultos
+              {t.noHiddenFees}
             </span>
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-olive text-sm">security</span>
-              Garantía Sernatur #7482
+              {t.sernaturWarranty}
             </span>
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-olive text-sm">cached</span>
-              Reprogramable por soroche
+              {t.sorocheFlexible}
             </span>
           </div>
 
@@ -295,13 +299,13 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 <span className="material-symbols-outlined animate-spin text-base">
                   progress_activity
                 </span>
-                <span>Autorizando con Stripe...</span>
+                <span>{t.authorizingStripe}</span>
               </>
             ) : (
               <>
                 <span className="material-symbols-outlined text-base">lock</span>
                 <span>
-                  Confirmar reserva ({rateInfo.symbol}{depositConverted.toLocaleString()} {currency})
+                  {t.confirmBookingBtn} ({rateInfo.symbol}{depositConverted.toLocaleString()} {currency})
                 </span>
               </>
             )}

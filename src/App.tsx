@@ -306,6 +306,7 @@ export default function App() {
         travelMode={checkoutMode}
         selectedExtras={checkoutExtras}
         currency={currency}
+        language={language}
         onSuccess={handleCheckoutSuccess}
       />
 
@@ -313,6 +314,7 @@ export default function App() {
       {voucherModalOpen && activeVoucherReservation && (
         <VoucherModal
           reservation={activeVoucherReservation}
+          language={language}
           onClose={() => setVoucherModalOpen(false)}
         />
       )}

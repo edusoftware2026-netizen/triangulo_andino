@@ -77,7 +77,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             className="hover:text-terracotta-text transition-colors flex items-center gap-1 font-semibold"
           >
             <span className="material-symbols-outlined text-sm">arrow_back</span>
-            <span>Volver al catálogo</span>
+            <span>{t.backToCatalog}</span>
           </button>
           <span className="text-chocolate/20">/</span>
           <span className="text-chocolate font-medium">{packageItem.country}</span>
@@ -102,10 +102,10 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                 {packageItem.country}
               </span>
               <span className="px-3 py-1 rounded bg-terracotta-strong text-white text-xs font-bold uppercase tracking-wider">
-                {packageItem.days} Días / {packageItem.nights} Noches
+                {packageItem.days} {language === 'EN' ? 'Days' : language === 'FR' ? 'Jours' : language === 'PT' ? 'Dias' : 'Días'} / {packageItem.nights} {language === 'EN' ? 'Nights' : language === 'FR' ? 'Nuits' : language === 'PT' ? 'Noites' : 'Noches'}
               </span>
               <span className="px-3 py-1 rounded bg-white/20 backdrop-blur text-white text-xs font-semibold">
-                Altitud máx: {packageItem.maxAltitudeMeters.toLocaleString()} msnm
+                {t.maxAltitudeMetersLabel}: {packageItem.maxAltitudeMeters.toLocaleString()} msnm
               </span>
             </div>
 
@@ -126,7 +126,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-4">
               <h2 className="font-serif text-2xl font-semibold text-chocolate flex items-center gap-2">
                 <span className="material-symbols-outlined text-olive">verified</span>
-                <span>Inclusiones de alta gama y seguridad</span>
+                <span>{t.highEndInclusions}</span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {packageItem.highlights.map((h, idx) => (
@@ -148,7 +148,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                     {t.itineraryDaysTitle}
                   </h2>
                   <p className="text-xs text-earth mt-1">
-                    Estructurado para máxima aclimatación física y óptimos tiempos de paso fronterizo.
+                    {t.acclimationNotice}
                   </p>
                 </div>
                 <span className="material-symbols-outlined text-olive text-2xl">
@@ -178,8 +178,8 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                     </p>
                     {(day.meals || day.transport) && (
                       <div className="pt-2 border-t border-chocolate/8 flex flex-wrap gap-4 text-xs font-semibold text-chocolate">
-                        {day.meals && <span>Comidas: {day.meals}</span>}
-                        {day.transport && <span>Transporte: {day.transport}</span>}
+                        {day.meals && <span>{t.mealsLabel}: {day.meals}</span>}
+                        {day.transport && <span>{t.transportLabel}: {day.transport}</span>}
                       </div>
                     )}
                   </div>
@@ -192,7 +192,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-4">
                 <h3 className="font-serif text-2xl font-semibold text-chocolate flex items-center gap-2">
                   <span className="material-symbols-outlined text-olive">hotel</span>
-                  <span>Hotelería seleccionada para este circuito</span>
+                  <span>{t.selectedHotelsForCircuit}</span>
                 </h3>
                 <div className="grid grid-cols-1 gap-3">
                   {packageItem.recommendedHotels.map((h, i) => (
@@ -214,18 +214,18 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-6">
               <div className="pb-4 border-b border-chocolate/10">
                 <span className="text-[10px] uppercase tracking-widest text-terracotta-text font-bold block">
-                  Cotizador dinámico en tiempo real
+                  {t.realTimeQuoter}
                 </span>
                 <h3 className="font-serif text-2xl font-semibold text-chocolate mt-1">
-                  Configura tu expedición
+                  {t.configureExpedition}
                 </h3>
               </div>
 
               {/* 1. Número de Expedicionarios */}
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-bold uppercase tracking-wider text-chocolate flex justify-between">
-                  <span>Expedicionarios:</span>
-                  <span className="text-terracotta-text font-serif text-base">{travelers} Personas</span>
+                  <span>{t.expeditionersLabel}:</span>
+                  <span className="text-terracotta-text font-serif text-base">{travelers} {t.personsUnit}</span>
                 </label>
                 <div className="flex items-center gap-2 mt-1">
                   <button
@@ -251,7 +251,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               {/* 2. Modalidad de Viaje */}
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-bold uppercase tracking-wider text-chocolate">
-                  Modalidad de viaje
+                  {t.travelMode}
                 </label>
                 <div className="grid grid-cols-2 gap-2 mt-1">
                   <button
@@ -263,7 +263,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                         : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                     }`}
                   >
-                    Paquete completo (con hotel)
+                    {t.completePackage}
                   </button>
                   <button
                     type="button"
@@ -274,7 +274,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                         : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                     }`}
                   >
-                    Solo expedición (sin hotel)
+                    {t.expeditionOnly}
                   </button>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               {travelMode === 'complete' && (
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold uppercase tracking-wider text-chocolate">
-                    Categoría de alojamiento
+                    {t.accommodationCategory}
                   </label>
                   <div className="grid grid-cols-3 gap-2 mt-1">
                     <button
@@ -295,7 +295,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                           : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                       }`}
                     >
-                      3★ Confort
+                      {t.comfortTier}
                     </button>
                     <button
                       type="button"
@@ -306,7 +306,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                           : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                       }`}
                     >
-                      4★ Boutique
+                      {t.boutiqueTier}
                     </button>
                     <button
                       type="button"
@@ -317,7 +317,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                           : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                       }`}
                     >
-                      5★ Luxury
+                      {t.luxuryTier}
                     </button>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               {/* 4. Actividades Extra / Upgrades */}
               <div className="flex flex-col gap-2 pt-2 border-t border-chocolate/10">
                 <label className="text-xs font-bold uppercase tracking-wider text-chocolate">
-                  Experiencias extra opcionales
+                  {t.extraExperiences}
                 </label>
                 <div className="flex flex-col gap-2">
                   {AVAILABLE_EXTRAS.map((extra) => {
@@ -368,7 +368,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                 <div className="flex items-baseline justify-between">
                   <div>
                     <span className="text-[10px] uppercase tracking-wider text-earth font-bold block">
-                      Precio por expedicionario
+                      {t.pricePerTraveler}
                     </span>
                     <div className="flex items-baseline gap-1 mt-0.5">
                       <span className="font-serif text-3xl font-bold text-chocolate">
@@ -380,7 +380,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
 
                   <div className="text-right">
                     <span className="text-[10px] text-earth block font-semibold">
-                      Total grupo ({travelers} pax):
+                      {t.totalGroupLabel} ({travelers} pax):
                     </span>
                     <span className="font-serif text-xl font-bold text-terracotta-text">
                       {rateInfo.symbol}{totalGroupConverted.toLocaleString()} {currency}
@@ -391,25 +391,25 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                 {/* Formula Breakdown Details */}
                 <div className="flex flex-col gap-1 text-[11px] text-earth pt-2 border-t border-chocolate/10">
                   <div className="flex justify-between">
-                    <span>Base tour:</span>
+                    <span>{t.baseTour}:</span>
                     <span>{rateInfo.symbol}{Math.round(baseTourUSD * rateInfo.rate).toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Hotelería ({hotelTier}):</span>
+                    <span>{t.hotelCategory} ({hotelTier}):</span>
                     <span>{rateInfo.symbol}{Math.round(hotelUSD * rateInfo.rate).toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Traslados 4x4 y logística:</span>
+                    <span>{t.transfersLogistics}:</span>
                     <span>{rateInfo.symbol}{Math.round(transfersUSD * rateInfo.rate).toLocaleString()}</span>
                   </div>
                   {extrasUSD > 0 && (
                     <div className="flex justify-between text-terracotta-text">
-                      <span>Actividades extra:</span>
+                      <span>{t.extraActivities}:</span>
                       <span>+{rateInfo.symbol}{Math.round(extrasUSD * rateInfo.rate).toLocaleString()}</span>
                     </div>
                   )}
                   <div className="flex justify-between font-bold text-chocolate pt-1 border-t border-chocolate/10">
-                    <span>Garantía de reserva (20%):</span>
+                    <span>{t.reservationGuarantee}:</span>
                     <span>{rateInfo.symbol}{depositConverted.toLocaleString()} {currency}</span>
                   </div>
                 </div>
@@ -419,7 +419,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               <div className="p-3 bg-stone/40 rounded border border-chocolate/12 text-xs flex items-center justify-between text-chocolate">
                 <div className="flex items-center gap-1.5 font-semibold text-earth">
                   <span className="material-symbols-outlined text-sm text-gold-text">analytics</span>
-                  <span>Margen neto agencia estimado:</span>
+                  <span>{t.estimatedAgencyMargin}:</span>
                 </div>
                 <span className="font-mono font-bold text-chocolate">
                   ${estimatedProfitUSD.toLocaleString()} USD
@@ -451,7 +451,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                   className="w-full py-2.5 px-4 rounded bg-stone/30 hover:bg-stone/60 text-chocolate text-xs uppercase tracking-wider font-bold transition-colors flex items-center justify-center gap-1.5 border border-chocolate/12"
                 >
                   <span className="material-symbols-outlined text-olive text-base">chat</span>
-                  <span>Consultar con Concierge 24/7</span>
+                  <span>{t.consultConcierge247}</span>
                 </button>
               </div>
             </div>

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
-import { BookingReservation } from '../types';
+import { BookingReservation, Language } from '../types';
+import { TRANSLATIONS } from '../data/translations';
 import { CURRENCY_RATES } from '../data/mockData';
 
 interface VoucherModalProps {
   reservation: BookingReservation | null;
   onClose: () => void;
+  language?: Language;
 }
 
-export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose }) => {
+export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose, language = 'ES' }) => {
+  const t = TRANSLATIONS[language || 'ES'];
   const [qrDataUrl, setQrDataUrl] = useState<string>('');
 
   useEffect(() => {
@@ -77,10 +80,10 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
             </span>
             <div>
               <h3 className="font-serif text-lg font-semibold tracking-tight">
-                Voucher oficial de expedición
+                {t.officialVoucherTitle}
               </h3>
               <p className="text-[10px] uppercase tracking-widest text-stone/80">
-                Salvoconducto transfronterizo · Chile, Bolivia & Perú
+                {t.crossBorderSafeConduct}
               </p>
             </div>
           </div>
@@ -113,14 +116,14 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
 
             <div className="flex flex-col items-center sm:items-end">
               <span className="text-[10px] uppercase tracking-wider text-earth font-semibold">
-                Código único de reserva
+                {t.uniqueBookingCode}
               </span>
               <span className="font-mono text-lg font-bold text-terracotta-text bg-stone/30 px-3 py-1 rounded border border-chocolate/10">
                 {reservation.id}
               </span>
               <span className="inline-flex items-center gap-1 text-[11px] text-olive font-bold mt-1">
                 <span className="w-2 h-2 rounded-full bg-olive"></span>
-                Depósito confirmado (Stripe)
+                {t.depositConfirmed}
               </span>
             </div>
           </div>
@@ -131,7 +134,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
             <div className="md:col-span-2 flex flex-col justify-between gap-4">
               <div>
                 <span className="text-[11px] uppercase tracking-wider text-earth font-bold block mb-1">
-                  Expedición contratada
+                  {t.contractedExpedition}
                 </span>
                 <h4 className="font-serif text-xl font-bold text-chocolate leading-snug">
                   {reservation.packageName}
@@ -140,21 +143,21 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
 
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div>
-                  <span className="text-earth block font-medium">Expedicionario principal:</span>
+                  <span className="text-earth block font-medium">{t.leadTraveler}:</span>
                   <span className="font-bold text-chocolate text-sm">{reservation.travelerName}</span>
                 </div>
                 <div>
-                  <span className="text-earth block font-medium">Fecha de salida:</span>
+                  <span className="text-earth block font-medium">{t.travelDate}:</span>
                   <span className="font-bold text-chocolate text-sm">{reservation.travelDate}</span>
                 </div>
                 <div>
-                  <span className="text-earth block font-medium">Expedicionarios:</span>
-                  <span className="font-bold text-chocolate">{reservation.travelersCount} Personas</span>
+                  <span className="text-earth block font-medium">{t.expeditionersLabel}:</span>
+                  <span className="font-bold text-chocolate">{reservation.travelersCount} {t.personsUnit}</span>
                 </div>
                 <div>
-                  <span className="text-earth block font-medium">Categoría hotelera:</span>
+                  <span className="text-earth block font-medium">{t.hotelCategory}:</span>
                   <span className="font-bold text-terracotta-text uppercase">
-                    {reservation.hotelTier === 'none' ? 'Sin hotel (solo tours)' : reservation.hotelTier}
+                    {reservation.hotelTier === 'none' ? t.expeditionOnly : reservation.hotelTier}
                   </span>
                 </div>
               </div>
@@ -163,7 +166,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
               {reservation.selectedExtras.length > 0 && (
                 <div className="pt-2 border-t border-chocolate/8 text-xs">
                   <span className="font-semibold text-chocolate block mb-1">
-                    Experiencias adicionales incluidas:
+                    {t.includedExtrasTitle}
                   </span>
                   <ul className="list-disc list-inside text-earth space-y-0.5">
                     {reservation.selectedExtras.map((ext) => (
@@ -176,21 +179,21 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
               {/* Financial Box */}
               <div className="p-3 bg-stone/25 rounded text-xs space-y-1 border border-chocolate/8">
                 <div className="flex justify-between text-earth">
-                  <span>Total expedición:</span>
+                  <span>{t.totalGroupLabel}:</span>
                   <span className="font-bold text-chocolate">
                     {rateInfo.symbol}{totalConverted.toLocaleString()} {reservation.currency}
                   </span>
                 </div>
                 <div className="flex justify-between text-terracotta-text font-bold text-sm">
-                  <span>Garantía 20% abonada:</span>
+                  <span>{t.guaranteeDeposit}:</span>
                   <span>
                     {rateInfo.symbol}{depositConverted.toLocaleString()} {reservation.currency}
                   </span>
                 </div>
                 <div className="flex justify-between text-earth/80">
-                  <span>Saldo restante (80%):</span>
+                  <span>{t.remainingBalanceLabel}:</span>
                   <span>
-                    {rateInfo.symbol}{remainingConverted.toLocaleString()} {reservation.currency} (a pagar 30 días antes)
+                    {rateInfo.symbol}{remainingConverted.toLocaleString()} {reservation.currency} {language === 'EN' ? '(payable 30 days prior)' : language === 'FR' ? '(à payer 30 jours avant)' : language === 'PT' ? '(a pagar 30 dias antes)' : '(a pagar 30 días antes)'}
                   </span>
                 </div>
               </div>
@@ -210,10 +213,10 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
                 </div>
               )}
               <span className="text-[10px] text-center uppercase tracking-widest text-chocolate font-bold mt-2">
-                Escaneo oficial en aduanas y hoteles
+                {t.officialScanAdmissions}
               </span>
               <span className="text-[9px] text-earth text-center mt-0.5">
-                Validador criptográfico Triángulo Andino
+                {t.cryptoValidator}
               </span>
             </div>
           </div>
@@ -225,10 +228,10 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
             </span>
             <div>
               <h5 className="font-bold uppercase tracking-wider text-chocolate">
-                Protocolo médico andino & cruce de fronteras
+                {t.medicalProtocolHeading}
               </h5>
               <p className="text-earth leading-relaxed text-[11px]">
-                Presentar este salvoconducto digital o impreso ante el guía líder de 4x4 en el punto de encuentro. Incluye oxigenoterapia de cabina, seguro satelital Garmin InReach y tramitación migratoria prioritaria en Hito Cajón (Chile-Bolivia) y Kasani (Bolivia-Perú).
+                {t.medicalProtocolText}
               </p>
             </div>
           </div>
@@ -243,7 +246,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
               className="px-4 py-2 rounded bg-stone/25 hover:bg-stone/50 text-chocolate text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-1.5 border border-chocolate/10"
             >
               <span className="material-symbols-outlined text-sm">print</span>
-              <span>Imprimir voucher</span>
+              <span>{t.printVoucher}</span>
             </button>
             <button
               onClick={handleSendWhatsApp}
@@ -251,7 +254,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
               className="px-4 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-1.5"
             >
               <span className="material-symbols-outlined text-sm">chat</span>
-              <span>Enviar a WhatsApp Concierge</span>
+              <span>{t.sendToConcierge}</span>
             </button>
           </div>
 
@@ -260,7 +263,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
             type="button"
             className="px-5 py-2 rounded bg-chocolate hover:bg-chocolate/85 text-white text-xs uppercase tracking-wider font-bold transition-colors"
           >
-            Finalizar
+            {t.finalizeBtn}
           </button>
         </div>
       </div>

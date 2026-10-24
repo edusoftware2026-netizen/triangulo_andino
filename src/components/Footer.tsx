@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
               </span>
             </div>
             <p className="text-sm text-earth max-w-sm leading-relaxed">
-              Pioneros en expediciones de alta gama a través del Altiplano, Atacama y los Andes Centrales. Uniendo Chile, Bolivia y Perú con sofisticación arquitectónica, trazabilidad satelital y rigor de servicio.
+              {t.footerMission}
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-2">
               <span className="px-2 py-1 rounded bg-stone text-[11px] uppercase tracking-wider text-earth font-semibold border border-chocolate/10">
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
           {/* Quick Routes Links */}
           <div className="lg:col-span-2 flex flex-col gap-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-chocolate">
-              Rutas magistrales
+              {t.footerSignatureRoutes}
             </h4>
             <div className="flex flex-col gap-2">
               <button
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
           {/* Tech & Data */}
           <div className="lg:col-span-2 flex flex-col gap-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-chocolate">
-              Tecnología & datos
+              {t.footerTechData}
             </h4>
             <div className="flex flex-col gap-2">
               <button
@@ -134,10 +134,10 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
           {/* Direct Concierge Line & Newsletter */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-chocolate">
-              Asistencia concierge ininterrumpida
+              {t.footerConciergeSupport}
             </h4>
             <p className="text-sm text-earth">
-              Soporte logístico por satélite Garmin InReach y enlace prioritario WhatsApp 24/7 para expedicionarios en ruta.
+              {t.footerConciergeDesc}
             </p>
             <div
               onClick={onOpenConcierge}
@@ -148,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
               </span>
               <div>
                 <p className="text-[10px] uppercase tracking-wider text-earth font-bold">
-                  Línea directa satelital
+                  {language === 'EN' ? 'Direct Satellite Line' : language === 'FR' ? 'Ligne Satellite Directe' : language === 'PT' ? 'Linha Satélite Direta' : 'Línea directa satelital'}
                 </p>
                 <p className="text-sm font-semibold text-chocolate">
                   +56 9 8234 9900 · +591 2 244 8900
@@ -162,14 +162,14 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
                 required
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
-                placeholder="Correo corporativo o privado..."
+                placeholder={t.footerSubscribePlaceholder}
                 className="w-full px-3 py-2.5 rounded bg-white text-xs text-chocolate placeholder:text-earth/70 border border-outline focus:outline-none focus:ring-2 focus:ring-olive"
               />
               <button
                 type="submit"
                 className="px-4 py-2.5 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors shrink-0 shadow-xs"
               >
-                {subscribed ? '¡Suscrito!' : 'Suscribir'}
+                {subscribed ? t.footerSubscribedMsg : t.footerSubscribeBtn}
               </button>
             </form>
           </div>
@@ -178,19 +178,19 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
         {/* Bottom copyright & legal */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-earth">
           <p className="tracking-wider uppercase text-[11px]">
-            © 2026 Triángulo Andino Expeditions SAC / Ltda. Todos los derechos reservados.
+            {t.footerRights}
           </p>
           <div className="flex items-center gap-4">
             <span className="hover:text-chocolate cursor-pointer transition-colors">
-              Privacidad y protocolo andino
+              {language === 'EN' ? 'Privacy & Andean protocol' : language === 'FR' ? 'Confidentialité & protocole andin' : language === 'PT' ? 'Privacidade & protocolo andino' : 'Privacidad y protocolo andino'}
             </span>
             <span>·</span>
             <span className="hover:text-chocolate cursor-pointer transition-colors">
-              Términos de expedición
+              {language === 'EN' ? 'Expedition terms' : language === 'FR' ? 'Conditions d\'expédition' : language === 'PT' ? 'Termos de expedição' : 'Términos de expedición'}
             </span>
             <span>·</span>
             <span className="hover:text-chocolate cursor-pointer transition-colors">
-              Políticas de cancelación
+              {language === 'EN' ? 'Cancellation policy' : language === 'FR' ? 'Politique d\'annulation' : language === 'PT' ? 'Políticas de cancelamento' : 'Políticas de cancelación'}
             </span>
           </div>
         </div>
