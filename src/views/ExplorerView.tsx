@@ -83,28 +83,28 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
   });
 
   return (
-    <div className="w-full bg-surface min-h-screen pt-24 pb-20">
+    <div className="w-full bg-canvas min-h-screen pt-24 pb-20 text-chocolate">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-10">
         {/* Header Hero */}
         <div className="flex flex-col gap-3 max-w-4xl">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-[#ac3400] text-2xl">
+            <span className="material-symbols-outlined text-olive text-2xl">
               travel_explore
             </span>
-            <span className="text-xs uppercase tracking-widest text-[#ac3400] font-bold">
+            <span className="text-xs uppercase tracking-widest text-terracotta-text font-bold">
               Google Search Grounding Engine
             </span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl text-[#0F172A] font-medium tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl text-chocolate font-medium tracking-tight">
             {t.explorerTitle}
           </h1>
-          <p className="text-sm sm:text-base text-[#45464d] leading-relaxed">
+          <p className="text-sm sm:text-base text-earth leading-relaxed">
             {t.explorerSubtitle}
           </p>
         </div>
 
         {/* Search Bar & Quick Picks */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-black/10 flex flex-col gap-4">
+        <div className="bg-white p-6 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-4">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -113,7 +113,7 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
             className="flex flex-col sm:flex-row gap-3"
           >
             <div className="relative flex-1">
-              <span className="material-symbols-outlined absolute left-3.5 top-3.5 text-[#76777d]">
+              <span className="material-symbols-outlined absolute left-3.5 top-3.5 text-earth">
                 search
               </span>
               <input
@@ -121,13 +121,13 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={t.explorerPlaceholder}
-                className="w-full pl-11 pr-4 py-3 rounded-lg bg-[#f2f4f6] text-sm text-[#191c1e] placeholder:text-[#76777d] border border-black/10 focus:outline-none focus:ring-2 focus:ring-[#ac3400]"
+                className="w-full pl-11 pr-4 py-3 rounded bg-stone/20 text-sm text-chocolate placeholder:text-earth/60 border border-outline focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
               />
             </div>
             <button
               type="submit"
               disabled={isLoading}
-              className="py-3 px-6 rounded-lg bg-[#0F172A] hover:bg-[#ac3400] text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shrink-0 disabled:opacity-50"
+              className="py-3 px-6 rounded bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shrink-0 disabled:opacity-50"
             >
               {isLoading ? (
                 <>
@@ -147,8 +147,8 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
 
           {/* Quick Chips */}
           <div className="flex flex-wrap items-center gap-2 pt-1">
-            <span className="text-[11px] text-[#45464d] uppercase font-bold mr-1">
-              Destinos Rápidos:
+            <span className="text-[11px] text-earth uppercase font-bold mr-1">
+              Destinos sugeridos:
             </span>
             {quickPicks.map((pick) => (
               <button
@@ -158,10 +158,10 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                   setSearchQuery(pick);
                   handleSearch(pick);
                 }}
-                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all border ${
+                className={`px-3 py-1 rounded text-xs font-semibold transition-all border ${
                   searchQuery === pick
-                    ? 'bg-[#ac3400] text-white border-[#ac3400]'
-                    : 'bg-[#f2f4f6] text-[#45464d] hover:text-[#191c1e] border-black/5 hover:border-black/20'
+                    ? 'bg-olive text-white border-olive'
+                    : 'bg-stone/25 text-chocolate hover:bg-stone/50 border-chocolate/10'
                 }`}
               >
                 {pick}
@@ -172,17 +172,17 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
 
         {/* Loading Animation */}
         {isLoading && (
-          <div className="bg-white p-8 rounded-2xl border border-black/10 flex flex-col items-center justify-center gap-4 text-center">
-            <div className="w-12 h-12 rounded-full bg-[#ffdbd0] flex items-center justify-center text-[#ac3400]">
+          <div className="bg-white p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col items-center justify-center gap-4 text-center">
+            <div className="w-12 h-12 rounded bg-stone/40 flex items-center justify-center text-olive">
               <span className="material-symbols-outlined text-2xl animate-spin">
                 satellite_alt
               </span>
             </div>
             <div>
-              <h4 className="font-serif text-xl font-semibold text-[#0F172A]">
-                Conectando con Satélites & Google Search Grounding
+              <h4 className="font-serif text-xl font-semibold text-chocolate">
+                Conectando con satélites y Google Search Grounding
               </h4>
-              <p className="text-xs text-[#45464d] mt-1">
+              <p className="text-xs text-earth mt-1">
                 Extrayendo altitud geométrica, pasos fronterizos en vivo, clima actual y recomendaciones de equipamiento...
               </p>
             </div>
@@ -191,7 +191,7 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
 
         {/* Error message */}
         {errorMsg && (
-          <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl">
+          <div className="p-4 bg-red-50 border border-red-200 text-red-800 text-sm rounded">
             {errorMsg}
           </div>
         )}
@@ -200,38 +200,38 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
         {result && !isLoading && (
           <div className="flex flex-col gap-8 animate-fade-in">
             {/* Main Destination Hero Card */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-black/10 flex flex-col gap-6">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-black/5">
+            <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-chocolate/10">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded bg-[#0F172A] text-white text-[11px] font-bold uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 rounded bg-chocolate text-white text-[11px] font-bold uppercase tracking-wider">
                       {result.country}
                     </span>
-                    <span className="text-xs text-[#45464d] font-semibold">
+                    <span className="text-xs text-earth font-semibold">
                       Sugerido: {result.recommendedDays} Días
                     </span>
                   </div>
-                  <h2 className="font-serif text-3xl sm:text-4xl text-[#0F172A] font-semibold mt-1">
+                  <h2 className="font-serif text-3xl sm:text-4xl text-chocolate font-semibold mt-1">
                     {result.destinationName}
                   </h2>
                 </div>
 
                 {/* Altitude Pill with Risk Badge */}
-                <div className="flex items-center gap-3 bg-[#f2f4f6] p-3 rounded-xl border border-black/5">
-                  <span className="material-symbols-outlined text-[#ac3400] text-3xl">
+                <div className="flex items-center gap-3 bg-stone/25 p-3 rounded border border-chocolate/10">
+                  <span className="material-symbols-outlined text-terracotta text-3xl">
                     landscape
                   </span>
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#45464d] font-bold block">
+                    <span className="text-[10px] uppercase tracking-wider text-earth font-bold block">
                       {t.altitudeMsnm}
                     </span>
-                    <span className="font-serif text-xl font-bold text-[#ac3400]">
+                    <span className="font-serif text-xl font-bold text-chocolate">
                       {result.altitudeFormatted}
                     </span>
                     <div className="flex items-center gap-1 mt-0.5">
-                      <span className="text-[10px] text-[#45464d] font-semibold">Riesgo:</span>
+                      <span className="text-[10px] text-earth font-semibold">Riesgo:</span>
                       <span
-                        className={`text-[10px] font-bold px-1.5 py-0.2 rounded ${
+                        className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
                           result.altitudeRiskLevel === 'Alto' || result.altitudeRiskLevel === 'Muy Alto'
                             ? 'bg-red-100 text-red-800'
                             : result.altitudeRiskLevel === 'Moderado'
@@ -247,50 +247,50 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
               </div>
 
               {/* Summary narrative */}
-              <p className="font-serif text-lg sm:text-xl text-[#191c1e] italic leading-relaxed bg-surface p-5 rounded-xl border-l-4 border-[#ac3400]">
+              <p className="font-serif text-lg sm:text-xl text-chocolate italic leading-relaxed bg-stone/20 p-5 rounded border-l-4 border-olive">
                 "{result.summary}"
               </p>
 
               {/* 4 Bento Panels Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* 1. Clima */}
-                <div className="p-5 rounded-xl bg-[#f2f4f6] flex flex-col gap-2 border border-black/5">
-                  <div className="flex items-center gap-2 text-[#0F172A]">
-                    <span className="material-symbols-outlined text-[#ac3400]">wb_sunny</span>
+                <div className="p-5 rounded bg-stone/25 flex flex-col gap-2 border border-chocolate/8">
+                  <div className="flex items-center gap-2 text-chocolate">
+                    <span className="material-symbols-outlined text-olive">wb_sunny</span>
                     <h3 className="font-bold text-sm uppercase tracking-wider">
                       {t.climateTitle}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#45464d] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-earth leading-relaxed">
                     {result.climate}
                   </p>
                 </div>
 
                 {/* 2. Requisitos de Frontera */}
-                <div className="p-5 rounded-xl bg-[#f2f4f6] flex flex-col gap-2 border border-black/5">
-                  <div className="flex items-center gap-2 text-[#0F172A]">
-                    <span className="material-symbols-outlined text-[#ac3400]">badge</span>
+                <div className="p-5 rounded bg-stone/25 flex flex-col gap-2 border border-chocolate/8">
+                  <div className="flex items-center gap-2 text-chocolate">
+                    <span className="material-symbols-outlined text-olive">badge</span>
                     <h3 className="font-bold text-sm uppercase tracking-wider">
                       {t.borderRequirementsTitle}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#45464d] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-earth leading-relaxed">
                     {result.borderRequirements}
                   </p>
                 </div>
 
                 {/* 3. Qué Llevar en la Maleta */}
-                <div className="p-5 rounded-xl bg-[#f2f4f6] flex flex-col gap-2 border border-black/5">
-                  <div className="flex items-center gap-2 text-[#0F172A]">
-                    <span className="material-symbols-outlined text-[#ac3400]">backpack</span>
+                <div className="p-5 rounded bg-stone/25 flex flex-col gap-2 border border-chocolate/8">
+                  <div className="flex items-center gap-2 text-chocolate">
+                    <span className="material-symbols-outlined text-olive">backpack</span>
                     <h3 className="font-bold text-sm uppercase tracking-wider">
                       {t.whatToPackTitle}
                     </h3>
                   </div>
-                  <ul className="grid grid-cols-1 gap-1 text-xs sm:text-sm text-[#45464d]">
+                  <ul className="grid grid-cols-1 gap-1 text-xs sm:text-sm text-earth">
                     {result.whatToPack.map((item, idx) => (
                       <li key={idx} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#ac3400]"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-olive"></span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -298,14 +298,14 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                 </div>
 
                 {/* 4. Aclimatación Médica y Soroche */}
-                <div className="p-5 rounded-xl bg-[#f2f4f6] flex flex-col gap-2 border border-black/5">
-                  <div className="flex items-center gap-2 text-[#0F172A]">
-                    <span className="material-symbols-outlined text-[#ac3400]">medical_services</span>
+                <div className="p-5 rounded bg-stone/25 flex flex-col gap-2 border border-chocolate/8">
+                  <div className="flex items-center gap-2 text-chocolate">
+                    <span className="material-symbols-outlined text-olive">medical_services</span>
                     <h3 className="font-bold text-sm uppercase tracking-wider">
                       {t.acclimationAdviceTitle}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#45464d] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-earth leading-relaxed">
                     {result.acclimationAdvice}
                   </p>
                 </div>
@@ -314,19 +314,19 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
               {/* Atractivos Principales */}
               {result.topAttractions && result.topAttractions.length > 0 && (
                 <div className="flex flex-col gap-3 pt-2">
-                  <h3 className="font-serif text-xl font-semibold text-[#0F172A] flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#ac3400]">photo_camera</span>
+                  <h3 className="font-serif text-xl font-semibold text-chocolate flex items-center gap-2">
+                    <span className="material-symbols-outlined text-olive">photo_camera</span>
                     <span>{t.attractionsTitle}</span>
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {result.topAttractions.map((att, i) => (
                       <div
                         key={i}
-                        className="p-4 rounded-xl bg-white border border-black/10 shadow-xs flex flex-col gap-1"
+                        className="p-4 rounded bg-stone/20 border border-chocolate/8 flex flex-col gap-1"
                       >
-                        <span className="text-xs font-bold text-[#ac3400]">Hito {i + 1}</span>
-                        <h4 className="font-semibold text-sm text-[#191c1e]">{att.name}</h4>
-                        <p className="text-xs text-[#45464d] leading-relaxed mt-1">
+                        <span className="text-xs font-bold text-terracotta-text">Hito {i + 1}</span>
+                        <h4 className="font-semibold text-sm text-chocolate">{att.name}</h4>
+                        <p className="text-xs text-earth leading-relaxed mt-1">
                           {att.description}
                         </p>
                       </div>
@@ -337,9 +337,9 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
 
               {/* Grounding Sources Chips */}
               {result.sources && result.sources.length > 0 && (
-                <div className="pt-3 border-t border-black/5 flex flex-wrap items-center gap-2 text-xs">
-                  <span className="font-bold text-[#45464d] flex items-center gap-1">
-                    <span className="material-symbols-outlined text-sm text-green-700">verified</span>
+                <div className="pt-3 border-t border-chocolate/10 flex flex-wrap items-center gap-2 text-xs">
+                  <span className="font-bold text-earth flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm text-olive">verified</span>
                     Citas web verificadas en tiempo real:
                   </span>
                   {result.sources.map((src, idx) => (
@@ -348,7 +348,7 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                       href={src.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-2.5 py-1 rounded bg-[#f2f4f6] hover:bg-[#e0e3e5] text-[#191c1e] font-medium transition-colors flex items-center gap-1 border border-black/5"
+                      className="px-2.5 py-1 rounded bg-stone/25 hover:bg-stone/50 text-chocolate font-medium transition-colors flex items-center gap-1 border border-chocolate/10"
                     >
                       <span className="line-clamp-1 max-w-xs">{src.title}</span>
                       <span className="material-symbols-outlined text-[12px]">open_in_new</span>
@@ -362,11 +362,11 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
             <div className="flex flex-col gap-5 pt-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-xs uppercase tracking-widest text-[#ac3400] font-bold">
-                    Integración con el Catálogo
+                  <span className="text-xs uppercase tracking-widest text-terracotta-text font-bold">
+                    Integración con el catálogo
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-[#0F172A] font-semibold">
-                    Expediciones Disponibles que Incluyen este Destino
+                  <h3 className="font-serif text-2xl sm:text-3xl text-chocolate font-semibold">
+                    Expediciones disponibles que incluyen este destino
                   </h3>
                 </div>
               </div>
@@ -377,45 +377,62 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                   return (
                     <div
                       key={pkg.id}
-                      className="bg-white rounded-xl shadow-xs border border-black/10 overflow-hidden flex flex-col justify-between group"
+                      className="bg-white rounded-lg elevation-card border border-chocolate/12 overflow-hidden flex flex-col justify-between group transition-all"
                     >
-                      <div className="h-44 w-full relative overflow-hidden bg-gray-900">
+                      {/* Photo Container */}
+                      <div className="h-48 w-full relative overflow-hidden bg-stone/20">
                         <img
                           src={pkg.imageUrl}
                           alt={pkg.title[language] || pkg.title.ES}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                         />
-                        <span className="absolute top-2 left-2 px-2 py-0.5 rounded bg-[#0F172A]/85 text-white text-[10px] uppercase font-bold tracking-wider">
-                          {pkg.country}
-                        </span>
-                        <span className="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#ac3400] text-white text-[10px] font-bold">
-                          {pkg.days} Días
-                        </span>
+                        {/* Translucent Country Bar */}
+                        <div className="absolute bottom-0 inset-x-0 h-9 bg-chocolate/85 backdrop-blur-sm px-4 flex items-center justify-between text-white text-xs">
+                          <span className="font-semibold tracking-wide uppercase text-[11px] truncate">
+                            {pkg.country}
+                          </span>
+                          <span className="text-white/80 font-medium text-[11px]">
+                            {pkg.days} Días / {pkg.nights} Noches
+                          </span>
+                        </div>
+                        {/* Top Badges */}
+                        <div className="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none">
+                          <span className="px-2.5 py-1 rounded bg-terracotta-strong text-white text-[11px] font-bold tracking-wider uppercase">
+                            Circuito oficial
+                          </span>
+                          <span className="px-2.5 py-1 rounded bg-stone/90 backdrop-blur text-chocolate text-[11px] font-semibold">
+                            {pkg.maxAltitudeMeters.toLocaleString()} msnm
+                          </span>
+                        </div>
                       </div>
+
+                      {/* Card Body */}
                       <div className="p-5 flex flex-col justify-between flex-1 gap-4">
                         <div>
-                          <h4 className="font-serif text-lg font-semibold text-[#191c1e]">
+                          <h4 className="font-serif text-lg font-semibold text-chocolate leading-snug">
                             {pkg.title[language] || pkg.title.ES}
                           </h4>
-                          <p className="text-xs text-[#45464d] line-clamp-2 mt-1">
+                          <p className="text-xs text-earth line-clamp-2 mt-1 leading-relaxed">
                             {pkg.tagline[language] || pkg.tagline.ES}
                           </p>
                         </div>
-                        <div className="flex items-baseline justify-between pt-2 border-t border-black/5">
+
+                        {/* Card Piedra Footer */}
+                        <div className="pt-3 border-t border-chocolate/8 flex items-baseline justify-between">
                           <div>
-                            <span className="text-[10px] uppercase text-[#45464d] block">
+                            <span className="text-[10px] uppercase text-earth block">
                               Desde:
                             </span>
-                            <span className="font-serif text-xl font-bold text-[#0F172A]">
+                            <span className="font-serif text-xl font-bold text-chocolate">
                               {rateInfo.symbol}{convertedPrice.toLocaleString()} {currency}
                             </span>
                           </div>
                           <button
                             type="button"
                             onClick={() => onSelectPackage(pkg)}
-                            className="px-3 py-2 rounded bg-[#0F172A] hover:bg-[#ac3400] text-white text-xs uppercase tracking-wider font-bold transition-colors"
+                            className="px-3.5 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors"
                           >
-                            Cotizar
+                            Ver expedición
                           </button>
                         </div>
                       </div>

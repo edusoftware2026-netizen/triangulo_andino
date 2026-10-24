@@ -101,32 +101,33 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
   return (
     <div
       data-lenis-prevent
-      className="fixed inset-0 z-50 bg-[#0F172A]/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-chocolate/65 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
     >
-      <div className="bg-white max-w-xl w-full rounded-2xl shadow-2xl overflow-hidden border border-black/10 my-6 animate-fade-in">
+      <div className="bg-white max-w-xl w-full rounded-lg elevation-modal overflow-hidden border border-chocolate/12 my-6 animate-fade-in text-chocolate">
         {/* Stripe Header */}
-        <div className="bg-[#0F172A] text-white p-6 flex items-center justify-between">
+        <div className="bg-chocolate text-white p-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-secondary-container text-2xl">
+            <span className="material-symbols-outlined text-gold text-2xl">
               lock
             </span>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-serif text-xl font-bold tracking-tight">
-                  Pago Seguro con Stripe
+                  Pago seguro con Stripe
                 </h3>
-                <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] tracking-wider uppercase font-semibold text-[#ffdcc3]">
+                <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] tracking-wider uppercase font-semibold text-gold">
                   256-bit SSL
                 </span>
               </div>
-              <p className="text-xs text-[#bec6e0] mt-0.5">
-                Garantía de Expedición (20% de depósito inicial)
+              <p className="text-xs text-stone/80 mt-0.5">
+                Garantía de expedición (20% de depósito inicial)
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
             disabled={isProcessing}
+            aria-label="Cerrar ventana"
             className="text-white/70 hover:text-white transition-colors"
           >
             <span className="material-symbols-outlined text-2xl">close</span>
@@ -134,26 +135,26 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
         </div>
 
         {/* Financial Summary Strip */}
-        <div className="bg-[#f2f4f6] p-4 px-6 border-b border-black/5 flex items-center justify-between">
+        <div className="bg-stone/30 p-4 px-6 border-b border-chocolate/10 flex items-center justify-between">
           <div>
-            <span className="text-[11px] text-[#45464d] uppercase font-semibold block">
-              Monto a Pagar Ahora (20% Depósito):
+            <span className="text-[11px] text-earth uppercase font-semibold block">
+              Monto a pagar ahora (20% depósito):
             </span>
             <div className="flex items-baseline gap-1 mt-0.5">
-              <span className="text-2xl font-bold text-[#ac3400]">
+              <span className="text-2xl font-bold text-terracotta-text">
                 {rateInfo.symbol}{depositConverted.toLocaleString()}
               </span>
-              <span className="text-xs font-bold text-[#45464d]">{currency}</span>
+              <span className="text-xs font-bold text-earth">{currency}</span>
             </div>
           </div>
 
           <div className="text-right text-xs">
-            <span className="text-[#45464d] block">Total Expedición ({travelers} pax):</span>
-            <span className="font-bold text-[#191c1e]">
+            <span className="text-earth block">Total expedición ({travelers} pax):</span>
+            <span className="font-bold text-chocolate">
               {rateInfo.symbol}{totalConverted.toLocaleString()} {currency}
             </span>
-            <span className="text-[10px] text-[#76777d] block mt-0.5">
-              Saldo Restante: {rateInfo.symbol}{remainingConverted.toLocaleString()}
+            <span className="text-[10px] text-earth/80 block mt-0.5">
+              Saldo restante: {rateInfo.symbol}{remainingConverted.toLocaleString()}
             </span>
           </div>
         </div>
@@ -162,8 +163,8 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
         <form onSubmit={handlePay} className="p-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e] block mb-1">
-                Expedicionario Principal *
+              <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
+                Expedicionario principal *
               </label>
               <input
                 type="text"
@@ -171,13 +172,13 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 value={leadName}
                 onChange={(e) => setLeadName(e.target.value)}
                 placeholder="Ej: Dr. Alejandro Valenzuela"
-                className="w-full px-3 py-2.5 rounded bg-surface border border-black/15 text-xs text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                className="w-full px-3 py-2.5 rounded bg-canvas border border-outline text-xs text-chocolate placeholder:text-earth/60 focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e] block mb-1">
-                Correo Electrónico *
+              <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
+                Correo electrónico *
               </label>
               <input
                 type="email"
@@ -185,15 +186,15 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 value={leadEmail}
                 onChange={(e) => setLeadEmail(e.target.value)}
                 placeholder="pasajero@privado.com"
-                className="w-full px-3 py-2.5 rounded bg-surface border border-black/15 text-xs text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                className="w-full px-3 py-2.5 rounded bg-canvas border border-outline text-xs text-chocolate placeholder:text-earth/60 focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e] block mb-1">
-                WhatsApp Satelital *
+              <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
+                WhatsApp satelital *
               </label>
               <input
                 type="tel"
@@ -201,35 +202,35 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 value={leadPhone}
                 onChange={(e) => setLeadPhone(e.target.value)}
                 placeholder="+56 9 8234 9900"
-                className="w-full px-3 py-2.5 rounded bg-surface border border-black/15 text-xs text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                className="w-full px-3 py-2.5 rounded bg-canvas border border-outline text-xs text-chocolate placeholder:text-earth/60 focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e] block mb-1">
-                Fecha Estimada de Salida *
+              <label className="text-xs font-bold uppercase tracking-wider text-chocolate block mb-1">
+                Fecha estimada de salida *
               </label>
               <input
                 type="date"
                 required
                 value={travelDate}
                 onChange={(e) => setTravelDate(e.target.value)}
-                className="w-full px-3 py-2.5 rounded bg-surface border border-black/15 text-xs text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                className="w-full px-3 py-2.5 rounded bg-canvas border border-outline text-xs text-chocolate focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
               />
             </div>
           </div>
 
           {/* Stripe Card Element Box */}
-          <div className="mt-2 p-4 rounded-xl border border-black/10 bg-surface space-y-3">
+          <div className="mt-2 p-4 rounded bg-stone/25 border border-chocolate/10 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] uppercase tracking-wider font-bold text-[#45464d] flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-sm text-[#ac3400]">credit_card</span>
-                Datos de Tarjeta (Stripe Elements Sandbox)
+              <span className="text-[11px] uppercase tracking-wider font-bold text-earth flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-sm text-olive">credit_card</span>
+                Datos de tarjeta (Stripe Elements Sandbox)
               </span>
               <div className="flex items-center gap-1">
-                <span className="text-[10px] font-bold text-blue-900 bg-blue-100 px-1.5 py-0.5 rounded">VISA</span>
-                <span className="text-[10px] font-bold text-orange-900 bg-orange-100 px-1.5 py-0.5 rounded">MC</span>
-                <span className="text-[10px] font-bold text-indigo-900 bg-indigo-100 px-1.5 py-0.5 rounded">AMEX</span>
+                <span className="text-[10px] font-bold text-chocolate bg-stone/50 px-1.5 py-0.5 rounded">VISA</span>
+                <span className="text-[10px] font-bold text-chocolate bg-stone/50 px-1.5 py-0.5 rounded">MC</span>
+                <span className="text-[10px] font-bold text-chocolate bg-stone/50 px-1.5 py-0.5 rounded">AMEX</span>
               </div>
             </div>
 
@@ -239,7 +240,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 required
                 value={cardNumber}
                 onChange={(e) => setCardNumber(e.target.value)}
-                className="w-full px-3 py-2 rounded bg-white border border-black/15 text-xs font-mono font-semibold text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                className="w-full px-3 py-2 rounded bg-white border border-outline text-xs font-mono font-semibold text-chocolate focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
               />
             </div>
 
@@ -251,7 +252,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                   value={cardExpiry}
                   onChange={(e) => setCardExpiry(e.target.value)}
                   placeholder="MM / AA"
-                  className="w-full px-3 py-2 rounded bg-white border border-black/15 text-xs font-mono text-center font-semibold text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                  className="w-full px-3 py-2 rounded bg-white border border-outline text-xs font-mono text-center font-semibold text-chocolate focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
                 />
               </div>
               <div>
@@ -261,24 +262,24 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                   value={cardCvc}
                   onChange={(e) => setCardCvc(e.target.value)}
                   placeholder="CVC"
-                  className="w-full px-3 py-2 rounded bg-white border border-black/15 text-xs font-mono text-center font-semibold text-[#191c1e] focus:outline-none focus:ring-1 focus:ring-[#ac3400]"
+                  className="w-full px-3 py-2 rounded bg-white border border-outline text-xs font-mono text-center font-semibold text-chocolate focus:outline-none focus:ring-2 focus:ring-olive focus:border-olive"
                 />
               </div>
             </div>
           </div>
 
           {/* Guarantee Badges */}
-          <div className="flex items-center justify-between text-[11px] text-[#76777d] pt-1">
+          <div className="flex items-center justify-between text-[11px] text-earth pt-1">
             <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-green-700 text-sm">check_circle</span>
+              <span className="material-symbols-outlined text-olive text-sm">check_circle</span>
               Sin cargos ocultos
             </span>
             <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-green-700 text-sm">security</span>
+              <span className="material-symbols-outlined text-olive text-sm">security</span>
               Garantía Sernatur #7482
             </span>
             <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-green-700 text-sm">cached</span>
+              <span className="material-symbols-outlined text-olive text-sm">cached</span>
               Reprogramable por soroche
             </span>
           </div>
@@ -287,7 +288,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
           <button
             type="submit"
             disabled={isProcessing}
-            className="w-full py-3.5 px-6 rounded-lg bg-[#ac3400] hover:bg-[#832600] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-md flex items-center justify-center gap-2 mt-2 disabled:opacity-50"
+            className="w-full py-3.5 px-6 rounded bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 elevation-card flex items-center justify-center gap-2 mt-2 disabled:opacity-50"
           >
             {isProcessing ? (
               <>
@@ -300,7 +301,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
               <>
                 <span className="material-symbols-outlined text-base">lock</span>
                 <span>
-                  Confirmar Reserva ({rateInfo.symbol}{depositConverted.toLocaleString()} {currency})
+                  Confirmar reserva ({rateInfo.symbol}{depositConverted.toLocaleString()} {currency})
                 </span>
               </>
             )}

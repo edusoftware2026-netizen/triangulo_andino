@@ -67,52 +67,52 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
   const remainingConverted = Math.round(remainingAmountUSD * rateInfo.rate);
 
   return (
-    <div className="w-full bg-surface min-h-screen pt-24 pb-20 text-[#191c1e]">
+    <div className="w-full bg-canvas min-h-screen pt-24 pb-20 text-chocolate">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-8">
         {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-[#45464d]">
+        <div className="flex items-center gap-2 text-xs text-earth">
           <button
             type="button"
             onClick={onBack}
-            className="hover:text-[#ac3400] transition-colors flex items-center gap-1 font-bold"
+            className="hover:text-terracotta-text transition-colors flex items-center gap-1 font-semibold"
           >
             <span className="material-symbols-outlined text-sm">arrow_back</span>
-            <span>Volver al Catálogo</span>
+            <span>Volver al catálogo</span>
           </button>
-          <span>/</span>
-          <span className="text-[#191c1e] font-semibold">{packageItem.country}</span>
-          <span>/</span>
-          <span className="text-[#ac3400] font-semibold truncate max-w-xs">
+          <span className="text-chocolate/20">/</span>
+          <span className="text-chocolate font-medium">{packageItem.country}</span>
+          <span className="text-chocolate/20">/</span>
+          <span className="text-terracotta-text font-semibold truncate max-w-xs">
             {packageItem.title[language] || packageItem.title.ES}
           </span>
         </div>
 
         {/* Main Header Hero */}
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-black/10 min-h-[380px] flex items-end p-6 sm:p-10 text-white">
+        <div className="relative w-full rounded-lg overflow-hidden elevation-card border border-chocolate/12 min-h-[380px] flex items-end p-6 sm:p-10 text-white">
           <img
             src={packageItem.imageUrl}
             alt={packageItem.title[language] || packageItem.title.ES}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/65 to-transparent" />
 
           <div className="relative z-10 max-w-4xl flex flex-col gap-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded bg-[#0F172A]/80 backdrop-blur text-white text-xs uppercase font-bold tracking-wider">
+              <span className="px-3 py-1 rounded bg-chocolate/85 backdrop-blur text-white text-xs uppercase font-bold tracking-wider border border-white/10">
                 {packageItem.country}
               </span>
-              <span className="px-3 py-1 rounded bg-[#ac3400] text-white text-xs font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded bg-terracotta-strong text-white text-xs font-bold uppercase tracking-wider">
                 {packageItem.days} Días / {packageItem.nights} Noches
               </span>
               <span className="px-3 py-1 rounded bg-white/20 backdrop-blur text-white text-xs font-semibold">
-                Altitud Máx: {packageItem.maxAltitudeMeters.toLocaleString()} msnm
+                Altitud máx: {packageItem.maxAltitudeMeters.toLocaleString()} msnm
               </span>
             </div>
 
             <h1 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight leading-tight">
               {packageItem.title[language] || packageItem.title.ES}
             </h1>
-            <p className="text-sm sm:text-base text-[#bec6e0] leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base text-stone/90 leading-relaxed max-w-2xl">
               {packageItem.tagline[language] || packageItem.tagline.ES}
             </p>
           </div>
@@ -123,15 +123,15 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
           {/* LEFT: Inclusions, Itinerary & Hotels */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             {/* Highlights Box */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xs border border-black/10 flex flex-col gap-4">
-              <h2 className="font-serif text-2xl font-semibold text-[#0F172A] flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#ac3400]">verified</span>
-                <span>Inclusiones de Alta Gama & Seguridad</span>
+            <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-4">
+              <h2 className="font-serif text-2xl font-semibold text-chocolate flex items-center gap-2">
+                <span className="material-symbols-outlined text-olive">verified</span>
+                <span>Inclusiones de alta gama y seguridad</span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {packageItem.highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 p-3 rounded-lg bg-[#f2f4f6] text-xs text-[#191c1e]">
-                    <span className="material-symbols-outlined text-[#ac3400] text-base shrink-0 mt-0.5">
+                  <div key={idx} className="flex items-start gap-2 p-3 rounded bg-stone/25 border border-chocolate/8 text-xs text-chocolate">
+                    <span className="material-symbols-outlined text-olive text-base shrink-0 mt-0.5">
                       check_circle
                     </span>
                     <span className="leading-relaxed">{h}</span>
@@ -141,17 +141,17 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             </div>
 
             {/* Detailed Day-by-Day Itinerary */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xs border border-black/10 flex flex-col gap-6">
-              <div className="flex items-center justify-between pb-4 border-b border-black/5">
+            <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-6">
+              <div className="flex items-center justify-between pb-4 border-b border-chocolate/10">
                 <div>
-                  <h2 className="font-serif text-2xl font-semibold text-[#0F172A]">
+                  <h2 className="font-serif text-2xl font-semibold text-chocolate">
                     {t.itineraryDaysTitle}
                   </h2>
-                  <p className="text-xs text-[#45464d] mt-1">
+                  <p className="text-xs text-earth mt-1">
                     Estructurado para máxima aclimatación física y óptimos tiempos de paso fronterizo.
                   </p>
                 </div>
-                <span className="material-symbols-outlined text-[#ac3400] text-2xl">
+                <span className="material-symbols-outlined text-olive text-2xl">
                   timeline
                 </span>
               </div>
@@ -160,24 +160,24 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                 {packageItem.itinerary.map((day, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-[#f2f4f6] border border-black/5 flex flex-col gap-2"
+                    className="p-4 rounded bg-stone/25 border border-chocolate/8 flex flex-col gap-2"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-[#ac3400] uppercase tracking-wider">
+                      <span className="text-xs font-bold text-terracotta-text uppercase tracking-wider">
                         {day.day}
                       </span>
-                      <span className="text-[11px] text-[#45464d] font-semibold">
+                      <span className="text-[11px] text-earth font-semibold">
                         {day.region}
                       </span>
                     </div>
-                    <h4 className="font-serif text-lg font-semibold text-[#191c1e]">
+                    <h4 className="font-serif text-lg font-semibold text-chocolate">
                       {day.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-[#45464d] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-earth leading-relaxed">
                       {day.description}
                     </p>
                     {(day.meals || day.transport) && (
-                      <div className="pt-2 border-t border-black/5 flex flex-wrap gap-4 text-xs font-semibold text-[#191c1e]">
+                      <div className="pt-2 border-t border-chocolate/8 flex flex-wrap gap-4 text-xs font-semibold text-chocolate">
                         {day.meals && <span>Comidas: {day.meals}</span>}
                         {day.transport && <span>Transporte: {day.transport}</span>}
                       </div>
@@ -189,19 +189,19 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
 
             {/* Recommended Luxury Lodges */}
             {packageItem.recommendedHotels && packageItem.recommendedHotels.length > 0 && (
-              <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xs border border-black/10 flex flex-col gap-4">
-                <h3 className="font-serif text-2xl font-semibold text-[#0F172A] flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#ac3400]">hotel</span>
-                  <span>Hotelería Seleccionada para este Circuito</span>
+              <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-4">
+                <h3 className="font-serif text-2xl font-semibold text-chocolate flex items-center gap-2">
+                  <span className="material-symbols-outlined text-olive">hotel</span>
+                  <span>Hotelería seleccionada para este circuito</span>
                 </h3>
                 <div className="grid grid-cols-1 gap-3">
                   {packageItem.recommendedHotels.map((h, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-[#f2f4f6] border border-black/5 flex flex-col gap-1">
+                    <div key={i} className="p-4 rounded bg-stone/25 border border-chocolate/8 flex flex-col gap-1">
                       <div className="flex items-center justify-between">
-                        <h4 className="font-semibold text-sm text-[#191c1e]">{h.name}</h4>
-                        <span className="text-xs font-bold text-[#ac3400]">{h.category}</span>
+                        <h4 className="font-semibold text-sm text-chocolate">{h.name}</h4>
+                        <span className="text-xs font-bold text-terracotta-text">{h.category}</span>
                       </div>
-                      <p className="text-xs text-[#45464d] leading-relaxed">{h.description}</p>
+                      <p className="text-xs text-earth leading-relaxed">{h.description}</p>
                     </div>
                   ))}
                 </div>
@@ -211,37 +211,37 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
 
           {/* RIGHT: Dynamic Quotation & Real-Time Booking Widget */}
           <div className="lg:col-span-5 flex flex-col gap-6 sticky top-24">
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-black/10 flex flex-col gap-6">
-              <div className="pb-4 border-b border-black/5">
-                <span className="text-[10px] uppercase tracking-widest text-[#ac3400] font-bold block">
-                  Cotizador Dinámico en Tiempo Real
+            <div className="bg-white p-6 sm:p-8 rounded-lg elevation-card border border-chocolate/12 flex flex-col gap-6">
+              <div className="pb-4 border-b border-chocolate/10">
+                <span className="text-[10px] uppercase tracking-widest text-terracotta-text font-bold block">
+                  Cotizador dinámico en tiempo real
                 </span>
-                <h3 className="font-serif text-2xl font-semibold text-[#0F172A] mt-1">
-                  Configura tu Expedición
+                <h3 className="font-serif text-2xl font-semibold text-chocolate mt-1">
+                  Configura tu expedición
                 </h3>
               </div>
 
               {/* 1. Número de Expedicionarios */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e] flex justify-between">
+                <label className="text-xs font-bold uppercase tracking-wider text-chocolate flex justify-between">
                   <span>Expedicionarios:</span>
-                  <span className="text-[#ac3400] font-serif text-base">{travelers} Personas</span>
+                  <span className="text-terracotta-text font-serif text-base">{travelers} Personas</span>
                 </label>
                 <div className="flex items-center gap-2 mt-1">
                   <button
                     type="button"
                     onClick={() => setTravelers(Math.max(1, travelers - 1))}
-                    className="w-10 h-10 rounded bg-[#f2f4f6] hover:bg-[#e0e3e5] text-lg font-bold text-[#191c1e] transition-colors flex items-center justify-center border border-black/10"
+                    className="w-10 h-10 rounded bg-stone/30 hover:bg-stone text-lg font-bold text-chocolate transition-colors flex items-center justify-center border border-chocolate/12"
                   >
                     −
                   </button>
-                  <div className="flex-1 text-center font-serif text-xl font-bold bg-[#f2f4f6] py-1.5 rounded border border-black/10">
+                  <div className="flex-1 text-center font-serif text-xl font-bold bg-stone/20 py-1.5 rounded border border-chocolate/12">
                     {travelers}
                   </div>
                   <button
                     type="button"
                     onClick={() => setTravelers(Math.min(8, travelers + 1))}
-                    className="w-10 h-10 rounded bg-[#f2f4f6] hover:bg-[#e0e3e5] text-lg font-bold text-[#191c1e] transition-colors flex items-center justify-center border border-black/10"
+                    className="w-10 h-10 rounded bg-stone/30 hover:bg-stone text-lg font-bold text-chocolate transition-colors flex items-center justify-center border border-chocolate/12"
                   >
                     +
                   </button>
@@ -250,31 +250,31 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
 
               {/* 2. Modalidad de Viaje */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e]">
-                  Modalidad de Viaje
+                <label className="text-xs font-bold uppercase tracking-wider text-chocolate">
+                  Modalidad de viaje
                 </label>
                 <div className="grid grid-cols-2 gap-2 mt-1">
                   <button
                     type="button"
                     onClick={() => setTravelMode('complete')}
-                    className={`p-2.5 rounded-lg text-left text-xs font-bold transition-all border ${
+                    className={`p-2.5 rounded text-left text-xs font-bold transition-all border ${
                       travelMode === 'complete'
-                        ? 'bg-[#0F172A] text-white border-[#0F172A]'
-                        : 'bg-[#f2f4f6] text-[#45464d] border-black/5 hover:bg-[#e0e3e5]'
+                        ? 'bg-chocolate text-white border-chocolate'
+                        : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                     }`}
                   >
-                    Paquete Completo (Con Hotel)
+                    Paquete completo (con hotel)
                   </button>
                   <button
                     type="button"
                     onClick={() => setTravelMode('expedition')}
-                    className={`p-2.5 rounded-lg text-left text-xs font-bold transition-all border ${
+                    className={`p-2.5 rounded text-left text-xs font-bold transition-all border ${
                       travelMode === 'expedition'
-                        ? 'bg-[#0F172A] text-white border-[#0F172A]'
-                        : 'bg-[#f2f4f6] text-[#45464d] border-black/5 hover:bg-[#e0e3e5]'
+                        ? 'bg-chocolate text-white border-chocolate'
+                        : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                     }`}
                   >
-                    Solo Tours (Sin Hotel)
+                    Solo expedición (sin hotel)
                   </button>
                 </div>
               </div>
@@ -282,17 +282,17 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               {/* 3. Categoría Hotelera (si completa) */}
               {travelMode === 'complete' && (
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e]">
-                    Categoría de Alojamiento
+                  <label className="text-xs font-bold uppercase tracking-wider text-chocolate">
+                    Categoría de alojamiento
                   </label>
                   <div className="grid grid-cols-3 gap-2 mt-1">
                     <button
                       type="button"
                       onClick={() => setHotelTier('3star')}
-                      className={`p-2 rounded-lg text-center text-xs font-bold transition-all border ${
+                      className={`p-2 rounded text-center text-xs font-bold transition-all border ${
                         hotelTier === '3star'
-                          ? 'bg-[#ac3400] text-white border-[#ac3400]'
-                          : 'bg-[#f2f4f6] text-[#45464d] border-black/5 hover:bg-[#e0e3e5]'
+                          ? 'bg-olive text-white border-olive'
+                          : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                       }`}
                     >
                       3★ Confort
@@ -300,10 +300,10 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setHotelTier('4star')}
-                      className={`p-2 rounded-lg text-center text-xs font-bold transition-all border ${
+                      className={`p-2 rounded text-center text-xs font-bold transition-all border ${
                         hotelTier === '4star'
-                          ? 'bg-[#ac3400] text-white border-[#ac3400]'
-                          : 'bg-[#f2f4f6] text-[#45464d] border-black/5 hover:bg-[#e0e3e5]'
+                          ? 'bg-olive text-white border-olive'
+                          : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                       }`}
                     >
                       4★ Boutique
@@ -311,10 +311,10 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setHotelTier('5star')}
-                      className={`p-2 rounded-lg text-center text-xs font-bold transition-all border ${
+                      className={`p-2 rounded text-center text-xs font-bold transition-all border ${
                         hotelTier === '5star'
-                          ? 'bg-[#ac3400] text-white border-[#ac3400]'
-                          : 'bg-[#f2f4f6] text-[#45464d] border-black/5 hover:bg-[#e0e3e5]'
+                          ? 'bg-olive text-white border-olive'
+                          : 'bg-stone/30 text-earth border-chocolate/10 hover:bg-stone/50'
                       }`}
                     >
                       5★ Luxury
@@ -324,9 +324,9 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               )}
 
               {/* 4. Actividades Extra / Upgrades */}
-              <div className="flex flex-col gap-2 pt-2 border-t border-black/5">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#191c1e]">
-                  Experiencias Extra Opcionales
+              <div className="flex flex-col gap-2 pt-2 border-t border-chocolate/10">
+                <label className="text-xs font-bold uppercase tracking-wider text-chocolate">
+                  Experiencias extra opcionales
                 </label>
                 <div className="flex flex-col gap-2">
                   {AVAILABLE_EXTRAS.map((extra) => {
@@ -336,26 +336,26 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                       <label
                         key={extra.id}
                         onClick={() => toggleExtra(extra.id)}
-                        className={`p-3 rounded-lg border text-xs cursor-pointer flex items-start gap-2.5 transition-all ${
+                        className={`p-3 rounded border text-xs cursor-pointer flex items-start gap-2.5 transition-all ${
                           isSelected
-                            ? 'bg-[#ffdbd0]/30 border-[#ac3400]/40'
-                            : 'bg-[#f2f4f6] border-black/5 hover:bg-[#e0e3e5]'
+                            ? 'bg-stone/40 border-olive/40 ring-1 ring-olive/20'
+                            : 'bg-stone/20 border-chocolate/8 hover:bg-stone/40'
                         }`}
                       >
                         <input
                           type="checkbox"
                           checked={isSelected}
                           onChange={() => {}}
-                          className="mt-0.5 w-4 h-4 accent-[#ac3400] cursor-pointer shrink-0"
+                          className="mt-0.5 w-4 h-4 accent-olive cursor-pointer shrink-0"
                         />
                         <div className="flex-1">
-                          <div className="flex items-center justify-between font-semibold text-[#191c1e]">
+                          <div className="flex items-center justify-between font-semibold text-chocolate">
                             <span>{extra.name}</span>
-                            <span className="text-[#ac3400] font-bold">
+                            <span className="text-terracotta-text font-bold">
                               +{rateInfo.symbol}{convertedExtra} {currency}
                             </span>
                           </div>
-                          <p className="text-[11px] text-[#45464d] mt-0.5">{extra.description}</p>
+                          <p className="text-[11px] text-earth mt-0.5">{extra.description}</p>
                         </div>
                       </label>
                     );
@@ -364,34 +364,34 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
               </div>
 
               {/* Financial Calculation Box */}
-              <div className="p-4 bg-[#f2f4f6] rounded-xl border border-black/5 space-y-3">
+              <div className="p-4 bg-stone/25 rounded border border-chocolate/10 space-y-3">
                 <div className="flex items-baseline justify-between">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#45464d] font-bold block">
-                      Precio Por Expedicionario
+                    <span className="text-[10px] uppercase tracking-wider text-earth font-bold block">
+                      Precio por expedicionario
                     </span>
                     <div className="flex items-baseline gap-1 mt-0.5">
-                      <span className="font-serif text-3xl font-bold text-[#0F172A]">
+                      <span className="font-serif text-3xl font-bold text-chocolate">
                         {rateInfo.symbol}{pricePerPersonConverted.toLocaleString()}
                       </span>
-                      <span className="text-xs font-bold text-[#45464d]">{currency}</span>
+                      <span className="text-xs font-bold text-earth">{currency}</span>
                     </div>
                   </div>
 
                   <div className="text-right">
-                    <span className="text-[10px] text-[#45464d] block font-semibold">
-                      Total Grupo ({travelers} pax):
+                    <span className="text-[10px] text-earth block font-semibold">
+                      Total grupo ({travelers} pax):
                     </span>
-                    <span className="font-serif text-xl font-bold text-[#ac3400]">
+                    <span className="font-serif text-xl font-bold text-terracotta-text">
                       {rateInfo.symbol}{totalGroupConverted.toLocaleString()} {currency}
                     </span>
                   </div>
                 </div>
 
                 {/* Formula Breakdown Details */}
-                <div className="flex flex-col gap-1 text-[11px] text-[#45464d] pt-2 border-t border-black/5">
+                <div className="flex flex-col gap-1 text-[11px] text-earth pt-2 border-t border-chocolate/10">
                   <div className="flex justify-between">
-                    <span>Base Tour:</span>
+                    <span>Base tour:</span>
                     <span>{rateInfo.symbol}{Math.round(baseTourUSD * rateInfo.rate).toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
@@ -399,29 +399,29 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                     <span>{rateInfo.symbol}{Math.round(hotelUSD * rateInfo.rate).toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Traslados 4x4 & Logística:</span>
+                    <span>Traslados 4x4 y logística:</span>
                     <span>{rateInfo.symbol}{Math.round(transfersUSD * rateInfo.rate).toLocaleString()}</span>
                   </div>
                   {extrasUSD > 0 && (
-                    <div className="flex justify-between text-[#ac3400]">
-                      <span>Actividades Extra:</span>
+                    <div className="flex justify-between text-terracotta-text">
+                      <span>Actividades extra:</span>
                       <span>+{rateInfo.symbol}{Math.round(extrasUSD * rateInfo.rate).toLocaleString()}</span>
                     </div>
                   )}
-                  <div className="flex justify-between font-bold text-[#191c1e] pt-1 border-t border-black/5">
-                    <span>Garantía de Reserva (20%):</span>
+                  <div className="flex justify-between font-bold text-chocolate pt-1 border-t border-chocolate/10">
+                    <span>Garantía de reserva (20%):</span>
                     <span>{rateInfo.symbol}{depositConverted.toLocaleString()} {currency}</span>
                   </div>
                 </div>
               </div>
 
               {/* Profitability Transparency Metric */}
-              <div className="p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs flex items-center justify-between text-amber-900">
-                <div className="flex items-center gap-1.5 font-semibold">
-                  <span className="material-symbols-outlined text-sm text-[#d97706]">analytics</span>
-                  <span>Margen Neto Agencia Estimado:</span>
+              <div className="p-3 bg-stone/40 rounded border border-chocolate/12 text-xs flex items-center justify-between text-chocolate">
+                <div className="flex items-center gap-1.5 font-semibold text-earth">
+                  <span className="material-symbols-outlined text-sm text-gold-text">analytics</span>
+                  <span>Margen neto agencia estimado:</span>
                 </div>
-                <span className="font-mono font-bold text-[#0F172A]">
+                <span className="font-mono font-bold text-chocolate">
                   ${estimatedProfitUSD.toLocaleString()} USD
                 </span>
               </div>
@@ -439,7 +439,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                       activeExtras
                     )
                   }
-                  className="w-full py-3.5 px-4 rounded-xl bg-[#ac3400] hover:bg-[#832600] text-white text-xs uppercase tracking-wider font-bold transition-colors shadow-md flex items-center justify-center gap-2"
+                  className="w-full py-3.5 px-4 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors elevation-card flex items-center justify-center gap-2"
                 >
                   <span className="material-symbols-outlined text-base">credit_card</span>
                   <span>{t.btnBookGuarantee}</span>
@@ -448,9 +448,9 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                 <button
                   type="button"
                   onClick={onOpenConcierge}
-                  className="w-full py-2.5 px-4 rounded-lg bg-[#f2f4f6] hover:bg-[#e0e3e5] text-[#191c1e] text-xs uppercase tracking-wider font-bold transition-colors flex items-center justify-center gap-1.5 border border-black/5"
+                  className="w-full py-2.5 px-4 rounded bg-stone/30 hover:bg-stone/60 text-chocolate text-xs uppercase tracking-wider font-bold transition-colors flex items-center justify-center gap-1.5 border border-chocolate/12"
                 >
-                  <span className="material-symbols-outlined text-green-700 text-base">chat</span>
+                  <span className="material-symbols-outlined text-olive text-base">chat</span>
                   <span>Consultar con Concierge 24/7</span>
                 </button>
               </div>

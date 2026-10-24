@@ -29,7 +29,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
         width: 220,
         margin: 2,
         color: {
-          dark: '#0F172A',
+          dark: '#3E322C',
           light: '#FFFFFF'
         }
       })
@@ -66,21 +66,21 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
   return (
     <div
       data-lenis-prevent
-      className="fixed inset-0 z-50 bg-primary/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-chocolate/65 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
     >
-      <div className="bg-white max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden border border-black/10 my-8 flex flex-col">
+      <div className="bg-white max-w-2xl w-full rounded-lg elevation-modal overflow-hidden border border-chocolate/12 my-8 flex flex-col text-chocolate">
         {/* Top Header Bar */}
-        <div className="bg-primary text-white px-6 py-4 flex items-center justify-between">
+        <div className="bg-chocolate text-white px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-secondary-container text-2xl">
+            <span className="material-symbols-outlined text-gold text-2xl">
               verified
             </span>
             <div>
               <h3 className="font-serif text-lg font-semibold tracking-tight">
-                Voucher Oficial de Expedición
+                Voucher oficial de expedición
               </h3>
-              <p className="text-[10px] uppercase tracking-widest text-[#bec6e0]">
-                Salvoconducto Transfronterizo · Chile, Bolivia & Perú
+              <p className="text-[10px] uppercase tracking-widest text-stone/80">
+                Salvoconducto transfronterizo · Chile, Bolivia & Perú
               </p>
             </div>
           </div>
@@ -94,80 +94,78 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
         </div>
 
         {/* Printable Certificate Body */}
-        <div id="printable-voucher" className="p-6 sm:p-8 flex flex-col gap-6 bg-surface">
+        <div id="printable-voucher" className="p-6 sm:p-8 flex flex-col gap-6 bg-canvas">
           {/* Certificate Header Banner */}
-          <div className="bg-white p-5 rounded-xl border border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-xs">
+          <div className="bg-white p-5 rounded border border-chocolate/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div className="flex items-center gap-3">
-              <img
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WbI1b3W87j_X4Czfrq3qSnHZF0wTnt1GIRF85bEfzhKv3cRjWGASopjeHsyLz2pcNbx7WfTFNb3ABN8XDB8_XT_rGLd79nHPaVYpeK-j07XU2bq23y2llPC276l6VKKM3rHe_7ePPhzNOCvGByTLcLSvBLaWrl2RQHRRmaJEZtAzDVKsBQu8KSw5KDpX-dpyf0O3O5uEq1rnUM3lgIHTPJdeJLFBoQAVetfawvGJ3P3tjN9tkOBbVTIQ"
-                alt="Triángulo Andino Logo"
-                className="h-10 w-auto"
-              />
+              <div className="w-10 h-10 rounded bg-chocolate flex items-center justify-center text-gold font-serif font-bold text-lg shadow-xs">
+                ▲
+              </div>
               <div>
-                <h2 className="font-serif text-2xl font-bold text-on-surface leading-tight">
+                <h2 className="font-serif text-2xl font-bold text-chocolate leading-tight">
                   Triángulo Andino Expeditions
                 </h2>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-secondary">
-                  Garantía Satelital InReach & Acreditación Triple
+                <span className="text-[10px] uppercase font-bold tracking-widest text-terracotta-text">
+                  Garantía satelital InReach & acreditación triple
                 </span>
               </div>
             </div>
 
             <div className="flex flex-col items-center sm:items-end">
-              <span className="text-[10px] uppercase tracking-wider text-on-surface-variant font-semibold">
-                Código Único de Reserva
+              <span className="text-[10px] uppercase tracking-wider text-earth font-semibold">
+                Código único de reserva
               </span>
-              <span className="font-mono text-lg font-bold text-secondary bg-[#ffdbd0]/40 px-3 py-1 rounded border border-secondary/20">
+              <span className="font-mono text-lg font-bold text-terracotta-text bg-stone/30 px-3 py-1 rounded border border-chocolate/10">
                 {reservation.id}
               </span>
-              <span className="inline-flex items-center gap-1 text-[11px] text-green-700 font-bold mt-1">
-                <span className="w-2 h-2 rounded-full bg-green-600"></span>
-                Depósito Confirmado (Stripe)
+              <span className="inline-flex items-center gap-1 text-[11px] text-olive font-bold mt-1">
+                <span className="w-2 h-2 rounded-full bg-olive"></span>
+                Depósito confirmado (Stripe)
               </span>
             </div>
           </div>
 
           {/* Core Voucher Details Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white p-6 rounded-xl border border-black/10 shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white p-6 rounded border border-chocolate/10">
             {/* Left 2 Cols: Details */}
             <div className="md:col-span-2 flex flex-col justify-between gap-4">
               <div>
-                <span className="text-[11px] uppercase tracking-wider text-on-surface-variant font-bold block mb-1">
-                  Expedición Contratada
+                <span className="text-[11px] uppercase tracking-wider text-earth font-bold block mb-1">
+                  Expedición contratada
                 </span>
-                <h4 className="font-serif text-xl font-bold text-primary leading-snug">
+                <h4 className="font-serif text-xl font-bold text-chocolate leading-snug">
                   {reservation.packageName}
                 </h4>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div>
-                  <span className="text-on-surface-variant block font-medium">Expedicionario Principal:</span>
-                  <span className="font-bold text-on-surface text-sm">{reservation.travelerName}</span>
+                  <span className="text-earth block font-medium">Expedicionario principal:</span>
+                  <span className="font-bold text-chocolate text-sm">{reservation.travelerName}</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant block font-medium">Fecha de Salida:</span>
-                  <span className="font-bold text-on-surface text-sm">{reservation.travelDate}</span>
+                  <span className="text-earth block font-medium">Fecha de salida:</span>
+                  <span className="font-bold text-chocolate text-sm">{reservation.travelDate}</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant block font-medium">Expedicionarios:</span>
-                  <span className="font-bold text-on-surface">{reservation.travelersCount} Personas</span>
+                  <span className="text-earth block font-medium">Expedicionarios:</span>
+                  <span className="font-bold text-chocolate">{reservation.travelersCount} Personas</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant block font-medium">Categoría Hotelera:</span>
-                  <span className="font-bold text-secondary uppercase">
-                    {reservation.hotelTier === 'none' ? 'Sin Hotel (Solo Tours)' : reservation.hotelTier}
+                  <span className="text-earth block font-medium">Categoría hotelera:</span>
+                  <span className="font-bold text-terracotta-text uppercase">
+                    {reservation.hotelTier === 'none' ? 'Sin hotel (solo tours)' : reservation.hotelTier}
                   </span>
                 </div>
               </div>
 
               {/* Extra Activities included */}
               {reservation.selectedExtras.length > 0 && (
-                <div className="pt-2 border-t border-black/5 text-xs">
-                  <span className="font-semibold text-on-surface block mb-1">
-                    Experiencias Adicionales Incluidas:
+                <div className="pt-2 border-t border-chocolate/8 text-xs">
+                  <span className="font-semibold text-chocolate block mb-1">
+                    Experiencias adicionales incluidas:
                   </span>
-                  <ul className="list-disc list-inside text-on-surface-variant space-y-0.5">
+                  <ul className="list-disc list-inside text-earth space-y-0.5">
                     {reservation.selectedExtras.map((ext) => (
                       <li key={ext.id}>{ext.name}</li>
                     ))}
@@ -176,21 +174,21 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
               )}
 
               {/* Financial Box */}
-              <div className="p-3 bg-surface-container-low rounded-lg text-xs space-y-1">
-                <div className="flex justify-between text-on-surface-variant">
-                  <span>Total Expedición:</span>
-                  <span className="font-bold text-on-surface">
+              <div className="p-3 bg-stone/25 rounded text-xs space-y-1 border border-chocolate/8">
+                <div className="flex justify-between text-earth">
+                  <span>Total expedición:</span>
+                  <span className="font-bold text-chocolate">
                     {rateInfo.symbol}{totalConverted.toLocaleString()} {reservation.currency}
                   </span>
                 </div>
-                <div className="flex justify-between text-secondary font-bold text-sm">
-                  <span>Garantía 20% Abonada:</span>
+                <div className="flex justify-between text-terracotta-text font-bold text-sm">
+                  <span>Garantía 20% abonada:</span>
                   <span>
                     {rateInfo.symbol}{depositConverted.toLocaleString()} {reservation.currency}
                   </span>
                 </div>
-                <div className="flex justify-between text-[#76777d]">
-                  <span>Saldo Restante (80%):</span>
+                <div className="flex justify-between text-earth/80">
+                  <span>Saldo restante (80%):</span>
                   <span>
                     {rateInfo.symbol}{remainingConverted.toLocaleString()} {reservation.currency} (a pagar 30 días antes)
                   </span>
@@ -199,37 +197,37 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
             </div>
 
             {/* Right 1 Col: Official QR Code Stamp */}
-            <div className="flex flex-col items-center justify-center p-3 border border-dashed border-primary/20 rounded-lg bg-surface">
+            <div className="flex flex-col items-center justify-center p-3 border border-dashed border-chocolate/20 rounded bg-canvas">
               {qrDataUrl ? (
                 <img
                   src={qrDataUrl}
                   alt="QR Code Voucher"
-                  className="w-36 h-36 object-contain rounded shadow-xs"
+                  className="w-36 h-36 object-contain rounded"
                 />
               ) : (
-                <div className="w-36 h-36 bg-gray-200 animate-pulse rounded flex items-center justify-center text-xs text-gray-500">
+                <div className="w-36 h-36 bg-stone/30 animate-pulse rounded flex items-center justify-center text-xs text-earth">
                   Generando QR...
                 </div>
               )}
-              <span className="text-[10px] text-center uppercase tracking-widest text-on-surface-variant font-bold mt-2">
-                Escaneo Oficial en Aduanas y Hoteles
+              <span className="text-[10px] text-center uppercase tracking-widest text-chocolate font-bold mt-2">
+                Escaneo oficial en aduanas y hoteles
               </span>
-              <span className="text-[9px] text-[#76777d] text-center mt-0.5">
-                Validador Criptográfico Triángulo Andino
+              <span className="text-[9px] text-earth text-center mt-0.5">
+                Validador criptográfico Triángulo Andino
               </span>
             </div>
           </div>
 
           {/* High Altitude Protocol Notice */}
-          <div className="bg-[#131b2e] text-white p-4 rounded-xl text-xs space-y-1 flex items-start gap-3">
-            <span className="material-symbols-outlined text-secondary-container text-xl shrink-0 mt-0.5">
+          <div className="bg-stone/30 text-chocolate p-4 rounded text-xs space-y-1 flex items-start gap-3 border border-chocolate/10">
+            <span className="material-symbols-outlined text-olive text-xl shrink-0 mt-0.5">
               health_and_safety
             </span>
             <div>
-              <h5 className="font-bold uppercase tracking-wider text-[#ffdcc3]">
-                Protocolo Médico Andino & Cruce de Fronteras
+              <h5 className="font-bold uppercase tracking-wider text-chocolate">
+                Protocolo médico andino & cruce de fronteras
               </h5>
-              <p className="text-white/80 leading-relaxed text-[11px]">
+              <p className="text-earth leading-relaxed text-[11px]">
                 Presentar este salvoconducto digital o impreso ante el guía líder de 4x4 en el punto de encuentro. Incluye oxigenoterapia de cabina, seguro satelital Garmin InReach y tramitación migratoria prioritaria en Hito Cajón (Chile-Bolivia) y Kasani (Bolivia-Perú).
               </p>
             </div>
@@ -237,20 +235,20 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
         </div>
 
         {/* Action Controls Bar */}
-        <div className="bg-white px-6 py-4 border-t border-black/10 flex flex-wrap items-center justify-between gap-3">
+        <div className="bg-white px-6 py-4 border-t border-chocolate/10 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
               type="button"
-              className="px-4 py-2 rounded bg-surface-container hover:bg-[#e0e3e5] text-on-surface text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-1.5"
+              className="px-4 py-2 rounded bg-stone/25 hover:bg-stone/50 text-chocolate text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-1.5 border border-chocolate/10"
             >
               <span className="material-symbols-outlined text-sm">print</span>
-              <span>Imprimir Voucher</span>
+              <span>Imprimir voucher</span>
             </button>
             <button
               onClick={handleSendWhatsApp}
               type="button"
-              className="px-4 py-2 rounded bg-green-700 hover:bg-green-800 text-white text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-1.5 shadow-sm"
+              className="px-4 py-2 rounded bg-olive hover:bg-olive-deep text-white text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-1.5"
             >
               <span className="material-symbols-outlined text-sm">chat</span>
               <span>Enviar a WhatsApp Concierge</span>
@@ -260,7 +258,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
           <button
             onClick={onClose}
             type="button"
-            className="px-5 py-2 rounded bg-primary hover:bg-secondary text-white text-xs uppercase tracking-wider font-bold transition-colors"
+            className="px-5 py-2 rounded bg-chocolate hover:bg-chocolate/85 text-white text-xs uppercase tracking-wider font-bold transition-colors"
           >
             Finalizar
           </button>
