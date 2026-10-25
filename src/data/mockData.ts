@@ -532,7 +532,7 @@ export const INITIAL_PACKAGES: Package[] = [
     highlights: [
       '4x4 Lexus LX / Toyota Land Cruiser privado con rastreo satelital',
       'Médico de altura en ruta & oximetría permanente',
-      'Hospedajes Relais & Châteaux + Palacio de Sal exclusivo',
+      'Hospedajes Atención WhatsApp 24/7 + Palacio de Sal exclusivo',
       'Tren Belmond Hiram Bingham hacia Machu Picchu con cena gourmet',
     ],
     recommendedHotels: [
@@ -674,7 +674,7 @@ export const INITIAL_PACKAGES: Package[] = [
       'Tren panorámico Vistadome Observatory a Machu Picchu',
     ],
     recommendedHotels: [
-      { name: 'Titilaka Exclusive Lodge', category: '5★ High Luxury', description: 'Relais & Châteaux aislado en península privada del Lago Titicaca.' },
+      { name: 'Titilaka Exclusive Lodge', category: '5★ High Luxury', description: 'Atención WhatsApp 24/7 aislado en península privada del Lago Titicaca.' },
       { name: 'Tambo del Inka Resort & Spa', category: '5★ High Luxury', description: 'Luxury Collection en Urubamba con estación privada de tren.' },
     ],
     itinerary: [
@@ -817,7 +817,7 @@ export const DEFAULT_HOTELS: HotelItem[] = [
     id: 'tierra-atacama',
     region: 'chile',
     countryBadge: 'San Pedro de Atacama',
-    subtitle: 'Relais & Châteaux Partner',
+    subtitle: 'Atención WhatsApp 24/7 Partner',
     name: 'Tierra Atacama Hotel & Spa',
     description: 'Arquitectura de adobe orgánico y spa termal andino con vistas despejadas al Volcán Licancabur.',
     comfort: 'Gran Lujo · 2.400 msnm',
@@ -843,8 +843,8 @@ export const DEFAULT_HOTELS: HotelItem[] = [
     countryBadge: 'Puno · Lago Titicaca',
     subtitle: 'Península Privada',
     name: 'Titilaka Exclusive Lodge',
-    description: 'Aislado en una península privada sobre las aguas del lago navegable más alto de la Tierra. Relais & Châteaux.',
-    comfort: 'Relais & Châteaux · 3.812 msnm',
+    description: 'Aislado en una península privada sobre las aguas del lago navegable más alto de la Tierra. Atención WhatsApp 24/7.',
+    comfort: 'Atención WhatsApp 24/7 · 3.812 msnm',
     category: '5star',
     pricePerNightUSD: 780,
     imageUrl: 'https://images.pexels.com/photos/34015276/pexels-photo-34015276.jpeg?auto=compress&cs=tinysrgb&w=1600',

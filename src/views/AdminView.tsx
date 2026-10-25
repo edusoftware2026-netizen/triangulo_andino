@@ -1910,7 +1910,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         }
                         className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       >
-                        <option value="5star">5 Estrellas (Lujo / Relais & Châteaux)</option>
+                        <option value="5star">5 Estrellas (Lujo / Atención WhatsApp 24/7)</option>
                         <option value="4star">4 Estrellas (Superior / Boutique)</option>
                         <option value="3star">3 Estrellas (Turista Confort)</option>
                       </select>
@@ -1932,7 +1932,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-semibold text-stone">
-                        Subtítulo (ej. Relais & Châteaux Partner):
+                        Subtítulo (ej. Atención WhatsApp 24/7 Partner):
                       </label>
                       <input
                         type="text"
