@@ -790,7 +790,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
   };
 
   return (
-    <div className="min-h-screen bg-[#2A211D] text-[#F9F6F0] pb-24">
+    <div className="min-h-screen bg-admin-bg text-canvas pb-24">
       {/* Visual Floating Toast Confirmation */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-600 text-white px-5 py-3.5 rounded-lg shadow-2xl border border-emerald-400 font-semibold text-sm animate-bounce">
@@ -800,10 +800,10 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
       )}
 
       {/* Top Banner / Navigation Bar */}
-      <div className="bg-[#221A17] border-b border-[#5A4C42] sticky top-0 z-30">
+      <div className="bg-admin-card border-b border-admin-border sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-[#C2694E] to-[#D4A373] flex items-center justify-center text-white shadow-lg">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-terracotta to-gold flex items-center justify-center text-white shadow-lg">
               <span className="material-symbols-outlined text-2xl">admin_panel_settings</span>
             </div>
             <div>
@@ -815,7 +815,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   En Vivo
                 </span>
               </div>
-              <p className="text-xs text-[#D8CEC2]">
+              <p className="text-xs text-admin-text-secondary">
                 Edición en tiempo real del Frontend, Portada, Paquetes, Hoteles y Destinos
               </p>
             </div>
@@ -825,9 +825,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             <button
               type="button"
               onClick={onNavigateHome}
-              className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#E5DFD5] text-[#2A211D] text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-md transition-all active:scale-95"
+              className="px-4 py-2.5 rounded-xl bg-white hover:bg-stone text-admin-bg text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-md transition-all active:scale-95"
             >
-              <span className="material-symbols-outlined text-base text-[#C2694E]">visibility</span>
+              <span className="material-symbols-outlined text-base text-terracotta">visibility</span>
               <span>Ver Portada en Vivo</span>
             </button>
 
@@ -843,7 +843,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   showToast('¡Datos de fábrica restaurados con éxito!');
                 }
               }}
-              className="px-3.5 py-2.5 rounded-xl bg-[#332923] hover:bg-rose-950/60 hover:text-rose-300 text-[#E5DFD5] text-xs font-semibold flex items-center gap-1.5 border border-[#5A4C42] transition-all"
+              className="px-3.5 py-2.5 rounded-xl bg-admin-surface hover:bg-rose-950/60 hover:text-rose-300 text-stone text-xs font-semibold flex items-center gap-1.5 border border-admin-border transition-all"
               title="Restaurar datos iniciales"
             >
               <span className="material-symbols-outlined text-sm">restart_alt</span>
@@ -853,14 +853,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         </div>
 
         {/* CMS Tabs */}
-        <div className="max-w-7xl mx-auto px-6 flex items-center gap-1 overflow-x-auto border-t border-[#5A4C42]/80 pt-1">
+        <div className="max-w-7xl mx-auto px-6 flex items-center gap-1 overflow-x-auto border-t border-admin-border/80 pt-1">
           <button
             type="button"
             onClick={() => setActiveTab('branding')}
             className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'branding'
-                ? 'border-[#C2694E] text-white bg-[#2A211D]/70'
-                : 'border-transparent text-[#D8CEC2] hover:text-[#F4F0E8]'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
             }`}
           >
             <span className="material-symbols-outlined text-base">palette</span>
@@ -872,8 +872,8 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             onClick={() => setActiveTab('packages')}
             className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'packages'
-                ? 'border-[#C2694E] text-white bg-[#2A211D]/70'
-                : 'border-transparent text-[#D8CEC2] hover:text-[#F4F0E8]'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
             }`}
           >
             <span className="material-symbols-outlined text-base">inventory_2</span>
@@ -885,8 +885,8 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             onClick={() => setActiveTab('hotels')}
             className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'hotels'
-                ? 'border-[#C2694E] text-white bg-[#2A211D]/70'
-                : 'border-transparent text-[#D8CEC2] hover:text-[#F4F0E8]'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
             }`}
           >
             <span className="material-symbols-outlined text-base">hotel</span>
@@ -898,8 +898,8 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             onClick={() => setActiveTab('destinations')}
             className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'destinations'
-                ? 'border-[#C2694E] text-white bg-[#2A211D]/70'
-                : 'border-transparent text-[#D8CEC2] hover:text-[#F4F0E8]'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
             }`}
           >
             <span className="material-symbols-outlined text-base">map</span>
@@ -911,8 +911,8 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             onClick={() => setActiveTab('reservations')}
             className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'reservations'
-                ? 'border-[#C2694E] text-white bg-[#2A211D]/70'
-                : 'border-transparent text-[#D8CEC2] hover:text-[#F4F0E8]'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
             }`}
           >
             <span className="material-symbols-outlined text-base">receipt_long</span>
@@ -924,8 +924,8 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             onClick={() => setActiveTab('ai_gen')}
             className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'ai_gen'
-                ? 'border-[#C2694E] text-white bg-[#2A211D]/70'
-                : 'border-transparent text-[#D8CEC2] hover:text-[#F4F0E8]'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
             }`}
           >
             <span className="material-symbols-outlined text-base text-amber-400">auto_awesome</span>
@@ -940,14 +940,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         {/* MODULE 1: PORTADA & BRANDING                                              */}
         {/* ========================================================================= */}
         {activeTab === 'branding' && (
-          <div className="bg-[#221A17] border border-[#5A4C42] rounded-lg p-6 lg:p-8 shadow-xl flex flex-col gap-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#5A4C42] gap-4">
+          <div className="bg-admin-card border border-admin-border rounded-lg p-6 lg:p-8 shadow-xl flex flex-col gap-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-admin-border gap-4">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#C2694E]">palette</span>
+                  <span className="material-symbols-outlined text-terracotta">palette</span>
                   Configuración de Portada, Hero y Concierge
                 </h2>
-                <p className="text-xs text-[#D8CEC2] mt-1">
+                <p className="text-xs text-admin-text-secondary mt-1">
                   Actualiza la fotografía principal de fondo, titulares y canales de contacto directo.
                 </p>
               </div>
@@ -955,7 +955,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               <button
                 type="button"
                 onClick={handleSaveBranding}
-                className="px-6 py-3 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                className="px-6 py-3 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
               >
                 <span className="material-symbols-outlined text-base">save</span>
                 <span>Guardar y Publicar en Portada</span>
@@ -964,21 +964,21 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
             <form onSubmit={handleSaveBranding} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left Column: Background Image Manager */}
-              <div className="flex flex-col gap-4 bg-[#2A211D]/80 p-6 rounded-lg border border-[#5A4C42]">
+              <div className="flex flex-col gap-4 bg-admin-bg/80 p-6 rounded-lg border border-admin-border">
                 <span className="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base">image</span>
                   Fotografía de Fondo del Hero (Pantalla Completa)
                 </span>
 
                 {/* Live Preview of Hero Background */}
-                <div className="relative h-56 w-full rounded-xl overflow-hidden border border-[#5A4C42] bg-[#221A17]">
+                <div className="relative h-56 w-full rounded-xl overflow-hidden border border-admin-border bg-admin-card">
                   <img
                     src={brandingForm.heroImageUrl}
                     alt="Hero Preview"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                    <span className="text-xs font-mono text-[#E5DFD5] truncate">
+                    <span className="text-xs font-mono text-stone truncate">
                       {brandingForm.heroImageUrl}
                     </span>
                   </div>
@@ -986,7 +986,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
                 {/* URL Input */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-[#E5DFD5]">
+                  <label className="text-xs font-semibold text-stone">
                     URL de la Imagen (Unsplash u otro servidor):
                   </label>
                   <input
@@ -996,14 +996,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       setBrandingForm({ ...brandingForm, heroImageUrl: e.target.value })
                     }
                     placeholder="https://..."
-                    className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-[#C2694E]"
+                    className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-terracotta"
                   />
                 </div>
 
                 {/* Local File Upload */}
-                <div className="flex flex-col gap-1.5 pt-2 border-t border-[#5A4C42]">
-                  <label className="text-xs font-semibold text-[#E5DFD5] flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-sm text-[#C2694E]">
+                <div className="flex flex-col gap-1.5 pt-2 border-t border-admin-border">
+                  <label className="text-xs font-semibold text-stone flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-sm text-terracotta">
                       upload_file
                     </span>
                     O subir imagen desde tu ordenador (Base64 local):
@@ -1019,13 +1019,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         });
                       }
                     }}
-                    className="text-xs text-[#D8CEC2] file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-[#332923] file:text-white hover:file:bg-[#4E3F37] cursor-pointer"
+                    className="text-xs text-admin-text-secondary file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-admin-surface file:text-white hover:file:bg-admin-hover cursor-pointer"
                   />
                 </div>
 
                 {/* Curated Presets */}
                 <div className="pt-2 flex flex-col gap-1.5">
-                  <span className="text-[11px] uppercase tracking-wider text-[#D8CEC2] font-bold">
+                  <span className="text-[11px] uppercase tracking-wider text-admin-text-secondary font-bold">
                     Presets Recomendados del Triángulo Andino:
                   </span>
                   <div className="grid grid-cols-2 gap-2">
@@ -1038,7 +1038,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
                         })
                       }
-                      className="px-2.5 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[11px] text-[#E5DFD5] text-left truncate"
+                      className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
                     >
                       🏔️ Machu Picchu (Perú)
                     </button>
@@ -1051,7 +1051,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
                         })
                       }
-                      className="px-2.5 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[11px] text-[#E5DFD5] text-left truncate"
+                      className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
                     >
                       🦩 Salar de Uyuni (Bolivia)
                     </button>
@@ -1064,7 +1064,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
                         })
                       }
-                      className="px-2.5 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[11px] text-[#E5DFD5] text-left truncate"
+                      className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
                     >
                       🏜️ San Pedro de Atacama (Chile)
                     </button>
@@ -1077,7 +1077,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             'https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=2000&q=85',
                         })
                       }
-                      className="px-2.5 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[11px] text-[#E5DFD5] text-left truncate"
+                      className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
                     >
                       ✨ Altiplano & Huayna Picchu
                     </button>
@@ -1086,14 +1086,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               </div>
 
               {/* Right Column: Titles, Kicker & WhatsApp Concierge */}
-              <div className="flex flex-col gap-5 bg-[#2A211D]/80 p-6 rounded-lg border border-[#5A4C42]">
+              <div className="flex flex-col gap-5 bg-admin-bg/80 p-6 rounded-lg border border-admin-border">
                 <span className="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base">edit_note</span>
                   Titulares y Mensajería Concierge
                 </span>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-[#E5DFD5]">
+                  <label className="text-xs font-semibold text-stone">
                     Kicker Superior (Encabezado pequeño):
                   </label>
                   <input
@@ -1106,13 +1106,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         heroTag: e.target.value,
                       })
                     }
-                    className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-[#C2694E]"
+                    className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-terracotta"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-[#E5DFD5]">
+                    <label className="text-xs font-semibold text-stone">
                       Título Hero - Parte 1:
                     </label>
                     <input
@@ -1121,11 +1121,11 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       onChange={(e) =>
                         setBrandingForm({ ...brandingForm, heroTitle1: e.target.value })
                       }
-                      className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-[#C2694E]"
+                      className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-terracotta"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-[#E5DFD5]">
+                    <label className="text-xs font-semibold text-stone">
                       Título Hero - Parte 2 (Dorado / Cursiva):
                     </label>
                     <input
@@ -1134,13 +1134,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       onChange={(e) =>
                         setBrandingForm({ ...brandingForm, heroTitle2: e.target.value })
                       }
-                      className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-amber-300 font-serif focus:outline-none focus:border-[#C2694E]"
+                      className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-amber-300 font-serif focus:outline-none focus:border-terracotta"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-[#E5DFD5]">
+                  <label className="text-xs font-semibold text-stone">
                     Subtítulo / Bajada Descriptiva:
                   </label>
                   <textarea
@@ -1149,11 +1149,11 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     onChange={(e) =>
                       setBrandingForm({ ...brandingForm, heroSubtitle: e.target.value })
                     }
-                    className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-[#C2694E] leading-relaxed"
+                    className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-terracotta leading-relaxed"
                   />
                 </div>
 
-                <div className="pt-3 border-t border-[#5A4C42] flex flex-col gap-3">
+                <div className="pt-3 border-t border-admin-border flex flex-col gap-3">
                   <span className="text-xs uppercase tracking-wider font-bold text-emerald-400 flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-base">chat</span>
                     WhatsApp Concierge 24/7
@@ -1161,7 +1161,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Teléfono WhatsApp (Con código de país):
                       </label>
                       <input
@@ -1171,12 +1171,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                           setBrandingForm({ ...brandingForm, conciergePhone: e.target.value })
                         }
                         placeholder="56982349900"
-                        className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500 font-mono"
+                        className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500 font-mono"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Mensaje Pre-cargado:
                       </label>
                       <input
@@ -1185,7 +1185,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setBrandingForm({ ...brandingForm, conciergeDefaultMsg: e.target.value })
                         }
-                        className="w-full bg-[#221A17] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500"
+                        className="w-full bg-admin-card border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -1194,7 +1194,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                    className="w-full py-3.5 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
                   >
                     <span className="material-symbols-outlined text-base">save</span>
                     <span>Guardar y Publicar en Portada</span>
@@ -1210,13 +1210,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         {/* ========================================================================= */}
         {activeTab === 'packages' && (
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#221A17] p-6 rounded-lg border border-[#5A4C42]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-admin-card p-6 rounded-lg border border-admin-border">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#C2694E]">inventory_2</span>
+                  <span className="material-symbols-outlined text-terracotta">inventory_2</span>
                   Gestor de Paquetes Turísticos del Catálogo
                 </h2>
-                <p className="text-xs text-[#D8CEC2] mt-1">
+                <p className="text-xs text-admin-text-secondary mt-1">
                   Administra precios base, itinerarios día a día y galerías fotográficas completas.
                 </p>
               </div>
@@ -1224,7 +1224,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               <button
                 type="button"
                 onClick={handleStartCreatePkg}
-                className="px-5 py-3 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
+                className="px-5 py-3 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
               >
                 <span className="material-symbols-outlined text-base">add_circle</span>
                 <span>Crear Nuevo Paquete</span>
@@ -1238,9 +1238,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                 return (
                   <div
                     key={pkg.id}
-                    className="bg-[#221A17] border border-[#5A4C42] rounded-lg overflow-hidden flex flex-col group hover:border-[#5A4C42] transition-all shadow-lg"
+                    className="bg-admin-card border border-admin-border rounded-lg overflow-hidden flex flex-col group hover:border-admin-border transition-all shadow-lg"
                   >
-                    <div className="relative h-48 w-full overflow-hidden bg-[#2A211D]">
+                    <div className="relative h-48 w-full overflow-hidden bg-admin-bg">
                       <img
                         src={pkg.imageUrl}
                         alt={pkg.title.ES}
@@ -1249,7 +1249,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-white text-[10px] font-bold uppercase">
                         {pkg.countriesList.join(' · ')}
                       </div>
-                      <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[#5B6E52] text-white text-[10px] font-bold">
+                      <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-olive text-white text-[10px] font-bold">
                         {pkg.days} Días / {pkg.nights} Noches
                       </div>
                       <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/75 text-amber-400 text-[10px] font-semibold flex items-center gap-1">
@@ -1263,10 +1263,10 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         <h3 className="text-base font-bold text-white line-clamp-1">
                           {pkg.title.ES}
                         </h3>
-                        <p className="text-xs text-[#D8CEC2] mt-1 line-clamp-2">
+                        <p className="text-xs text-admin-text-secondary mt-1 line-clamp-2">
                           {pkg.tagline.ES}
                         </p>
-                        <div className="mt-3 flex items-center justify-between text-xs text-[#E5DFD5]">
+                        <div className="mt-3 flex items-center justify-between text-xs text-stone">
                           <span>Altitud Máx: {pkg.maxAltitudeMeters.toLocaleString()} msnm</span>
                           <span className="text-amber-400 font-bold text-sm">
                             ${pkg.basePriceUSD} USD
@@ -1274,11 +1274,11 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         </div>
                       </div>
 
-                      <div className="pt-3 border-t border-[#5A4C42] flex items-center justify-between gap-2">
+                      <div className="pt-3 border-t border-admin-border flex items-center justify-between gap-2">
                         <button
                           type="button"
                           onClick={() => onViewPackage(pkg)}
-                          className="px-3 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] text-xs font-semibold flex items-center gap-1"
+                          className="px-3 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-stone text-xs font-semibold flex items-center gap-1"
                         >
                           <span className="material-symbols-outlined text-sm">visibility</span>
                           Ver
@@ -1312,10 +1312,10 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             {/* Package Edit/Create Modal */}
             {editingPkg && (
               <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-                <div className="bg-[#221A17] border border-[#5A4C42] rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
-                  <div className="flex items-center justify-between pb-4 border-b border-[#5A4C42]">
+                <div className="bg-admin-card border border-admin-border rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
+                  <div className="flex items-center justify-between pb-4 border-b border-admin-border">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#C2694E]">
+                      <span className="material-symbols-outlined text-terracotta">
                         {isCreatingPkg ? 'add_circle' : 'edit'}
                       </span>
                       {isCreatingPkg ? 'Crear Nuevo Paquete' : `Editar: ${editingPkg.title.ES}`}
@@ -1323,7 +1323,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     <button
                       type="button"
                       onClick={() => setEditingPkg(null)}
-                      className="w-8 h-8 rounded-full bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] flex items-center justify-center"
+                      className="w-8 h-8 rounded-full bg-admin-surface hover:bg-admin-hover text-stone flex items-center justify-center"
                     >
                       <span className="material-symbols-outlined text-base">close</span>
                     </button>
@@ -1332,7 +1332,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   {/* Form fields */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5 md:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Título del Paquete (Español):
                       </label>
                       <input
@@ -1344,12 +1344,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             title: { ...editingPkg.title, ES: e.target.value },
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5 md:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Tagline / Descripción Corta:
                       </label>
                       <input
@@ -1361,12 +1361,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             tagline: { ...editingPkg.tagline, ES: e.target.value },
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Precio Base USD (Por Viajero):
                       </label>
                       <input
@@ -1378,12 +1378,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             basePriceUSD: Number(e.target.value) || 0,
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-amber-400 font-bold"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-amber-400 font-bold"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Altitud Máxima (msnm):
                       </label>
                       <input
@@ -1395,12 +1395,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             maxAltitudeMeters: Number(e.target.value) || 0,
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">Días:</label>
+                      <label className="text-xs font-semibold text-stone">Días:</label>
                       <input
                         type="number"
                         value={editingPkg.days}
@@ -1411,12 +1411,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             nights: Math.max(1, (Number(e.target.value) || 1) - 1),
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">Noches:</label>
+                      <label className="text-xs font-semibold text-stone">Noches:</label>
                       <input
                         type="number"
                         value={editingPkg.nights}
@@ -1426,12 +1426,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             nights: Number(e.target.value) || 1,
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5 md:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Países Incluidos (Separados por coma):
                       </label>
                       <input
@@ -1448,13 +1448,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             country: list.join(' · '),
                           });
                         }}
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
                   </div>
 
                   {/* Multi-Photo Gallery Manager */}
-                  <div className="pt-4 border-t border-[#5A4C42] flex flex-col gap-3">
+                  <div className="pt-4 border-t border-admin-border flex flex-col gap-3">
                     <span className="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-1.5">
                       <span className="material-symbols-outlined text-base">photo_library</span>
                       Galería de Fotos del Paquete (Multi-Imagen en Carrusel)
@@ -1465,7 +1465,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       {(editingPkg.images || [editingPkg.imageUrl]).map((img, idx) => (
                         <div
                           key={`${img}-${idx}`}
-                          className="relative h-28 rounded-xl overflow-hidden border border-[#5A4C42] group bg-[#2A211D]"
+                          className="relative h-28 rounded-xl overflow-hidden border border-admin-border group bg-admin-bg"
                         >
                           <img
                             src={img}
@@ -1473,7 +1473,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             className="w-full h-full object-cover"
                           />
                           {idx === 0 && (
-                            <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-md bg-[#5B6E52] text-white text-[9px] font-bold uppercase">
+                            <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-md bg-olive text-white text-[9px] font-bold uppercase">
                               Principal
                             </span>
                           )}
@@ -1493,7 +1493,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                                     images: newImages,
                                   });
                                 }}
-                                className="px-2 py-1 rounded-md bg-amber-500 text-[#2A211D] text-[10px] font-bold"
+                                className="px-2 py-1 rounded-md bg-amber-500 text-admin-bg text-[10px] font-bold"
                                 title="Establecer como foto principal"
                               >
                                 Portada
@@ -1532,7 +1532,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                           placeholder="Agregar URL de foto..."
                           value={newGalleryUrlInput}
                           onChange={(e) => setNewGalleryUrlInput(e.target.value)}
-                          className="flex-1 bg-[#2A211D] border border-[#5A4C42] px-3 py-2 rounded-xl text-xs text-white"
+                          className="flex-1 bg-admin-bg border border-admin-border px-3 py-2 rounded-xl text-xs text-white"
                         />
                         <button
                           type="button"
@@ -1545,7 +1545,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             });
                             setNewGalleryUrlInput('');
                           }}
-                          className="px-3 py-2 rounded-xl bg-[#332923] hover:bg-[#4E3F37] text-white text-xs font-semibold"
+                          className="px-3 py-2 rounded-xl bg-admin-surface hover:bg-admin-hover text-white text-xs font-semibold"
                         >
                           + URL
                         </button>
@@ -1567,14 +1567,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                               });
                             }
                           }}
-                          className="text-xs text-[#D8CEC2] file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-[#332923] file:text-white hover:file:bg-[#4E3F37] cursor-pointer"
+                          className="text-xs text-admin-text-secondary file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-admin-surface file:text-white hover:file:bg-admin-hover cursor-pointer"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Day-by-Day Itinerary Editor */}
-                  <div className="pt-4 border-t border-[#5A4C42] flex flex-col gap-3">
+                  <div className="pt-4 border-t border-admin-border flex flex-col gap-3">
                     <div className="flex items-center justify-between">
                       <span className="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-1.5">
                         <span className="material-symbols-outlined text-base">calendar_month</span>
@@ -1599,7 +1599,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             ],
                           });
                         }}
-                        className="px-3 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-xs text-[#F4F0E8] font-semibold"
+                        className="px-3 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-xs text-surface-container-low font-semibold"
                       >
                         + Agregar Día
                       </button>
@@ -1609,10 +1609,10 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       {editingPkg.itinerary.map((item, idx) => (
                         <div
                           key={idx}
-                          className="bg-[#2A211D] p-3.5 rounded-xl border border-[#5A4C42] flex flex-col gap-2"
+                          className="bg-admin-bg p-3.5 rounded-xl border border-admin-border flex flex-col gap-2"
                         >
                           <div className="flex items-center justify-between gap-2">
-                            <span className="px-2 py-0.5 rounded-md bg-[#5B6E52] text-white text-[10px] font-bold">
+                            <span className="px-2 py-0.5 rounded-md bg-olive text-white text-[10px] font-bold">
                               Día {item.day}
                             </span>
                             <div className="flex items-center gap-2">
@@ -1628,7 +1628,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                                   };
                                   setEditingPkg({ ...editingPkg, itinerary: updatedItin });
                                 }}
-                                className="w-24 bg-[#221A17] border border-[#5A4C42] px-2 py-1 rounded-md text-[11px] text-white"
+                                className="w-24 bg-admin-card border border-admin-border px-2 py-1 rounded-md text-[11px] text-white"
                               />
                               <button
                                 type="button"
@@ -1654,7 +1654,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                               updatedItin[idx] = { ...updatedItin[idx], title: e.target.value };
                               setEditingPkg({ ...editingPkg, itinerary: updatedItin });
                             }}
-                            className="w-full bg-[#221A17] border border-[#5A4C42] px-3 py-1.5 rounded-lg text-xs text-white font-semibold"
+                            className="w-full bg-admin-card border border-admin-border px-3 py-1.5 rounded-lg text-xs text-white font-semibold"
                           />
 
                           <textarea
@@ -1669,7 +1669,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                               };
                               setEditingPkg({ ...editingPkg, itinerary: updatedItin });
                             }}
-                            className="w-full bg-[#221A17] border border-[#5A4C42] px-3 py-1.5 rounded-lg text-xs text-[#E5DFD5]"
+                            className="w-full bg-admin-card border border-admin-border px-3 py-1.5 rounded-lg text-xs text-stone"
                           />
                         </div>
                       ))}
@@ -1677,18 +1677,18 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#5A4C42]">
+                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-admin-border">
                     <button
                       type="button"
                       onClick={() => setEditingPkg(null)}
-                      className="px-5 py-2.5 rounded-xl bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] text-xs font-semibold"
+                      className="px-5 py-2.5 rounded-xl bg-admin-surface hover:bg-admin-hover text-stone text-xs font-semibold"
                     >
                       Cancelar
                     </button>
                     <button
                       type="button"
                       onClick={handleSavePkg}
-                      className="px-6 py-2.5 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider shadow-lg"
+                      className="px-6 py-2.5 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider shadow-lg"
                     >
                       Guardar Paquete
                     </button>
@@ -1704,13 +1704,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         {/* ========================================================================= */}
         {activeTab === 'hotels' && (
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#221A17] p-6 rounded-lg border border-[#5A4C42]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-admin-card p-6 rounded-lg border border-admin-border">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#C2694E]">hotel</span>
+                  <span className="material-symbols-outlined text-terracotta">hotel</span>
                   Gestor de Hoteles, Hostales & Lodges de Altura
                 </h2>
-                <p className="text-xs text-[#D8CEC2] mt-1">
+                <p className="text-xs text-admin-text-secondary mt-1">
                   Controla la sección de hoteles del Home (Chile, Bolivia y Perú) en tiempo real.
                 </p>
               </div>
@@ -1718,7 +1718,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               <button
                 type="button"
                 onClick={handleStartCreateHotel}
-                className="px-5 py-3 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
+                className="px-5 py-3 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
               >
                 <span className="material-symbols-outlined text-base">add_business</span>
                 <span>Agregar Nuevo Hotel</span>
@@ -1730,9 +1730,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               {hotelsList.map((hotel) => (
                 <div
                   key={hotel.id}
-                  className="bg-[#221A17] border border-[#5A4C42] rounded-lg overflow-hidden flex flex-col group hover:border-[#5A4C42] transition-all shadow-lg"
+                  className="bg-admin-card border border-admin-border rounded-lg overflow-hidden flex flex-col group hover:border-admin-border transition-all shadow-lg"
                 >
-                  <div className="relative h-44 w-full overflow-hidden bg-[#2A211D]">
+                  <div className="relative h-44 w-full overflow-hidden bg-admin-bg">
                     <img
                       src={hotel.imageUrl}
                       alt={hotel.name}
@@ -1741,7 +1741,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur text-white text-[10px] font-bold uppercase">
                       {hotel.countryBadge}
                     </div>
-                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-amber-500 text-[#2A211D] text-[10px] font-extrabold uppercase">
+                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-amber-500 text-admin-bg text-[10px] font-extrabold uppercase">
                       {hotel.category === '5star'
                         ? '5 Estrellas'
                         : hotel.category === '4star'
@@ -1752,19 +1752,19 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
                   <div className="p-4 flex flex-col flex-1 justify-between gap-3">
                     <div>
-                      <span className="text-[10px] text-[#C2694E] uppercase font-bold tracking-wider">
+                      <span className="text-[10px] text-terracotta uppercase font-bold tracking-wider">
                         {hotel.subtitle}
                       </span>
                       <h4 className="text-sm font-bold text-white mt-0.5 line-clamp-1">
                         {hotel.name}
                       </h4>
-                      <p className="text-[11px] text-[#D8CEC2] mt-1 line-clamp-2 leading-relaxed">
+                      <p className="text-[11px] text-admin-text-secondary mt-1 line-clamp-2 leading-relaxed">
                         {hotel.description}
                       </p>
                     </div>
 
-                    <div className="pt-2.5 border-t border-[#5A4C42] flex items-center justify-between text-xs">
-                      <span className="text-[#D8CEC2] text-[11px]">{hotel.comfort}</span>
+                    <div className="pt-2.5 border-t border-admin-border flex items-center justify-between text-xs">
+                      <span className="text-admin-text-secondary text-[11px]">{hotel.comfort}</span>
                       <div className="flex items-center gap-1.5">
                         <button
                           type="button"
@@ -1792,16 +1792,16 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             {/* Hotel Edit/Create Modal */}
             {editingHotel && (
               <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-                <div className="bg-[#221A17] border border-[#5A4C42] rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
-                  <div className="flex items-center justify-between pb-4 border-b border-[#5A4C42]">
+                <div className="bg-admin-card border border-admin-border rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
+                  <div className="flex items-center justify-between pb-4 border-b border-admin-border">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#C2694E]">hotel</span>
+                      <span className="material-symbols-outlined text-terracotta">hotel</span>
                       {isCreatingHotel ? 'Agregar Hotel / Lodge' : `Editar: ${editingHotel.name}`}
                     </h3>
                     <button
                       type="button"
                       onClick={() => setEditingHotel(null)}
-                      className="w-8 h-8 rounded-full bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] flex items-center justify-center"
+                      className="w-8 h-8 rounded-full bg-admin-surface hover:bg-admin-hover text-stone flex items-center justify-center"
                     >
                       <span className="material-symbols-outlined text-base">close</span>
                     </button>
@@ -1809,7 +1809,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Nombre del Hotel / Lodge:
                       </label>
                       <input
@@ -1818,12 +1818,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setEditingHotel({ ...editingHotel, name: e.target.value })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">País / Región:</label>
+                      <label className="text-xs font-semibold text-stone">País / Región:</label>
                       <select
                         value={editingHotel.region}
                         onChange={(e) =>
@@ -1832,7 +1832,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             region: e.target.value as 'chile' | 'bolivia' | 'peru',
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       >
                         <option value="chile">🇨🇱 Chile</option>
                         <option value="bolivia">🇧🇴 Bolivia</option>
@@ -1841,7 +1841,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">Categoría:</label>
+                      <label className="text-xs font-semibold text-stone">Categoría:</label>
                       <select
                         value={editingHotel.category}
                         onChange={(e) =>
@@ -1850,7 +1850,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             category: e.target.value as '3star' | '4star' | '5star',
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       >
                         <option value="5star">5 Estrellas (Lujo / Relais & Châteaux)</option>
                         <option value="4star">4 Estrellas (Superior / Boutique)</option>
@@ -1859,7 +1859,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Badge Ubicación (ej. San Pedro de Atacama):
                       </label>
                       <input
@@ -1868,12 +1868,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setEditingHotel({ ...editingHotel, countryBadge: e.target.value })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Subtítulo (ej. Relais & Châteaux Partner):
                       </label>
                       <input
@@ -1882,24 +1882,24 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setEditingHotel({ ...editingHotel, subtitle: e.target.value })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">Descripción:</label>
+                      <label className="text-xs font-semibold text-stone">Descripción:</label>
                       <textarea
                         rows={3}
                         value={editingHotel.description}
                         onChange={(e) =>
                           setEditingHotel({ ...editingHotel, description: e.target.value })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white leading-relaxed"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white leading-relaxed"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Confort / Altitud (ej. Gran Lujo · 2.400 msnm):
                       </label>
                       <input
@@ -1908,12 +1908,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setEditingHotel({ ...editingHotel, comfort: e.target.value })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Precio Estimado por Noche USD:
                       </label>
                       <input
@@ -1925,13 +1925,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             pricePerNightUSD: Number(e.target.value) || 0,
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-amber-400 font-bold"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-amber-400 font-bold"
                       />
                     </div>
 
                     {/* Image URL & Upload */}
-                    <div className="flex flex-col gap-2 sm:col-span-2 pt-2 border-t border-[#5A4C42]">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                    <div className="flex flex-col gap-2 sm:col-span-2 pt-2 border-t border-admin-border">
+                      <label className="text-xs font-semibold text-stone">
                         Foto del Hotel (URL o Subir archivo):
                       </label>
                       <input
@@ -1941,7 +1941,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                           setEditingHotel({ ...editingHotel, imageUrl: e.target.value })
                         }
                         placeholder="https://..."
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                       <input
                         type="file"
@@ -1954,23 +1954,23 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             });
                           }
                         }}
-                        className="text-xs text-[#D8CEC2] file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-[#332923] file:text-white hover:file:bg-[#4E3F37] cursor-pointer"
+                        className="text-xs text-admin-text-secondary file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-admin-surface file:text-white hover:file:bg-admin-hover cursor-pointer"
                       />
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#5A4C42]">
+                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-admin-border">
                     <button
                       type="button"
                       onClick={() => setEditingHotel(null)}
-                      className="px-5 py-2.5 rounded-xl bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] text-xs font-semibold"
+                      className="px-5 py-2.5 rounded-xl bg-admin-surface hover:bg-admin-hover text-stone text-xs font-semibold"
                     >
                       Cancelar
                     </button>
                     <button
                       type="button"
                       onClick={handleSaveHotel}
-                      className="px-6 py-2.5 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider shadow-lg"
+                      className="px-6 py-2.5 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider shadow-lg"
                     >
                       Guardar Hotel
                     </button>
@@ -1986,13 +1986,13 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         {/* ========================================================================= */}
         {activeTab === 'destinations' && (
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#221A17] p-6 rounded-lg border border-[#5A4C42]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-admin-card p-6 rounded-lg border border-admin-border">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#C2694E]">map</span>
+                  <span className="material-symbols-outlined text-terracotta">map</span>
                   Gestor de Destinos & Hitos del Trazador Interactivo
                 </h2>
-                <p className="text-xs text-[#D8CEC2] mt-1">
+                <p className="text-xs text-admin-text-secondary mt-1">
                   Crea o modifica los hitos que los turistas eligen para trazar la ruta en vivo y el
                   gráfico altimétrico SVG del Home.
                 </p>
@@ -2001,7 +2001,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               <button
                 type="button"
                 onClick={handleStartCreateDest}
-                className="px-5 py-3 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
+                className="px-5 py-3 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
               >
                 <span className="material-symbols-outlined text-base">add_location_alt</span>
                 <span>Agregar Nuevo Hito</span>
@@ -2013,9 +2013,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               {destinations.map((dest) => (
                 <div
                   key={dest.id}
-                  className="bg-[#221A17] border border-[#5A4C42] rounded-lg overflow-hidden flex flex-col group hover:border-[#5A4C42] transition-all shadow-lg"
+                  className="bg-admin-card border border-admin-border rounded-lg overflow-hidden flex flex-col group hover:border-admin-border transition-all shadow-lg"
                 >
-                  <div className="relative h-44 w-full overflow-hidden bg-[#2A211D]">
+                  <div className="relative h-44 w-full overflow-hidden bg-admin-bg">
                     <img
                       src={dest.imageUrl}
                       alt={dest.name}
@@ -2024,7 +2024,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-white text-[10px] font-bold uppercase">
                       {dest.flag} {dest.country}
                     </div>
-                    <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-[#221A17]/85 backdrop-blur text-amber-300 text-[11px] font-bold">
+                    <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-admin-card/85 backdrop-blur text-amber-300 text-[11px] font-bold">
                       {dest.altitudeMeters.toLocaleString()} msnm
                     </div>
                   </div>
@@ -2032,16 +2032,16 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   <div className="p-5 flex flex-col flex-1 justify-between gap-3">
                     <div>
                       <h4 className="text-base font-bold text-white">{dest.name}</h4>
-                      <p className="text-xs text-[#D8CEC2] mt-1 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-admin-text-secondary mt-1 line-clamp-2 leading-relaxed">
                         {dest.tag}
                       </p>
-                      <div className="mt-3 flex items-center justify-between text-xs text-[#E5DFD5]">
+                      <div className="mt-3 flex items-center justify-between text-xs text-stone">
                         <span>{dest.days} días sugeridos</span>
                         <span className="text-amber-400 font-bold">+${dest.costUSD} USD</span>
                       </div>
                     </div>
 
-                    <div className="pt-3 border-t border-[#5A4C42] flex items-center justify-end gap-2">
+                    <div className="pt-3 border-t border-admin-border flex items-center justify-end gap-2">
                       <button
                         type="button"
                         onClick={() => handleStartEditDest(dest)}
@@ -2067,16 +2067,16 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             {/* Destination Edit/Create Modal */}
             {editingDest && (
               <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-                <div className="bg-[#221A17] border border-[#5A4C42] rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
-                  <div className="flex items-center justify-between pb-4 border-b border-[#5A4C42]">
+                <div className="bg-admin-card border border-admin-border rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
+                  <div className="flex items-center justify-between pb-4 border-b border-admin-border">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#C2694E]">map</span>
+                      <span className="material-symbols-outlined text-terracotta">map</span>
                       {isCreatingDest ? 'Nuevo Destino / Hito' : `Editar Hito: ${editingDest.name}`}
                     </h3>
                     <button
                       type="button"
                       onClick={() => setEditingDest(null)}
-                      className="w-8 h-8 rounded-full bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] flex items-center justify-center"
+                      className="w-8 h-8 rounded-full bg-admin-surface hover:bg-admin-hover text-stone flex items-center justify-center"
                     >
                       <span className="material-symbols-outlined text-base">close</span>
                     </button>
@@ -2084,19 +2084,19 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Nombre del Destino / Hito:
                       </label>
                       <input
                         type="text"
                         value={editingDest.name}
                         onChange={(e) => setEditingDest({ ...editingDest, name: e.target.value })}
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">País:</label>
+                      <label className="text-xs font-semibold text-stone">País:</label>
                       <select
                         value={editingDest.country}
                         onChange={(e) =>
@@ -2105,7 +2105,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             country: e.target.value as 'Chile' | 'Bolivia' | 'Perú',
                           })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       >
                         <option value="Chile">🇨🇱 Chile</option>
                         <option value="Bolivia">🇧🇴 Bolivia</option>
@@ -2114,19 +2114,19 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Bandera Emoji (ej. 🇨🇱, 🇧🇴, 🇵🇪):
                       </label>
                       <input
                         type="text"
                         value={editingDest.flag}
                         onChange={(e) => setEditingDest({ ...editingDest, flag: e.target.value })}
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Altitud en Metros (Afecta el SVG altimétrico):
                       </label>
                       <input
@@ -2140,12 +2140,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             altitude: `${m.toLocaleString()} msnm`,
                           });
                         }}
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-amber-300 font-bold"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-amber-300 font-bold"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Días Sugeridos:
                       </label>
                       <input
@@ -2154,12 +2154,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setEditingDest({ ...editingDest, days: Number(e.target.value) || 1 })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Costo Base en USD (Por persona):
                       </label>
                       <input
@@ -2168,25 +2168,25 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         onChange={(e) =>
                           setEditingDest({ ...editingDest, costUSD: Number(e.target.value) || 0 })
                         }
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-amber-400 font-bold"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-amber-400 font-bold"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                      <label className="text-xs font-semibold text-stone">
                         Tagline / Atractivos Clave:
                       </label>
                       <input
                         type="text"
                         value={editingDest.tag}
                         onChange={(e) => setEditingDest({ ...editingDest, tag: e.target.value })}
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                     </div>
 
                     {/* Image URL & Upload */}
-                    <div className="flex flex-col gap-2 sm:col-span-2 pt-2 border-t border-[#5A4C42]">
-                      <label className="text-xs font-semibold text-[#E5DFD5]">
+                    <div className="flex flex-col gap-2 sm:col-span-2 pt-2 border-t border-admin-border">
+                      <label className="text-xs font-semibold text-stone">
                         Foto del Hito (URL o Subir archivo):
                       </label>
                       <input
@@ -2196,7 +2196,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                           setEditingDest({ ...editingDest, imageUrl: e.target.value })
                         }
                         placeholder="https://..."
-                        className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white"
+                        className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white"
                       />
                       <input
                         type="file"
@@ -2209,23 +2209,23 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             });
                           }
                         }}
-                        className="text-xs text-[#D8CEC2] file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-[#332923] file:text-white hover:file:bg-[#4E3F37] cursor-pointer"
+                        className="text-xs text-admin-text-secondary file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-admin-surface file:text-white hover:file:bg-admin-hover cursor-pointer"
                       />
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#5A4C42]">
+                  <div className="flex items-center justify-end gap-3 pt-4 border-t border-admin-border">
                     <button
                       type="button"
                       onClick={() => setEditingDest(null)}
-                      className="px-5 py-2.5 rounded-xl bg-[#332923] hover:bg-[#4E3F37] text-[#E5DFD5] text-xs font-semibold"
+                      className="px-5 py-2.5 rounded-xl bg-admin-surface hover:bg-admin-hover text-stone text-xs font-semibold"
                     >
                       Cancelar
                     </button>
                     <button
                       type="button"
                       onClick={handleSaveDest}
-                      className="px-6 py-2.5 rounded-xl bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold uppercase tracking-wider shadow-lg"
+                      className="px-6 py-2.5 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider shadow-lg"
                     >
                       Guardar Hito
                     </button>
@@ -2243,20 +2243,20 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
           <div className="flex flex-col gap-6">
             {/* KPI Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-[#221A17] border border-[#5A4C42] p-5 rounded-lg flex flex-col gap-1">
-                <span className="text-xs text-[#D8CEC2] uppercase tracking-wider font-semibold">
+              <div className="bg-admin-card border border-admin-border p-5 rounded-lg flex flex-col gap-1">
+                <span className="text-xs text-admin-text-secondary uppercase tracking-wider font-semibold">
                   Facturación Total
                 </span>
                 <span className="text-2xl font-bold text-amber-400 font-mono">
                   ${totalRevenueUSD.toLocaleString()} USD
                 </span>
-                <span className="text-[11px] text-[#D8CEC2]">
+                <span className="text-[11px] text-admin-text-secondary">
                   {reservations.length} expediciones contratadas
                 </span>
               </div>
 
-              <div className="bg-[#221A17] border border-[#5A4C42] p-5 rounded-lg flex flex-col gap-1">
-                <span className="text-xs text-[#D8CEC2] uppercase tracking-wider font-semibold">
+              <div className="bg-admin-card border border-admin-border p-5 rounded-lg flex flex-col gap-1">
+                <span className="text-xs text-admin-text-secondary uppercase tracking-wider font-semibold">
                   Margen Bruto Agencia
                 </span>
                 <span className="text-2xl font-bold text-emerald-400 font-mono">
@@ -2269,35 +2269,35 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                 </span>
               </div>
 
-              <div className="bg-[#221A17] border border-[#5A4C42] p-5 rounded-lg flex flex-col gap-1">
-                <span className="text-xs text-[#D8CEC2] uppercase tracking-wider font-semibold">
+              <div className="bg-admin-card border border-admin-border p-5 rounded-lg flex flex-col gap-1">
+                <span className="text-xs text-admin-text-secondary uppercase tracking-wider font-semibold">
                   Reservas Confirmadas
                 </span>
                 <span className="text-2xl font-bold text-white font-mono">
                   {paidReservationsCount}
                 </span>
-                <span className="text-[11px] text-[#D8CEC2]">Con pago Stripe simulado</span>
+                <span className="text-[11px] text-admin-text-secondary">Con pago Stripe simulado</span>
               </div>
 
-              <div className="bg-[#221A17] border border-[#5A4C42] p-5 rounded-lg flex flex-col gap-1">
-                <span className="text-xs text-[#D8CEC2] uppercase tracking-wider font-semibold">
+              <div className="bg-admin-card border border-admin-border p-5 rounded-lg flex flex-col gap-1">
+                <span className="text-xs text-admin-text-secondary uppercase tracking-wider font-semibold">
                   Destino Más Vendido
                 </span>
                 <span className="text-xl font-bold text-amber-300 truncate">
                   Salar de Uyuni
                 </span>
-                <span className="text-[11px] text-[#D8CEC2]">Líder en ventas cruzadas</span>
+                <span className="text-[11px] text-admin-text-secondary">Líder en ventas cruzadas</span>
               </div>
             </div>
 
             {/* Reservations Table */}
-            <div className="bg-[#221A17] border border-[#5A4C42] rounded-lg overflow-hidden shadow-xl">
-              <div className="p-5 border-b border-[#5A4C42] flex items-center justify-between">
+            <div className="bg-admin-card border border-admin-border rounded-lg overflow-hidden shadow-xl">
+              <div className="p-5 border-b border-admin-border flex items-center justify-between">
                 <div>
                   <h3 className="text-base font-bold text-white">
                     Registro de Reservas y Vouchers Generados
                   </h3>
-                  <p className="text-xs text-[#D8CEC2] mt-0.5">
+                  <p className="text-xs text-admin-text-secondary mt-0.5">
                     Historial de clientes, estado de pago y acceso a comprobantes oficiales con código QR.
                   </p>
                 </div>
@@ -2305,7 +2305,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#2A211D]/80 text-[#D8CEC2] uppercase tracking-wider text-[10px]">
+                  <thead className="bg-admin-bg/80 text-admin-text-secondary uppercase tracking-wider text-[10px]">
                     <tr>
                       <th className="px-5 py-3 font-semibold">Código / Cliente</th>
                       <th className="px-5 py-3 font-semibold">Paquete Contratado</th>
@@ -2316,15 +2316,15 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       <th className="px-5 py-3 font-semibold text-right">Voucher</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#5A4C42] text-[#F4F0E8]">
+                  <tbody className="divide-y divide-admin-border text-surface-container-low">
                     {reservations.map((res) => (
-                      <tr key={res.id} className="hover:bg-[#2A211D]/60 transition-colors">
+                      <tr key={res.id} className="hover:bg-admin-bg/60 transition-colors">
                         <td className="px-5 py-4">
                           <div className="font-bold text-white font-mono">{res.id}</div>
-                          <div className="text-[11px] text-[#D8CEC2]">
+                          <div className="text-[11px] text-admin-text-secondary">
                             {res.travelerName}
                           </div>
-                          <div className="text-[10px] text-[#D8CEC2]">
+                          <div className="text-[10px] text-admin-text-secondary">
                             {res.travelerEmail}
                           </div>
                         </td>
@@ -2357,7 +2357,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                                 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                                 : res.paymentStatus === 'paid_deposit'
                                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                                : 'bg-[#332923] text-[#D8CEC2]'
+                                : 'bg-admin-surface text-admin-text-secondary'
                             }`}
                           >
                             {res.paymentStatus === 'paid_full'
@@ -2372,7 +2372,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                           <button
                             type="button"
                             onClick={() => onViewVoucher(res)}
-                            className="px-3 py-1.5 rounded-lg bg-[#5B6E52] hover:bg-[#44543D] text-white text-xs font-bold flex items-center gap-1.5 ml-auto shadow-sm"
+                            className="px-3 py-1.5 rounded-lg bg-olive hover:bg-olive-deep text-white text-xs font-bold flex items-center gap-1.5 ml-auto shadow-sm"
                           >
                             <span className="material-symbols-outlined text-sm">qr_code_2</span>
                             <span>Ver Voucher</span>
@@ -2391,7 +2391,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         {/* MODULE 6: GENERADOR IA DE PAQUETES                                        */}
         {/* ========================================================================= */}
         {activeTab === 'ai_gen' && (
-          <div className="bg-[#221A17] border border-[#5A4C42] rounded-lg p-6 lg:p-8 shadow-xl flex flex-col gap-6">
+          <div className="bg-admin-card border border-admin-border rounded-lg p-6 lg:p-8 shadow-xl flex flex-col gap-6">
             <div>
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-amber-400 text-2xl">
@@ -2401,7 +2401,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   Generador de Paquetes con Inteligencia Artificial
                 </h2>
               </div>
-              <p className="text-xs text-[#D8CEC2] mt-1 max-w-2xl">
+              <p className="text-xs text-admin-text-secondary mt-1 max-w-2xl">
                 Ingresa cualquier destino andino (incluso no tradicionales como Samaipata, Sajama,
                 Arequipa o Cañón del Colca) y la IA estructurará el itinerario, calculará
                 logística y lo publicará en el catálogo.
@@ -2410,7 +2410,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
             <form onSubmit={handleGeneratePackage} className="flex flex-col gap-4 max-w-xl">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-[#E5DFD5]">
+                <label className="text-xs font-semibold text-stone">
                   Destino o Región a Desarrollar:
                 </label>
                 <input
@@ -2418,12 +2418,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   value={destInput}
                   onChange={(e) => setDestInput(e.target.value)}
                   placeholder="ej. Samaipata, Sajama & Valles Cruceños"
-                  className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-[#C2694E]"
+                  className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-terracotta"
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-[#E5DFD5]">
+                <label className="text-xs font-semibold text-stone">
                   Duración Deseada (Días):
                 </label>
                 <input
@@ -2432,14 +2432,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   max={25}
                   value={daysInput}
                   onChange={(e) => setDaysInput(Number(e.target.value) || 5)}
-                  className="w-full bg-[#2A211D] border border-[#5A4C42] px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-[#C2694E]"
+                  className="w-full bg-admin-bg border border-admin-border px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-terracotta"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isGenerating}
-                className="py-3 px-6 rounded-xl bg-linear-to-r from-[#c2410c] to-amber-600 hover:from-[#9a3412] hover:to-amber-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 transition-all cursor-pointer"
+                className="py-3 px-6 rounded-xl bg-linear-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 transition-all cursor-pointer"
               >
                 <span className="material-symbols-outlined text-base">auto_awesome</span>
                 <span>{isGenerating ? 'Generando Expedición...' : 'Generar y Publicar en Web'}</span>
@@ -2454,20 +2454,20 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             </form>
 
             {lastGeneratedPkg && (
-              <div className="mt-4 p-5 rounded-xl bg-[#2A211D] border border-emerald-500/40 flex flex-col gap-2">
+              <div className="mt-4 p-5 rounded-xl bg-admin-bg border border-emerald-500/40 flex flex-col gap-2">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase">
                   <span className="material-symbols-outlined text-base">check_circle</span>
                   ¡Último Paquete Creado Exitosamente!
                 </div>
                 <h4 className="text-sm font-bold text-white">{lastGeneratedPkg.title.ES}</h4>
-                <p className="text-xs text-[#E5DFD5]">{lastGeneratedPkg.tagline.ES}</p>
+                <p className="text-xs text-stone">{lastGeneratedPkg.tagline.ES}</p>
                 <div className="text-xs text-amber-400 font-bold">
                   Precio Base: ${lastGeneratedPkg.basePriceUSD} USD · {lastGeneratedPkg.days} Días
                 </div>
                 <button
                   type="button"
                   onClick={() => onViewPackage(lastGeneratedPkg)}
-                  className="mt-2 text-xs font-semibold text-[#C2694E] hover:underline flex items-center gap-1"
+                  className="mt-2 text-xs font-semibold text-terracotta hover:underline flex items-center gap-1"
                 >
                   <span>Ver Detalle del Paquete</span>
                   <span className="material-symbols-outlined text-xs">arrow_forward</span>

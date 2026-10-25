@@ -58,6 +58,8 @@
   --color-admin-border: #5A4C42;
   --color-admin-text: #F9F6F0;
   --color-admin-text-secondary: #D8CEC2;
+  --color-admin-card: #221A17;
+  --color-admin-hover: #4E3F37;
 }
 
 @layer base {

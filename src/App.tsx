@@ -212,7 +212,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f7f9fb] text-[#191c1e] selection:bg-[#fd6b36] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-canvas text-chocolate selection:bg-terracotta selection:text-white">
       {/* Universal Fixed Navbar */}
       <Navbar
         currentView={currentView}

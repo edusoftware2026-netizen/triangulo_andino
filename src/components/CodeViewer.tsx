@@ -100,23 +100,23 @@ CONCIERGE_WHATSAPP_NUMBER=+56982349900`
   };
 
   return (
-    <div id="architecture-section" className="mt-16 bg-[#f2f4f6] p-6 lg:p-10 rounded-2xl border border-black/10 shadow-xs">
+    <div id="architecture-section" className="mt-16 bg-stone/30 p-6 lg:p-10 rounded-2xl border border-black/10 shadow-xs">
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6">
         <div>
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-[#ac3400] text-2xl">
+            <span className="material-symbols-outlined text-terracotta-strong text-2xl">
               developer_board
             </span>
-            <h3 className="font-serif text-2xl font-semibold text-[#0F172A]">
+            <h3 className="font-serif text-2xl font-semibold text-chocolate">
               Arquitectura Dual Full-Stack (Inspect Code & Config)
             </h3>
           </div>
-          <p className="text-xs sm:text-sm text-[#45464d] mt-1 max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-earth mt-1 max-w-3xl leading-relaxed">
             Demostración transparente para ingenieros y arquitectos cloud: Código listo para producción con selector de modo Offline Mock vs. Producción Real con Google Gemini 3.8 Pro & Firestore.
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <span className="px-3 py-1 rounded bg-white text-[#ac3400] text-xs uppercase font-bold tracking-wider border border-black/10">
+          <span className="px-3 py-1 rounded bg-white text-terracotta-strong text-xs uppercase font-bold tracking-wider border border-black/10">
             Production-Ready TS
           </span>
         </div>
@@ -138,8 +138,8 @@ CONCIERGE_WHATSAPP_NUMBER=+56982349900`
               onClick={() => setActiveTab(tab)}
               className={`px-3.5 py-1.5 rounded text-xs uppercase font-bold transition-all ${
                 activeTab === tab
-                  ? 'bg-[#0F172A] text-white shadow-xs'
-                  : 'bg-white text-[#45464d] hover:text-[#191c1e] border border-black/10'
+                  ? 'bg-chocolate text-white shadow-xs'
+                  : 'bg-white text-earth hover:text-chocolate border border-black/10'
               }`}
             >
               {labels[tab]}
@@ -149,7 +149,7 @@ CONCIERGE_WHATSAPP_NUMBER=+56982349900`
       </div>
 
       {/* Code Display */}
-      <div className="bg-[#0F172A] text-[#dae2fd] p-5 rounded-xl overflow-x-auto text-xs font-mono leading-relaxed mt-2 shadow-inner border border-white/10">
+      <div className="bg-chocolate text-stone p-5 rounded-xl overflow-x-auto text-xs font-mono leading-relaxed mt-2 shadow-inner border border-white/10">
         <pre className="block">
           <code>{codeSnippets[activeTab]}</code>
         </pre>

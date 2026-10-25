@@ -264,7 +264,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                   {lang}
                 </button>
               ))}
-              <span className="w-[1px] h-4 bg-chocolate/15 mx-1"></span>
+              <span className="w-px h-4 bg-chocolate/15 mx-1"></span>
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as Currency)}
