@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Package, Currency, Language, HotelTier, TravelMode, ExtraActivity } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { CURRENCY_RATES, AVAILABLE_EXTRAS } from '../data/mockData';
@@ -26,6 +26,12 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
   onOpenCheckout,
   onOpenConcierge,
 }) => {
+  const gallery = packageItem.images && packageItem.images.length > 0 ? packageItem.images : [packageItem.imageUrl];
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
+
+  useEffect(() => {
+    setActiveImageIdx(0);
+  }, [packageItem.id]);
   const t = TRANSLATIONS[language];
   const rateInfo = CURRENCY_RATES[currency] || CURRENCY_RATES.USD;
 
@@ -87,14 +93,48 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
           </span>
         </div>
 
-        {/* Main Header Hero */}
-        <div className="relative w-full rounded-lg overflow-hidden elevation-card border border-chocolate/12 min-h-[380px] flex items-end p-6 sm:p-10 text-white">
+        {/* Main Header Hero with Interactive Multi-Image Gallery */}
+        <div className="relative w-full rounded-lg overflow-hidden elevation-card border border-chocolate/12 min-h-[420px] flex items-end p-6 sm:p-10 text-white group">
           <img
-            src={packageItem.imageUrl}
+            src={gallery[activeImageIdx] || packageItem.imageUrl}
             alt={packageItem.title[language] || packageItem.title.ES}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out"
           />
           <div className="absolute inset-0 bg-linear-to-t from-chocolate via-chocolate/65 to-transparent" />
+
+          {/* Left / Right Carousel Controls if more than 1 image */}
+          {gallery.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImageIdx((prev) => (prev === 0 ? gallery.length - 1 : prev - 1));
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-chocolate/80 hover:bg-chocolate text-white flex items-center justify-center backdrop-blur shadow-md opacity-80 group-hover:opacity-100 transition-all z-20"
+                aria-label="Foto anterior"
+              >
+                <span className="material-symbols-outlined text-xl">chevron_left</span>
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImageIdx((prev) => (prev === gallery.length - 1 ? 0 : prev + 1));
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-chocolate/80 hover:bg-chocolate text-white flex items-center justify-center backdrop-blur shadow-md opacity-80 group-hover:opacity-100 transition-all z-20"
+                aria-label="Siguiente foto"
+              >
+                <span className="material-symbols-outlined text-xl">chevron_right</span>
+              </button>
+
+              {/* Counter Pill */}
+              <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-chocolate/85 backdrop-blur text-white text-xs font-semibold flex items-center gap-1.5 border border-white/10">
+                <span className="material-symbols-outlined text-sm text-terracotta-soft">photo_camera</span>
+                <span>{activeImageIdx + 1} / {gallery.length}</span>
+              </div>
+            </>
+          )}
 
           <div className="relative z-10 max-w-4xl flex flex-col gap-3">
             <div className="flex flex-wrap items-center gap-2">
@@ -117,6 +157,35 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             </p>
           </div>
         </div>
+
+        {/* Thumbnail Selector Bar if multiple images */}
+        {gallery.length > 1 && (
+          <div className="bg-white p-3 rounded-lg border border-chocolate/12 flex items-center gap-3 overflow-x-auto shadow-sm">
+            <span className="text-xs uppercase font-bold tracking-wider text-chocolate/70 shrink-0 flex items-center gap-1 pl-1">
+              <span className="material-symbols-outlined text-base text-terracotta">photo_library</span>
+              Galería ({gallery.length}):
+            </span>
+            <div className="flex items-center gap-2">
+              {gallery.map((imgUrl, idx) => (
+                <button
+                  key={`${imgUrl}-${idx}`}
+                  type="button"
+                  onClick={() => setActiveImageIdx(idx)}
+                  className={`relative w-16 h-12 rounded-md overflow-hidden border-2 transition-all shrink-0 ${
+                    activeImageIdx === idx
+                      ? 'border-terracotta ring-2 ring-terracotta/30 scale-105'
+                      : 'border-transparent opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img src={imgUrl} alt={`Miniatura ${idx + 1}`} className="w-full h-full object-cover" />
+                  {activeImageIdx === idx && (
+                    <div className="absolute inset-0 bg-terracotta/10" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Two-Column Grid: Details Left, Quotation & Booking Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

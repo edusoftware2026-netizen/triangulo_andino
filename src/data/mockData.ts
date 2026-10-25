@@ -40,8 +40,8 @@ export const INITIAL_PACKAGES: Package[] = [
     imageUrl: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
     images: [
       'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-      'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
+      'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
       'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85',
     ],
     highlights: [
@@ -96,10 +96,10 @@ export const INITIAL_PACKAGES: Package[] = [
     },
     logisticsCostUSD: 720,
     ticketsCostUSD: 280,
-    imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
     images: [
-      'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
+      'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
       'https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=2000&q=85',
     ],
     highlights: [
@@ -495,6 +495,30 @@ export function saveStoredDestinations(destinations: RouteDestination[]) {
   }
 }
 
+const BANNED_IMAGE_KEYS = ['photo-1518638150340', 'photo-1509316975850'];
+const SAFE_FALLBACK_IMG = 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85';
+
+export function sanitizePackageImages(pkg: Package): Package {
+  const isBanned = (url?: string) =>
+    !url || BANNED_IMAGE_KEYS.some((banned) => url.includes(banned));
+
+  let cleanImages = Array.isArray(pkg.images)
+    ? pkg.images.filter((url) => !isBanned(url))
+    : [];
+
+  if (cleanImages.length === 0) {
+    cleanImages = isBanned(pkg.imageUrl) ? [SAFE_FALLBACK_IMG] : [pkg.imageUrl];
+  }
+
+  const cleanImageUrl = isBanned(pkg.imageUrl) ? cleanImages[0] : pkg.imageUrl;
+
+  return {
+    ...pkg,
+    imageUrl: cleanImageUrl,
+    images: cleanImages,
+  };
+}
+
 // Packages
 export function getStoredPackages(): Package[] {
   try {
@@ -502,21 +526,27 @@ export function getStoredPackages(): Package[] {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+        const sanitized = parsed.map(sanitizePackageImages);
+        try {
+          localStorage.setItem(STORAGE_PACKAGES_KEY, JSON.stringify(sanitized));
+        } catch {}
+        return sanitized;
       }
     }
   } catch (e) {
     console.warn('Error reading stored packages:', e);
   }
+  const defaultSanitized = INITIAL_PACKAGES.map(sanitizePackageImages);
   try {
-    localStorage.setItem(STORAGE_PACKAGES_KEY, JSON.stringify(INITIAL_PACKAGES));
+    localStorage.setItem(STORAGE_PACKAGES_KEY, JSON.stringify(defaultSanitized));
   } catch {}
-  return INITIAL_PACKAGES;
+  return defaultSanitized;
 }
 
 export function saveStoredPackages(packages: Package[]) {
   try {
-    localStorage.setItem(STORAGE_PACKAGES_KEY, JSON.stringify(packages));
+    const sanitized = packages.map(sanitizePackageImages);
+    localStorage.setItem(STORAGE_PACKAGES_KEY, JSON.stringify(sanitized));
   } catch (e) {
     console.error('Error saving packages to localStorage:', e);
   }

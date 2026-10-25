@@ -91,6 +91,41 @@ export const AdminView: React.FC<AdminViewProps> = ({
   const [isCreatingPkg, setIsCreatingPkg] = useState(false);
   const [newGalleryUrlInput, setNewGalleryUrlInput] = useState('');
 
+  const handleAddGalleryUrls = () => {
+    if (!editingPkg || !newGalleryUrlInput.trim()) return;
+    const rawMatches = newGalleryUrlInput.match(/https?:\/\/[^\s,;"'<>]+/gi) || [];
+    const banned = ['photo-1518638150340', 'photo-1509316975850'];
+    const validCleanUrls = rawMatches.filter((url) => !banned.some((b) => url.includes(b)));
+    
+    if (rawMatches.length > 0 && validCleanUrls.length === 0) {
+      alert('Las URLs ingresadas corresponden a enlaces bloqueados y fueron omitidas.');
+      setNewGalleryUrlInput('');
+      return;
+    }
+
+    let urlsToAdd = validCleanUrls;
+    if (urlsToAdd.length === 0 && newGalleryUrlInput.trim().startsWith('http')) {
+      const single = newGalleryUrlInput.trim();
+      if (!banned.some((b) => single.includes(b))) {
+        urlsToAdd = [single];
+      }
+    }
+
+    if (urlsToAdd.length === 0) {
+      alert('Por favor ingresa una URL válida (ej. https://images.unsplash.com/...)');
+      return;
+    }
+
+    const current = editingPkg.images && editingPkg.images.length > 0 ? editingPkg.images : [editingPkg.imageUrl];
+    const newImages = [...current, ...urlsToAdd];
+    setEditingPkg({
+      ...editingPkg,
+      images: newImages,
+    });
+    setNewGalleryUrlInput('');
+    showToast(`¡${urlsToAdd.length} foto(s) agregada(s) a la galería!`);
+  };
+
   const handleStartEditPkg = (pkg: Package) => {
     setEditingPkg(JSON.parse(JSON.stringify(pkg)));
     setIsCreatingPkg(false);
@@ -130,7 +165,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
         'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
       images: [
         'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
       ],
       highlights: [
         'Guía Bilingüe y Conductor Certificado',
@@ -166,17 +201,28 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
   const handleSavePkg = () => {
     if (!editingPkg) return;
+    const banned = ['photo-1518638150340', 'photo-1509316975850'];
+    const currentImages = editingPkg.images && editingPkg.images.length > 0 ? editingPkg.images : [editingPkg.imageUrl];
+    const cleanImages = currentImages.filter((img) => !banned.some((b) => img.includes(b)));
+    const fallbackCover = cleanImages[0] || 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85';
+
+    const finalPkg: Package = {
+      ...editingPkg,
+      imageUrl: cleanImages.includes(editingPkg.imageUrl) ? editingPkg.imageUrl : fallbackCover,
+      images: cleanImages.length > 0 ? cleanImages : [fallbackCover],
+    };
+
     let updated: Package[];
     if (isCreatingPkg) {
-      updated = [editingPkg, ...packages];
+      updated = [finalPkg, ...packages];
     } else {
-      updated = packages.map((p) => (p.id === editingPkg.id ? editingPkg : p));
+      updated = packages.map((p) => (p.id === finalPkg.id ? finalPkg : p));
     }
     setPackages(updated);
     saveStoredPackages(updated);
     setEditingPkg(null);
     setIsCreatingPkg(false);
-    showToast(`¡Paquete "${editingPkg.title.ES}" guardado y publicado en la web!`);
+    showToast(`¡Galería y paquete "${finalPkg.title.ES}" guardados exitosamente!`);
   };
 
   const handleDeletePkg = (id: string) => {
@@ -270,7 +316,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
       costUSD: 450,
       tag: 'Paisaje Natural & Aventura Privada',
       imageUrl:
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
     };
     setEditingDest(blankDest);
     setIsCreatingDest(true);
@@ -347,8 +393,8 @@ export const AdminView: React.FC<AdminViewProps> = ({
     let heroImage = 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85';
     let gallery = [
       'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-      'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
+      'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
     ];
 
     if (q.includes('uyuni') || q.includes('salar') || q.includes('potos') || q.includes('incahuasi')) {
@@ -357,10 +403,10 @@ export const AdminView: React.FC<AdminViewProps> = ({
       baseAltitude = 3650;
       maxAltitude = 4400;
       difficulty = 'Moderada';
-      heroImage = 'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=2000&q=85';
+      heroImage = 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85';
       gallery = [
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=2000&q=85',
-        'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
+        'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
         'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85',
       ];
     } else if (q.includes('atacama') || q.includes('san pedro') || q.includes('tatio') || q.includes('chile')) {
@@ -369,11 +415,11 @@ export const AdminView: React.FC<AdminViewProps> = ({
       baseAltitude = 2400;
       maxAltitude = 4320;
       difficulty = 'Media';
-      heroImage = 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2000&q=85';
+      heroImage = 'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85';
       gallery = [
-        'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2000&q=85',
+        'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
         'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
       ];
     } else if (
       q.includes('cusco') ||
@@ -395,7 +441,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
       gallery = [
         'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
         'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85',
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
       ];
     } else if (q.includes('samaipata') || q.includes('valles') || q.includes('amboro') || q.includes('cruceños')) {
       country = 'Bolivia';
@@ -407,7 +453,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
       gallery = [
         'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
         'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-        'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
       ];
     } else if (q.includes('titicaca') || q.includes('copacabana') || q.includes('puno') || q.includes('isla del sol')) {
       country = 'Bolivia · Perú';
@@ -419,7 +465,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
       gallery = [
         'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=2000&q=85',
         'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
       ];
     }
 
@@ -689,7 +735,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
             : [
                 rawPkg.imageUrl ||
                   'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
-                'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+                'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
               ],
         highlights: Array.isArray(rawPkg.highlights)
           ? rawPkg.highlights.map((h: any) =>
@@ -1002,7 +1048,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         setBrandingForm({
                           ...brandingForm,
                           heroImageUrl:
-                            'https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=85',
+                            'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
                         })
                       }
                       className="px-2.5 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[11px] text-[#E5DFD5] text-left truncate"
@@ -1015,7 +1061,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         setBrandingForm({
                           ...brandingForm,
                           heroImageUrl:
-                            'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+                            'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
                         })
                       }
                       className="px-2.5 py-1.5 rounded-lg bg-[#332923] hover:bg-[#4E3F37] text-[11px] text-[#E5DFD5] text-left truncate"
@@ -1418,7 +1464,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                       {(editingPkg.images || [editingPkg.imageUrl]).map((img, idx) => (
                         <div
-                          key={idx}
+                          key={`${img}-${idx}`}
                           className="relative h-28 rounded-xl overflow-hidden border border-[#5A4C42] group bg-[#2A211D]"
                         >
                           <img
