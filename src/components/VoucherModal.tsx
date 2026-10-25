@@ -101,7 +101,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
           {/* Certificate Header Banner */}
           <div className="bg-white p-5 rounded border border-chocolate/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded bg-chocolate flex items-center justify-center text-gold font-serif font-bold text-lg shadow-xs">
+              <div className="w-10 h-10 rounded bg-chocolate flex items-center justify-center text-gold-text font-serif font-bold text-lg shadow-xs">
                 ▲
               </div>
               <div>

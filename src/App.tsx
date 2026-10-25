@@ -65,8 +65,11 @@ export default function App() {
 
   const lenisRef = useRef<Lenis | null>(null);
 
-  // Initialize Lenis Smooth Scroll
+  // Initialize Lenis Smooth Scroll (respects prefers-reduced-motion)
   useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
     const lenis = new Lenis({
       duration: 1.25,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing exponencial suave

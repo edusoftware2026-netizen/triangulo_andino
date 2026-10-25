@@ -385,7 +385,8 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                           src={pkg.imageUrl}
                           alt={pkg.title[language] || pkg.title.ES}
                           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-                        />
+ loading="lazy" decoding="async"
+  />
                         {/* Translucent Country Bar */}
                         <div className="absolute bottom-0 inset-x-0 h-9 bg-chocolate/85 backdrop-blur-sm px-4 flex items-center justify-between text-white text-xs">
                           <span className="font-semibold tracking-wide uppercase text-[11px] truncate">

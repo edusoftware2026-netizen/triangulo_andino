@@ -199,6 +199,23 @@
   backdrop-filter: blur(8px);
 }
 
+/* Números tabulares: altitudes (msnm), precios y cifras alineables */
+@utility num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fase 2 · Accesibilidad de movimiento: respeta prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Custom print styles for official voucher */
 @media print {
   @page {

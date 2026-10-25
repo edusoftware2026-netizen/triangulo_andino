@@ -1034,8 +1034,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                     src={brandingForm.heroImageUrl}
                     alt="Hero Preview"
                     className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+ loading="lazy" decoding="async"
+  />
+                  <div className="absolute inset-0 bg-linear-to-t from-scrim/80 via-transparent to-transparent flex items-end p-4">
                     <span className="text-xs font-mono text-stone truncate">
                       {brandingForm.heroImageUrl}
                     </span>
@@ -1303,14 +1304,15 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         src={pkg.imageUrl}
                         alt={pkg.title.ES}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-white text-[10px] font-bold uppercase">
+ loading="lazy" decoding="async"
+  />
+                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-scrim/80 backdrop-blur text-white text-[10px] font-bold uppercase">
                         {pkg.countriesList.join(' · ')}
                       </div>
                       <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-olive text-white text-[10px] font-bold">
                         {pkg.days} Días / {pkg.nights} Noches
                       </div>
-                      <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/75 text-amber-400 text-[10px] font-semibold flex items-center gap-1">
+                      <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-scrim/75 text-amber-400 text-[10px] font-semibold flex items-center gap-1">
                         <span className="material-symbols-outlined text-xs">photo_library</span>
                         {gallery.length} fotos
                       </div>
@@ -1369,7 +1371,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
             {/* Package Edit/Create Modal */}
             {editingPkg && (
-              <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+              <div className="fixed inset-0 z-50 bg-scrim/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
                 <div className="bg-admin-card border border-admin-border rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
                   <div className="flex items-center justify-between pb-4 border-b border-admin-border">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
@@ -1529,13 +1531,14 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                             src={img}
                             alt={`Foto ${idx + 1}`}
                             className="w-full h-full object-cover"
-                          />
+ loading="lazy" decoding="async"
+  />
                           {idx === 0 && (
                             <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-md bg-olive text-white text-[9px] font-bold uppercase">
                               Principal
                             </span>
                           )}
-                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-2 transition-opacity">
+                          <div className="absolute inset-0 bg-scrim/60 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-2 transition-opacity">
                             {idx !== 0 && (
                               <button
                                 type="button"
@@ -1795,8 +1798,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       src={hotel.imageUrl}
                       alt={hotel.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur text-white text-[10px] font-bold uppercase">
+ loading="lazy" decoding="async"
+  />
+                    <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-scrim/80 backdrop-blur text-white text-[10px] font-bold uppercase">
                       {hotel.countryBadge}
                     </div>
                     <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-amber-500 text-admin-bg text-[10px] font-extrabold uppercase">
@@ -1849,7 +1853,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
             {/* Hotel Edit/Create Modal */}
             {editingHotel && (
-              <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+              <div className="fixed inset-0 z-50 bg-scrim/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
                 <div className="bg-admin-card border border-admin-border rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
                   <div className="flex items-center justify-between pb-4 border-b border-admin-border">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
@@ -2078,8 +2082,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                       src={dest.imageUrl}
                       alt={dest.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-white text-[10px] font-bold uppercase">
+ loading="lazy" decoding="async"
+  />
+                    <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-scrim/80 backdrop-blur text-white text-[10px] font-bold uppercase">
                       {dest.flag} {dest.country}
                     </div>
                     <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-admin-card/85 backdrop-blur text-amber-300 text-[11px] font-bold">
@@ -2124,7 +2129,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 
             {/* Destination Edit/Create Modal */}
             {editingDest && (
-              <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+              <div className="fixed inset-0 z-50 bg-scrim/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
                 <div className="bg-admin-card border border-admin-border rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 shadow-2xl">
                   <div className="flex items-center justify-between pb-4 border-b border-admin-border">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
@@ -2362,8 +2367,9 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         src={photo.directUrl}
                         alt={photo.title}
                         className="w-full h-full object-cover"
-                      />
-                      <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded bg-black/80 text-amber-300 text-[10px] font-bold">
+ loading="lazy" decoding="async"
+  />
+                      <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded bg-scrim/80 text-amber-300 text-[10px] font-bold">
                         Foto #{idx + 1}
                       </span>
                     </div>
