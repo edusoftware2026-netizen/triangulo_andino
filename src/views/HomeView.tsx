@@ -144,15 +144,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
         {/* Hero Narrative Content */}
         <div className="relative max-w-360 mx-auto px-6 lg:px-12 w-full z-10 flex flex-col gap-4 pt-4">
           {/* Editorial Kicker */}
-          <div className="flex items-center gap-3 text-gold-text font-sans">
-            <span className="text-xs uppercase tracking-[0.22em] font-bold">{t.heroTag}</span><span className="text-white/40">·</span><span className="text-xs uppercase tracking-widest text-stone font-medium">{t.heroSubtitle}</span><span className="text-white/40">·</span><span className="text-xs text-gold-text/90 font-medium">{t.pillHotels}</span>
+          <div className="flex items-center gap-3 text-gold font-sans">
+            <span className="text-xs uppercase tracking-[0.22em] font-bold">{t.heroTag}</span><span className="text-white/40">·</span><span className="text-xs uppercase tracking-widest text-stone font-medium">{t.heroSubtitle}</span><span className="text-white/40">·</span><span className="text-xs text-gold/90 font-medium">{t.pillHotels}</span>
           </div>
 
           {/* Master Headline (Sentence case) */}
           <div className="max-w-4xl flex flex-col gap-2.5">
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.08] tracking-tight">
               {t.heroTitle1}{' '}
-              <span className="italic font-light text-gold-text font-serif">
+              <span className="italic font-light text-gold font-serif">
                 {t.heroTitle2}
               </span>
             </h1>
@@ -387,7 +387,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         {pkg.country.toUpperCase()}
                       </span>
                       {/* Rating Badge (Máx. 2 badges sobre foto) */}
-                      <span className="flex items-center gap-1 text-gold-text font-bold text-xs shrink-0">
+                      <span className="flex items-center gap-1 text-gold font-bold text-xs shrink-0">
                         <span className="material-symbols-outlined text-xs fill-current">star</span>
                         <span>4.9★</span>
                       </span>
@@ -527,7 +527,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 pb-6 border-b border-white/10">
             <div className="flex flex-col gap-2 max-w-3xl">
-              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold-text font-bold">
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold font-bold">
                 <span className="material-symbols-outlined text-sm">auto_awesome</span>
                 {t.homeRoutePlannerKicker}
               </span>
@@ -599,7 +599,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         <h4 className="font-serif text-lg font-semibold text-white">
                           {dest.name}
                         </h4>
-                        <span className="text-[11px] text-gold-text font-medium block mt-0.5">
+                        <span className="text-[11px] text-gold font-medium block mt-0.5">
                           {dest.altitude}
                         </span>
                         <p className="text-xs text-stone/80 mt-2 line-clamp-2 leading-relaxed">
@@ -609,7 +609,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                       <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-stone">
                         <span>{dest.days} {language === 'EN' ? 'suggested days' : language === 'FR' ? 'jours suggérés' : language === 'PT' ? 'dias sugeridos' : 'días sugeridos'}</span>
-                        <span className="text-gold-text font-semibold flex items-center gap-1">
+                        <span className="text-gold font-semibold flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">verified</span>
                           {language === 'EN' ? '4x4 Logistics' : language === 'FR' ? 'Logistique 4x4' : language === 'PT' ? 'Logística 4x4' : 'Logística 4x4'}
                         </span>
@@ -727,13 +727,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   {t.homeStartingPoint}: {activeDestObjects[0]?.name || 'Atacama'}
                 </span>
                 {selectedHomeDests.includes('uyuni') && selectedHomeDests.includes('atacama') && (
-                  <span className="text-gold-text font-semibold flex items-center gap-1">
+                  <span className="text-gold font-semibold flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">badge</span>
                     {t.homeBorderCrossing1}
                   </span>
                 )}
                 {selectedHomeDests.includes('titicaca') && (selectedHomeDests.includes('machupicchu') || selectedHomeDests.includes('cusco')) && (
-                  <span className="text-gold-text font-semibold flex items-center gap-1">
+                  <span className="text-gold font-semibold flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">badge</span>
                     {t.homeBorderCrossing2}
                   </span>
@@ -764,7 +764,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     {language === 'EN' ? 'Selected milestones' : language === 'FR' ? 'Étapes sélectionnées' : language === 'PT' ? 'Marcos selecionados' : 'Hitos seleccionados'}
                   </span>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="font-serif text-2xl font-bold text-gold-text">
+                    <span className="font-serif text-2xl font-bold text-gold">
                       {activeDestObjects.length} {language === 'EN' ? 'Destinations' : language === 'FR' ? 'Destinations' : language === 'PT' ? 'Destinos' : 'Destinos'}
                     </span>
                     <span className="px-2 py-0.5 rounded bg-olive/40 text-[10px] uppercase font-bold text-white border border-olive/60">
@@ -1005,7 +1005,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="max-w-360 mx-auto px-6 lg:px-12">
           <div className="bg-chocolate text-white rounded-lg p-8 lg:p-12 border border-chocolate/20 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex flex-col gap-3 max-w-2xl">
-              <span className="text-xs uppercase tracking-widest text-gold-text font-bold">
+              <span className="text-xs uppercase tracking-widest text-gold font-bold">
                 {t.footerConciergeSupport}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal">

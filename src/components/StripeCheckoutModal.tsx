@@ -119,7 +119,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 <h3 className="font-serif text-xl font-bold tracking-tight">
                   {language === 'EN' ? 'Quote & Booking Confirmation' : language === 'FR' ? 'Confirmation Devis & Réservation' : language === 'PT' ? 'Confirmação de Cotação e Reserva' : 'Confirmación de Cotización y Reserva'}
                 </h3>
-                <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] tracking-wider uppercase font-semibold text-gold-text">
+                <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] tracking-wider uppercase font-semibold text-gold">
                   {t.sslEncrypted}
                 </span>
               </div>
