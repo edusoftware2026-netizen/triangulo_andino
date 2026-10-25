@@ -9,7 +9,13 @@ import {
   RouteDestination,
 } from '../types';
 import { TRANSLATIONS } from '../data/translations';
-import { saveStoredPackages } from '../data/mockData';
+import {
+  saveStoredPackages,
+  getStoredCountryMedia,
+  saveStoredCountryMedia,
+  normalizeMediaUrl,
+  CountryMediaCollection,
+} from '../data/mockData';
 
 interface AdminViewProps {
   reservations: BookingReservation[];
@@ -48,8 +54,46 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
   // Active Tab
   const [activeTab, setActiveTab] = useState<
-    'branding' | 'packages' | 'hotels' | 'destinations' | 'reservations' | 'ai_gen'
+    'branding' | 'packages' | 'hotels' | 'destinations' | 'media' | 'reservations' | 'ai_gen'
   >('branding');
+
+  // 3-Country Media Catalog State (10 Photos + 5 Videos per Country, editable in Admin)
+  const [countryMedia, setCountryMedia] = useState<Record<'chile' | 'bolivia' | 'peru', CountryMediaCollection>>(
+    () => getStoredCountryMedia()
+  );
+  const [selectedMediaCountry, setSelectedMediaCountry] = useState<'chile' | 'bolivia' | 'peru'>('chile');
+
+  const handleUpdateMediaItem = (
+    countryKey: 'chile' | 'bolivia' | 'peru',
+    mediaType: 'photos' | 'videos',
+    index: number,
+    field: 'title' | 'landmark' | 'pageUrl' | 'directUrl',
+    value: string
+  ) => {
+    setCountryMedia((prev) => {
+      const updatedList = [...prev[countryKey][mediaType]];
+      const item = { ...updatedList[index], [field]: value };
+      if (field === 'pageUrl' && mediaType === 'photos') {
+        item.directUrl = normalizeMediaUrl(value) || item.directUrl;
+      }
+      if (field === 'directUrl' && mediaType === 'photos') {
+        item.directUrl = normalizeMediaUrl(value) || value;
+      }
+      updatedList[index] = item;
+      return {
+        ...prev,
+        [countryKey]: {
+          ...prev[countryKey],
+          [mediaType]: updatedList,
+        },
+      };
+    });
+  };
+
+  const handleSaveCountryMedia = () => {
+    saveStoredCountryMedia(countryMedia);
+    showToast('¡Catálogo de 10 Fotos y 5 Videos por país guardado exitosamente!');
+  };
 
   // Toast confirmation state
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -840,6 +884,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                   )
                 ) {
                   onFactoryReset();
+                  setCountryMedia(getStoredCountryMedia());
                   showToast('¡Datos de fábrica restaurados con éxito!');
                 }
               }}
@@ -904,6 +949,19 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
           >
             <span className="material-symbols-outlined text-base">map</span>
             <span>🗺️ Rutas & Hitos ({destinations.length})</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveTab('media')}
+            className={`px-4 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'media'
+                ? 'border-terracotta text-white bg-admin-bg/70'
+                : 'border-transparent text-admin-text-secondary hover:text-surface-container-low'
+            }`}
+          >
+            <span className="material-symbols-outlined text-base">perm_media</span>
+            <span>🎬 Media 3 Países (30 Fotos / 15 Videos)</span>
           </button>
 
           <button
@@ -1035,7 +1093,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         setBrandingForm({
                           ...brandingForm,
                           heroImageUrl:
-                            'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85',
+                            'https://images.pexels.com/photos/31746177/pexels-photo-31746177.jpeg?auto=compress&cs=tinysrgb&w=1600',
                         })
                       }
                       className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
@@ -1048,7 +1106,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         setBrandingForm({
                           ...brandingForm,
                           heroImageUrl:
-                            'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=2000&q=85',
+                            'https://images.pexels.com/photos/30929532/pexels-photo-30929532.jpeg?auto=compress&cs=tinysrgb&w=1600',
                         })
                       }
                       className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
@@ -1061,12 +1119,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         setBrandingForm({
                           ...brandingForm,
                           heroImageUrl:
-                            'https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=2000&q=85',
+                            'https://images.pexels.com/photos/33047883/pexels-photo-33047883.jpeg?auto=compress&cs=tinysrgb&w=1600',
                         })
                       }
                       className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
                     >
-                      🏜️ San Pedro de Atacama (Chile)
+                      🏜️ Valle de la Luna · Atacama (Chile)
                     </button>
                     <button
                       type="button"
@@ -1074,12 +1132,12 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                         setBrandingForm({
                           ...brandingForm,
                           heroImageUrl:
-                            'https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=2000&q=85',
+                            'https://images.pexels.com/photos/39442820/pexels-photo-39442820.jpeg?auto=compress&cs=tinysrgb&w=1600',
                         })
                       }
                       className="px-2.5 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-[11px] text-stone text-left truncate"
                     >
-                      ✨ Altiplano & Huayna Picchu
+                      🌈 Vinicunca 7 Colores (Perú)
                     </button>
                   </div>
                 </div>
@@ -2237,6 +2295,185 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
         )}
 
         {/* ========================================================================= */}
+        {/* MODULE 4B: BANCO MULTIMEDIA DE LOS 3 PAÍSES (10 FOTOS + 5 VIDEOS / PAÍS)  */}
+        {/* ========================================================================= */}
+        {activeTab === 'media' && (
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-admin-card p-6 rounded-lg border border-admin-border">
+              <div>
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                  <span className="material-symbols-outlined text-terracotta">perm_media</span>
+                  Banco Multimedia Free por País (10 Fotos y 5 Videos por País)
+                </h2>
+                <p className="text-xs text-admin-text-secondary mt-1">
+                  Edita o reemplaza cualquiera de los enlaces de fotos y videos libres de derechos de Chile, Bolivia y Perú, o aplícalos con 1 clic en la Portada y Paquetes.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleSaveCountryMedia}
+                className="px-6 py-3 rounded-xl bg-olive hover:bg-olive-deep text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all"
+              >
+                <span className="material-symbols-outlined text-base">save</span>
+                <span>Guardar Enlaces Multimedia</span>
+              </button>
+            </div>
+
+            {/* Country Selector Pills */}
+            <div className="flex flex-wrap items-center gap-3">
+              {(
+                [
+                  { key: 'chile', label: '🇨🇱 Chile (10 Fotos · 5 Videos)' },
+                  { key: 'bolivia', label: '🇧🇴 Bolivia (10 Fotos · 5 Videos)' },
+                  { key: 'peru', label: '🇵🇪 Perú (10 Fotos · 5 Videos)' },
+                ] as const
+              ).map((tab) => (
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => setSelectedMediaCountry(tab.key)}
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all border ${
+                    selectedMediaCountry === tab.key
+                      ? 'bg-terracotta text-white border-terracotta shadow-md'
+                      : 'bg-admin-card text-stone border-admin-border hover:bg-admin-surface'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* 10 Photos Editor Grid */}
+            <div className="bg-admin-card border border-admin-border rounded-lg p-6 flex flex-col gap-4">
+              <h3 className="text-base font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg">photo_camera</span>
+                10 Fotografías Free — {selectedMediaCountry.toUpperCase()}
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {countryMedia[selectedMediaCountry].photos.map((photo, idx) => (
+                  <div
+                    key={photo.id}
+                    className="bg-admin-bg border border-admin-border rounded-xl p-4 flex flex-col sm:flex-row gap-4"
+                  >
+                    <div className="w-full sm:w-36 h-28 rounded-lg overflow-hidden bg-admin-card shrink-0 border border-admin-border relative">
+                      <img
+                        src={photo.directUrl}
+                        alt={photo.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded bg-black/80 text-amber-300 text-[10px] font-bold">
+                        Foto #{idx + 1}
+                      </span>
+                    </div>
+
+                    <div className="flex-1 flex flex-col gap-2">
+                      <input
+                        type="text"
+                        value={photo.landmark}
+                        onChange={(e) =>
+                          handleUpdateMediaItem(selectedMediaCountry, 'photos', idx, 'landmark', e.target.value)
+                        }
+                        placeholder="Hito / Destino"
+                        className="w-full bg-admin-card border border-admin-border px-2.5 py-1.5 rounded-lg text-xs text-white font-semibold"
+                      />
+                      <input
+                        type="url"
+                        value={photo.directUrl}
+                        onChange={(e) =>
+                          handleUpdateMediaItem(selectedMediaCountry, 'photos', idx, 'directUrl', e.target.value)
+                        }
+                        placeholder="URL directa de imagen (o link de Pexels/Unsplash)"
+                        className="w-full bg-admin-card border border-admin-border px-2.5 py-1.5 rounded-lg text-[11px] text-stone font-mono"
+                      />
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+                        <a
+                          href={photo.pageUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[11px] text-amber-400 hover:underline flex items-center gap-1"
+                        >
+                          <span className="material-symbols-outlined text-xs">open_in_new</span>
+                          Ver fuente original
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const updatedBranding = { ...brandingForm, heroImageUrl: photo.directUrl };
+                            setBrandingForm(updatedBranding);
+                            onUpdateBranding(updatedBranding);
+                            showToast(`¡Foto #${idx + 1} aplicada como Portada Hero!`);
+                          }}
+                          className="px-2.5 py-1 rounded bg-olive hover:bg-olive-deep text-white text-[10px] font-bold uppercase tracking-wider"
+                        >
+                          Usar en Hero
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 5 Videos Editor Grid */}
+            <div className="bg-admin-card border border-admin-border rounded-lg p-6 flex flex-col gap-4">
+              <h3 className="text-base font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg">videocam</span>
+                5 Videos Free (4K / HD) — {selectedMediaCountry.toUpperCase()}
+              </h3>
+
+              <div className="grid grid-cols-1 gap-3">
+                {countryMedia[selectedMediaCountry].videos.map((video, idx) => (
+                  <div
+                    key={video.id}
+                    className="bg-admin-bg border border-admin-border rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold">
+                        Video #{idx + 1}
+                      </span>
+                      <div>
+                        <input
+                          type="text"
+                          value={video.landmark}
+                          onChange={(e) =>
+                            handleUpdateMediaItem(selectedMediaCountry, 'videos', idx, 'landmark', e.target.value)
+                          }
+                          className="bg-admin-card border border-admin-border px-3 py-1.5 rounded-lg text-xs text-white font-semibold w-64 sm:w-80"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex-1 w-full md:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                      <input
+                        type="url"
+                        value={video.pageUrl}
+                        onChange={(e) => {
+                          handleUpdateMediaItem(selectedMediaCountry, 'videos', idx, 'pageUrl', e.target.value);
+                          handleUpdateMediaItem(selectedMediaCountry, 'videos', idx, 'directUrl', e.target.value);
+                        }}
+                        placeholder="https://www.pexels.com/video/..."
+                        className="flex-1 bg-admin-card border border-admin-border px-3 py-1.5 rounded-lg text-xs text-stone font-mono"
+                      />
+                      <a
+                        href={video.pageUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-3 py-1.5 rounded-lg bg-admin-surface hover:bg-admin-hover text-amber-300 text-xs font-semibold flex items-center justify-center gap-1 shrink-0"
+                      >
+                        <span className="material-symbols-outlined text-sm">play_circle</span>
+                        Abrir Video
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ========================================================================= */}
         {/* MODULE 5: RESERVAS & FINANZAS                                             */}
         {/* ========================================================================= */}
         {activeTab === 'reservations' && (
@@ -2480,3 +2717,5 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
     </div>
   );
 };
+
+export default AdminView;

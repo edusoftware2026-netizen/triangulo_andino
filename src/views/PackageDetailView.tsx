@@ -516,3 +516,5 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
     </div>
   );
 };
+
+export default PackageDetailView;

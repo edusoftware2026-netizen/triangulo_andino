@@ -1079,3 +1079,5 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
     </div>
   );
 };
+
+export default RouteBuilderView;

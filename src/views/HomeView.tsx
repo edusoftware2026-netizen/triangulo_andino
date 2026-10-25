@@ -132,7 +132,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 transform scale-100"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=2000&q=85')`,
+            backgroundImage: `url('${siteBranding?.heroImageUrl || 'https://images.pexels.com/photos/31746177/pexels-photo-31746177.jpeg?auto=compress&cs=tinysrgb&w=1600'}')`,
           }}
         />
 
@@ -912,7 +912,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="bg-white p-5 rounded-lg flex flex-col gap-3 elevation-card border border-chocolate/12">
                 <div className="h-44 w-full rounded overflow-hidden relative bg-chocolate">
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEOjZbHGZ2JcjXn1AIDcFj8TRd52aLAfePAy-v2oAc9wKfxTFSnKEAadii0IylRPt1U8X5M_ellITqOY6129zYqh8kuDTsZ2LjV_GJGKQKeZlTgvMHqBP8xfCvq7_6SincnccNowDdcuE0SrvsqV9SsZKdLlWIywBo_Im-OnaFR5Op4dmRfLnMKk7IThZ_zrU_ApE-vtGac9N32hZllp67h5iFgD8zi36cD6v_HONQ-M81mdGilOX6"
+                    src="https://unsplash.com/photos/llg7GwrWxw0/download?w=1600"
                     alt="Cena Astronómica en el Desierto"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -939,7 +939,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="bg-white p-5 rounded-lg flex flex-col gap-3 elevation-card border border-chocolate/12">
                 <div className="h-44 w-full rounded overflow-hidden relative bg-chocolate">
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS3gDCWBQk3irZJgLMfabAPIiYseScdrUi9JQe9gPRNLQpBjhqbyFSaPg8XDj83vkR5_JrNpUckWRgKRUEt0PeaWRrf4ZuD8C1UMyHnbTagImZthBFL0bfMmbStarkvzZhwuq8KpJVIZWXUJkSMPXta4mlkL7yG0Fe1CTO1ZgE_BgYz2DtVJBD-e4Hlc1lC6pesavXZQnT5qGnjPpeD7AsftZ2EH_5fxMG8SF-7APqsGbwxF50BJ3t"
+                    src="https://images.pexels.com/photos/30929499/pexels-photo-30929499.jpeg?auto=compress&cs=tinysrgb&w=1600"
                     alt="Picnic Flotante en el Espejo de Sal"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -966,7 +966,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="bg-white p-5 rounded-lg flex flex-col gap-3 elevation-card border border-chocolate/12">
                 <div className="h-44 w-full rounded overflow-hidden relative bg-chocolate">
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQHW9-5fs-asyRdXOfnn8HegM_cCHGG0iKvsLgGO_q1mRGDlC8JFjy6lmEJOJW2oJNOMbN4GF3Gx1Yw-vQb6o8mUYKUy7jJVZUP3LlyDVAM8Vb11XAuDMoERVXtK293hDbRISUu8w9yi5aepYyGj0U5G9R6o5SVbtgPevaW3rvgIGeBgO9ZaFSkPuq1zTYUiBgqXFpIaQCpYxYlWsBLBEEIARNmszNgZnVa1Gay0fn8YnGVVW3J3IZ"
+                    src="https://images.pexels.com/photos/6725678/pexels-photo-6725678.jpeg?auto=compress&cs=tinysrgb&w=1600"
                     alt="Degustación de Alturas Andinas"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -1034,3 +1034,5 @@ export const HomeView: React.FC<HomeViewProps> = ({
     </div>
   );
 };
+
+export default HomeView;
