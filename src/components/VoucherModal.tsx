@@ -61,7 +61,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
       `*Fecha de Salida:* ${reservation.travelDate}\n` +
       `*Viajeros:* ${reservation.travelersCount} pax\n` +
       `*Modalidad:* Cotización y Reserva Prioritaria Confirmada\n` +
-      `Solicito conexión con el Concierge de guardia.`
+      `Solicito conexión con Atención WhatsApp 24/7.`
     );
     window.open(`https://wa.me/56982349900?text=${text}`, '_blank');
   };
@@ -194,7 +194,7 @@ export const VoucherModal: React.FC<VoucherModalProps> = ({ reservation, onClose
                 <div className="flex justify-between text-earth/80">
                   <span>{language === 'EN' ? 'Quotation reference:' : language === 'FR' ? 'Référence devis :' : language === 'PT' ? 'Referência cotação:' : 'Referencia de cotización:'}</span>
                   <span className="font-semibold text-chocolate">
-                    {language === 'EN' ? 'VIP Private Rate (Direct Concierge)' : language === 'FR' ? 'Tarif VIP Privé (Concierge Direct)' : language === 'PT' ? 'Tarifa VIP Privada (Concierge Direto)' : 'Tarifa VIP Privada (Concierge Directo)'}
+                    {language === 'EN' ? 'VIP Private Rate (Direct WhatsApp)' : language === 'FR' ? 'Tarif VIP Privé (WhatsApp Direct)' : language === 'PT' ? 'Tarifa VIP Privada (WhatsApp Direto)' : 'Tarifa VIP Privada (WhatsApp Directo)'}
                   </span>
                 </div>
               </div>

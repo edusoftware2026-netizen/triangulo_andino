@@ -815,7 +815,7 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
               {openDayAccordions['day-1'] && (
                 <div className="p-5 pt-0 text-xs sm:text-sm text-earth space-y-2 border-t border-chocolate/8 mt-1 bg-white/70">
                   <p className="pt-3">
-                    Recepción privada en Aeropuerto El Loa (CJC) por concierge bilingüe. Traslado en SUV privada hacia San Pedro de Atacama cruzando la Cordillera de la Sal. Check-in en hotel boutique seleccionado.
+                    Recepción privada en Aeropuerto El Loa (CJC) por anfitrión bilingüe. Traslado en SUV privada hacia San Pedro de Atacama cruzando la Cordillera de la Sal. Check-in en hotel boutique seleccionado.
                   </p>
                   <div className="flex flex-wrap gap-4 pt-2 text-xs font-semibold text-chocolate">
                     <span><strong>Comidas:</strong> Cóctel de bienvenida andino</span>

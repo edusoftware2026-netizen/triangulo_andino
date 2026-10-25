@@ -124,7 +124,7 @@ export const StripeCheckoutModal: React.FC<StripeCheckoutModalProps> = ({
                 </span>
               </div>
               <p className="text-xs text-stone/80 mt-0.5">
-                {language === 'EN' ? 'Priority booking request with 24/7 Concierge assignment' : language === 'FR' ? 'Demande de réservation prioritaire avec Concierge 24/7' : language === 'PT' ? 'Solicitação de reserva prioritária com Concierge 24/7' : 'Solicitud prioritaria con asignación directa de Concierge 24/7'}
+                {language === 'EN' ? 'Priority booking request with 24/7 WhatsApp care' : language === 'FR' ? 'Demande de réservation prioritaire avec Assistance WhatsApp 24/7' : language === 'PT' ? 'Solicitação de reserva prioritária com Atendimento WhatsApp 24/7' : 'Solicitud prioritaria con asignación directa de Atención WhatsApp 24/7'}
               </p>
             </div>
           </div>

@@ -206,7 +206,7 @@ export default function App() {
     const phone = siteBranding.conciergePhone || '56982349900';
     const msg = encodeURIComponent(
       siteBranding.conciergeDefaultMsg ||
-        'Hola Triángulo Andino Concierge. Me gustaría consultar una expedición privada por Chile, Bolivia y Perú.'
+        'Hola DeiTaNa Travel. Me gustaría consultar una expedición privada por Chile, Bolivia y Perú.'
     );
     window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
   };

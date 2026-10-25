@@ -188,7 +188,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
         ES: 'Circuito privado de autor con hotelería cinco estrellas y asistencia 24/7.',
         EN: 'Private signature circuit with five-star hospitality and 24/7 care.',
         PT: 'Circuito privado de autor com hotelaria cinco estrelas e assistência 24/7.',
-        FR: 'Circuit privé signature avec hébergement cinq étoiles et conciergerie 24/7.',
+        FR: 'Circuit privé signature avec hébergement cinq étoiles et atención WhatsApp 24/7.',
       },
       country: 'Chile · Bolivia · Perú',
       countriesList: ['Chile', 'Bolivia'],
@@ -1003,7 +1003,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <span className="material-symbols-outlined text-terracotta">palette</span>
-                  Configuración de Portada, Hero y Concierge
+                  Configuración de Portada, Hero y WhatsApp 24/7
                 </h2>
                 <p className="text-xs text-admin-text-secondary mt-1">
                   Actualiza la fotografía principal de fondo, titulares y canales de contacto directo.
@@ -1147,7 +1147,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
               <div className="flex flex-col gap-5 bg-admin-bg/80 p-6 rounded-lg border border-admin-border">
                 <span className="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base">edit_note</span>
-                  Titulares y Mensajería Concierge
+                  Titulares y Mensajería WhatsApp 24/7
                 </span>
 
                 <div className="flex flex-col gap-1.5">
@@ -1214,7 +1214,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
                 <div className="pt-3 border-t border-admin-border flex flex-col gap-3">
                   <span className="text-xs uppercase tracking-wider font-bold text-emerald-400 flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-base">chat</span>
-                    WhatsApp Concierge 24/7
+                    Atención WhatsApp 24/7
                   </span>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
