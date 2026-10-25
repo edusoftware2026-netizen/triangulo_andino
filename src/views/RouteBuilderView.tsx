@@ -345,7 +345,8 @@ export const RouteBuilderView: React.FC<RouteBuilderViewProps> = ({
                           src={dest.imageUrl}
                           alt={dest.name}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
+ loading="lazy" decoding="async"
+  />
                         <span className="absolute top-2 left-2 px-2 py-0.5 rounded bg-chocolate/85 backdrop-blur text-white text-[10px] uppercase font-bold tracking-wider">
                           {dest.country}
                         </span>

@@ -100,7 +100,7 @@ CONCIERGE_WHATSAPP_NUMBER=+56982349900`
   };
 
   return (
-    <div id="architecture-section" className="mt-16 bg-stone/30 p-6 lg:p-10 rounded-2xl border border-black/10 shadow-xs">
+    <div id="architecture-section" className="mt-16 bg-stone/30 p-6 lg:p-10 rounded-2xl border border-stone shadow-xs">
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6">
         <div>
           <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ CONCIERGE_WHATSAPP_NUMBER=+56982349900`
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <span className="px-3 py-1 rounded bg-white text-terracotta-strong text-xs uppercase font-bold tracking-wider border border-black/10">
+          <span className="px-3 py-1 rounded bg-white text-terracotta-strong text-xs uppercase font-bold tracking-wider border border-stone">
             Production-Ready TS
           </span>
         </div>
@@ -139,7 +139,7 @@ CONCIERGE_WHATSAPP_NUMBER=+56982349900`
               className={`px-3.5 py-1.5 rounded text-xs uppercase font-bold transition-all ${
                 activeTab === tab
                   ? 'bg-chocolate text-white shadow-xs'
-                  : 'bg-white text-earth hover:text-chocolate border border-black/10'
+                  : 'bg-white text-earth hover:text-chocolate border border-stone'
               }`}
             >
               {labels[tab]}

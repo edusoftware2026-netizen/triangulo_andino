@@ -128,30 +128,31 @@ export const HomeView: React.FC<HomeViewProps> = ({
     <div className="flex flex-col w-full text-chocolate bg-canvas">
       {/* 1. IMMERSIVE HERO SECTION (ANDEAN VANGUARD LUXURY) */}
       <section className="relative w-full min-h-[78vh] flex flex-col justify-between pt-16 pb-12 overflow-hidden">
-        {/* Full-Bleed High-Res Photography Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 transform scale-100"
-          style={{
-            backgroundImage: `url('${siteBranding?.heroImageUrl || 'https://images.pexels.com/photos/31746177/pexels-photo-31746177.jpeg?auto=compress&cs=tinysrgb&w=1600'}')`,
-          }}
+        {/* Full-Bleed High-Res Photography Background (Fase 1B: img con fetchpriority para LCP) */}
+        <img
+          src={siteBranding?.heroImageUrl || 'https://images.pexels.com/photos/31746177/pexels-photo-31746177.jpeg?auto=compress&cs=tinysrgb&w=1600'}
+          alt="Paisaje andino del Triángulo Andino — Atacama, Uyuni y Titicaca"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 transform scale-100"
+          fetchPriority="high"
+          decoding="async"
         />
 
         {/* Cinematic Scrims: Warm Vignette Gradient (#2E2520) for Crisp Typographic Contrast */}
-        <div className="absolute inset-0 bg-linear-to-t from-scrim/95 via-scrim/60 to-black/35" />
+        <div className="absolute inset-0 bg-linear-to-t from-scrim/95 via-scrim/60 to-scrim/35" />
         <div className="absolute inset-0 bg-linear-to-r from-scrim/90 via-scrim/45 to-transparent" />
 
         {/* Hero Narrative Content */}
         <div className="relative max-w-360 mx-auto px-6 lg:px-12 w-full z-10 flex flex-col gap-4 pt-4">
           {/* Editorial Kicker */}
-          <div className="flex items-center gap-3 text-gold font-sans">
-            <span className="text-xs uppercase tracking-[0.22em] font-bold">{t.heroTag}</span><span className="text-white/40">·</span><span className="text-xs uppercase tracking-widest text-stone font-medium">{t.heroSubtitle}</span><span className="text-white/40">·</span><span className="text-xs text-gold/90 font-medium">{t.pillHotels}</span>
+          <div className="flex items-center gap-3 text-gold-text font-sans">
+            <span className="text-xs uppercase tracking-[0.22em] font-bold">{t.heroTag}</span><span className="text-white/40">·</span><span className="text-xs uppercase tracking-widest text-stone font-medium">{t.heroSubtitle}</span><span className="text-white/40">·</span><span className="text-xs text-gold-text/90 font-medium">{t.pillHotels}</span>
           </div>
 
           {/* Master Headline (Sentence case) */}
           <div className="max-w-4xl flex flex-col gap-2.5">
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.08] tracking-tight">
               {t.heroTitle1}{' '}
-              <span className="italic font-light text-gold font-serif">
+              <span className="italic font-light text-gold-text font-serif">
                 {t.heroTitle2}
               </span>
             </h1>
@@ -377,7 +378,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       alt={pkg.title[language] || pkg.title.ES}
                       className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-600 ease-out"
                       referrerPolicy="no-referrer"
-                    />
+ loading="lazy" decoding="async"
+  />
 
                     {/* Barra Superior Translúcida de 36px (Anatomía Oficial 7.4) */}
                     <div className="absolute top-0 inset-x-0 h-9 bg-chocolate/75 backdrop-blur-sm px-4 flex items-center justify-between text-white z-10 border-b border-white/10">
@@ -385,7 +387,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         {pkg.country.toUpperCase()}
                       </span>
                       {/* Rating Badge (Máx. 2 badges sobre foto) */}
-                      <span className="flex items-center gap-1 text-gold font-bold text-xs shrink-0">
+                      <span className="flex items-center gap-1 text-gold-text font-bold text-xs shrink-0">
                         <span className="material-symbols-outlined text-xs fill-current">star</span>
                         <span>4.9★</span>
                       </span>
@@ -456,7 +458,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     <div className="grid grid-cols-2 gap-2 text-xs py-2 border-y border-chocolate/8">
                       <div className="flex items-center gap-1.5 text-chocolate">
                         <span className="material-symbols-outlined text-sm text-olive">landscape</span>
-                        <span className="font-semibold">{pkg.maxAltitudeMeters.toLocaleString()} msnm</span>
+                        <span className="font-semibold num">{pkg.maxAltitudeMeters.toLocaleString()} msnm</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-chocolate justify-end">
                         <span className="material-symbols-outlined text-sm text-olive">schedule</span>
@@ -525,7 +527,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 pb-6 border-b border-white/10">
             <div className="flex flex-col gap-2 max-w-3xl">
-              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold-text font-bold">
                 <span className="material-symbols-outlined text-sm">auto_awesome</span>
                 {t.homeRoutePlannerKicker}
               </span>
@@ -572,7 +574,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         alt={dest.name}
                         className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                         referrerPolicy="no-referrer"
-                      />
+ loading="lazy" decoding="async"
+  />
                       <div className="absolute inset-0 bg-linear-to-t from-chocolate via-transparent to-transparent" />
 
                       {/* Flag and Country Badge */}
@@ -596,7 +599,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         <h4 className="font-serif text-lg font-semibold text-white">
                           {dest.name}
                         </h4>
-                        <span className="text-[11px] text-gold font-medium block mt-0.5">
+                        <span className="text-[11px] text-gold-text font-medium block mt-0.5">
                           {dest.altitude}
                         </span>
                         <p className="text-xs text-stone/80 mt-2 line-clamp-2 leading-relaxed">
@@ -606,7 +609,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                       <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-stone">
                         <span>{dest.days} {language === 'EN' ? 'suggested days' : language === 'FR' ? 'jours suggérés' : language === 'PT' ? 'dias sugeridos' : 'días sugeridos'}</span>
-                        <span className="text-gold font-semibold flex items-center gap-1">
+                        <span className="text-gold-text font-semibold flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">verified</span>
                           {language === 'EN' ? '4x4 Logistics' : language === 'FR' ? 'Logistique 4x4' : language === 'PT' ? 'Logística 4x4' : 'Logística 4x4'}
                         </span>
@@ -644,7 +647,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Dynamic Interactive SVG Elevation & Route Graph */}
-            <div className="w-full bg-black/25 rounded p-5 border border-white/10">
+            <div className="w-full bg-scrim/25 rounded p-5 border border-white/10">
               <div className="h-40 w-full relative">
                 <svg
                   className="w-full h-full overflow-visible"
@@ -724,13 +727,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   {t.homeStartingPoint}: {activeDestObjects[0]?.name || 'Atacama'}
                 </span>
                 {selectedHomeDests.includes('uyuni') && selectedHomeDests.includes('atacama') && (
-                  <span className="text-gold font-semibold flex items-center gap-1">
+                  <span className="text-gold-text font-semibold flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">badge</span>
                     {t.homeBorderCrossing1}
                   </span>
                 )}
                 {selectedHomeDests.includes('titicaca') && (selectedHomeDests.includes('machupicchu') || selectedHomeDests.includes('cusco')) && (
-                  <span className="text-gold font-semibold flex items-center gap-1">
+                  <span className="text-gold-text font-semibold flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">badge</span>
                     {t.homeBorderCrossing2}
                   </span>
@@ -761,7 +764,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     {language === 'EN' ? 'Selected milestones' : language === 'FR' ? 'Étapes sélectionnées' : language === 'PT' ? 'Marcos selecionados' : 'Hitos seleccionados'}
                   </span>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="font-serif text-2xl font-bold text-gold">
+                    <span className="font-serif text-2xl font-bold text-gold-text">
                       {activeDestObjects.length} {language === 'EN' ? 'Destinations' : language === 'FR' ? 'Destinations' : language === 'PT' ? 'Destinos' : 'Destinos'}
                     </span>
                     <span className="px-2 py-0.5 rounded bg-olive/40 text-[10px] uppercase font-bold text-white border border-olive/60">
@@ -865,7 +868,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     alt={hotel.name}
                     className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                     referrerPolicy="no-referrer"
-                  />
+ loading="lazy" decoding="async"
+  />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded bg-chocolate/80 backdrop-blur text-white text-[10px] uppercase font-bold tracking-wider">
                     {hotel.countryBadge}
                   </span>
@@ -916,7 +920,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     alt="Cena Astronómica en el Desierto"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
-                  />
+ loading="lazy" decoding="async"
+  />
                   <span className="absolute bottom-2.5 left-2.5 px-2.5 py-0.5 rounded bg-chocolate/85 text-white text-[10px] uppercase font-bold tracking-wider">
                     Atacama Stargazing
                   </span>
@@ -943,7 +948,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     alt="Picnic Flotante en el Espejo de Sal"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
-                  />
+ loading="lazy" decoding="async"
+  />
                   <span className="absolute bottom-2.5 left-2.5 px-2.5 py-0.5 rounded bg-chocolate/85 text-white text-[10px] uppercase font-bold tracking-wider">
                     Salar de Uyuni
                   </span>
@@ -970,7 +976,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     alt="Degustación de Alturas Andinas"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
-                  />
+ loading="lazy" decoding="async"
+  />
                   <span className="absolute bottom-2.5 left-2.5 px-2.5 py-0.5 rounded bg-chocolate/85 text-white text-[10px] uppercase font-bold tracking-wider">
                     Cusco & Valle Sagrado
                   </span>
@@ -998,7 +1005,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="max-w-360 mx-auto px-6 lg:px-12">
           <div className="bg-chocolate text-white rounded-lg p-8 lg:p-12 border border-chocolate/20 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex flex-col gap-3 max-w-2xl">
-              <span className="text-xs uppercase tracking-widest text-gold font-bold">
+              <span className="text-xs uppercase tracking-widest text-gold-text font-bold">
                 {t.footerConciergeSupport}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal">

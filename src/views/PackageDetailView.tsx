@@ -99,7 +99,8 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
             src={gallery[activeImageIdx] || packageItem.imageUrl}
             alt={packageItem.title[language] || packageItem.title.ES}
             className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out"
-          />
+ loading="lazy" decoding="async"
+  />
           <div className="absolute inset-0 bg-linear-to-t from-chocolate via-chocolate/65 to-transparent" />
 
           {/* Left / Right Carousel Controls if more than 1 image */}
@@ -177,7 +178,9 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
                       : 'border-transparent opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={imgUrl} alt={`Miniatura ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img src={imgUrl} alt={`Miniatura ${idx + 1}`} className="w-full h-full object-cover"
+ loading="lazy" decoding="async"
+  />
                   {activeImageIdx === idx && (
                     <div className="absolute inset-0 bg-terracotta/10" />
                   )}
