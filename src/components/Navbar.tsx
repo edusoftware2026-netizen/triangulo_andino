@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-chocolate/12 shadow-xs">
       <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
-        {/* SINGLE ELEGANT LOGO WITH GOLDEN MOUNTAIN ICON (ANDEAN VANGUARD) */}
+        {/* SINGLE ELEGANT LOGO WITH GOLDEN TRIANGLE ICON (DEITANA TRAVEL) */}
         <button
           type="button"
           onClick={() => {
@@ -43,19 +43,25 @@ export const Navbar: React.FC<NavbarProps> = ({
           }}
           className="flex items-center gap-2.5 text-left group focus-visible:ring-2 focus-visible:ring-olive focus-visible:ring-offset-2 rounded shrink-0"
         >
-          {/* Mountain in Gold over Chocolate box */}
+          {/* Golden Triangle Icon over Chocolate box (Deisy · Tamara · Nayra / Chile · Bolivia · Perú) */}
           <div className="w-10 h-10 rounded bg-chocolate flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-200 border border-gold/40">
             <svg
               className="w-6 h-6 text-gold"
               viewBox="0 0 24 24"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path d="M14 6l6 12H4L9.5 8.5 12 12l2-6z" />
+              <polygon points="12 3 21 19 3 19" fill="currentColor" fillOpacity="0.18" />
+              <polygon points="12 3 21 19 3 19" />
+              <polygon points="12 8.5 16.5 16.5 7.5 16.5" strokeWidth="1.4" />
             </svg>
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-chocolate leading-none group-hover:text-olive transition-colors whitespace-nowrap">
-              Triángulo Andino
+              DeiTaNa Travel
             </span>
             <span className="text-[10px] uppercase tracking-widest text-earth font-bold mt-1 whitespace-nowrap">
               Chile · Bolivia · Perú
@@ -151,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setCurrentView(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`w-full text-left px-4 py-3 rounded text-sm font-bold flex items-center justify-between min-h-[48px] ${
+                className={`w-full text-left px-4 py-3 rounded text-sm font-bold flex items-center justify-between min-h-12 ${
                   isActive
                     ? 'bg-stone text-chocolate border-l-4 border-olive'
                     : 'text-chocolate hover:bg-stone/40'

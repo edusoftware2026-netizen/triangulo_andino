@@ -351,7 +351,7 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
                       className="px-2.5 py-1 rounded bg-stone/25 hover:bg-stone/50 text-chocolate font-medium transition-colors flex items-center gap-1 border border-chocolate/10"
                     >
                       <span className="line-clamp-1 max-w-xs">{src.title}</span>
-                      <span className="material-symbols-outlined text-[12px]">open_in_new</span>
+                      <span className="material-symbols-outlined text-xs">open_in_new</span>
                     </a>
                   ))}
                 </div>

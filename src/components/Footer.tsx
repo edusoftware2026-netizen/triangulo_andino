@@ -30,13 +30,28 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenConcierge,
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded bg-chocolate flex items-center justify-center border border-gold/40 shadow-xs">
-                <svg className="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14 6l6 12H4L9.5 8.5 12 12l2-6z" />
+                <svg
+                  className="w-5 h-5 text-gold"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polygon points="12 3 21 19 3 19" fill="currentColor" fillOpacity="0.18" />
+                  <polygon points="12 3 21 19 3 19" />
+                  <polygon points="12 8.5 16.5 16.5 7.5 16.5" strokeWidth="1.4" />
                 </svg>
               </div>
-              <span className="font-serif text-2xl font-bold tracking-tight text-chocolate">
-                Triángulo Andino
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl font-bold tracking-tight text-chocolate leading-none">
+                  DeiTaNa Travel
+                </span>
+                <span className="text-[10px] uppercase tracking-widest text-terracotta-text font-bold mt-1">
+                  Deisy · Tamara · Nayra // Triángulo Andino
+                </span>
+              </div>
             </div>
             <p className="text-sm text-earth max-w-sm leading-relaxed">
               {t.footerMission}

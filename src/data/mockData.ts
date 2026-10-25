@@ -809,7 +809,7 @@ export const DEFAULT_BRANDING: SiteBranding = {
   heroTitle2: 'Techo del Mundo',
   heroDesc: 'Descubre la inmensidad del Salar de Uyuni, los cañones de Atacama y la gloria de Machu Picchu en vehículos 4x4 satelitales con logística médica y curaduría cinco estrellas.',
   conciergePhone: '+56 9 8452 1109',
-  conciergeDefaultMsg: 'Hola Triángulo Andino Concierge. Me gustaría consultar una expedición privada por Chile, Bolivia y Perú.',
+  conciergeDefaultMsg: 'Hola DeiTaNa Travel Concierge. Me gustaría consultar una expedición privada por Chile, Bolivia y Perú.',
 };
 
 export const DEFAULT_HOTELS: HotelItem[] = [

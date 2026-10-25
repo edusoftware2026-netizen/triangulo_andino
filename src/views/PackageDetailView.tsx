@@ -94,7 +94,7 @@ export const PackageDetailView: React.FC<PackageDetailViewProps> = ({
         </div>
 
         {/* Main Header Hero with Interactive Multi-Image Gallery */}
-        <div className="relative w-full rounded-lg overflow-hidden elevation-card border border-chocolate/12 min-h-[420px] flex items-end p-6 sm:p-10 text-white group">
+        <div className="relative w-full rounded-lg overflow-hidden elevation-card border border-chocolate/12 min-h-105 flex items-end p-6 sm:p-10 text-white group">
           <img
             src={gallery[activeImageIdx] || packageItem.imageUrl}
             alt={packageItem.title[language] || packageItem.title.ES}
